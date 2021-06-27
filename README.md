@@ -9,4 +9,13 @@ https://github.com/public-apis/public-apis
 3. New York Times
 4. Bible
 5. Apex legends stat tracker
-6. 
+6. Maps
+7. Walmart/Wegmans 
+8. 
+
+
+
+
+Ideas:
+- Any kind of custom map. The map can use another api to diplay whatever: restaurants, stores, weather, 
+- Shopping App
