@@ -6,33 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vegetable Tinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-
-</body>
-<title>Vegetable Tinder</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-</head>
-
-<body>
-
     <div class="container">
-        <input type="text" class="search-term" id="searchMarkets" value="" placeholder="ENTER ZIP CODE" />
-        <button type="button" class="btn btn-primary" id="search-button" onclick="getMarkets()">Find Local
-            Markets!</button>
-    </div>
-
-    <div class="container">
-        <input type="text" class="search-term" id="searchProduce" value="" placeholder="ENTER INGREDIENT" />
-        <button type="button" class="btn btn-primary" id="search-button" onclick="getHealth()">Get Nutritional
-            Information!</button>
+        <input type="text" class="search-term" id="searchProduce" value="" placeholder="Produce" />
+        <button type="button" class="btn btn-primary" id="search-button" onclick="getProduce()">Find Produce
+            Now!</button>
     </div>
 
 
     <div class="container">
-        <input type="text" class="search-term" id="searchRecipe" value="" placeholder="SEARCH FOR YOUR RECIPE" />
-        <button type="button" class="btn btn-primary" id="search-button" onclick="getRecipe()">Find Recipes
+        <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Recipe" />
+        <button type="button" class="btn btn-primary" id="search-button" onclick="getProduce()">Find Recipes
             Now!</button>
     </div>
 
@@ -40,51 +28,50 @@
         <h2>SEE LOCAL MARKETS HERE</h2>
     </div>
 
-    <div class="container" id="response-container-1">
-        <h2>SEE NUTRITIONAL INFORMATION HERE</h2>
-    </div>
-
     <div class="container" id="response-container-2">
-        <!----------------------------------------Ani's Dropdowns & Nav -------------------------------------------------------------------------->
-        <div class="dropdown">
-            <button onclick="starchDrop()" id="starchBtn" class="dropbtn">Starch</button>
-            <div id="starchDropDown" class="dropdown-content">
-                <a href="#potatoes">Potatoes</a>
-                <a href="#bread">Bread</a>
-                <a href="#more">More</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button id="vegetableBtn" class="dropbtn">Vegetable</button>
-            <div id="vegetableDropDown" class="dropdown-content">
-                <a href="#tomatoes">Tomatoes</a>
-                <a href="#carrots">Carrots</a>
-                <a href="#spinach">Spinach</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button id="proteinBtn" class="dropbtn">Protein</button>
-            <div id="proteinDropDown" class="dropdown-content">
-                <a href="#beef">Beef</a>
-                <a href="#eggs">Eggs</a>
-                <a href="#chicken">Chicken</a>
-                <a href="#vegetarian">Vegetarian</a>
-            </div>
-        </div>
-
-
-        <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-        </div>
         <h2>SEE RECIPE HERE</h2>
     </div>
 
+    <!----------------------------------------Ani's Dropdowns & Nav -------------------------------------------------------------------------->
+    <div class="dropdown">
+        <button onclick="starchDrop()" id="starchBtn" class="dropbtn">Starch</button>
+        <div id="starchDropDown" class="dropdown-content">
+            <a href="#potatoes">Potatoes</a>
+            <a href="#bread">Bread</a>
+            <a href="#more">More</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="vegetableBtn" class="dropbtn">Vegetable</button>
+        <div id="vegetableDropDown" class="dropdown-content">
+            <a href="#tomatoes">Tomatoes</a>
+            <a href="#carrots">Carrots</a>
+            <a href="#spinach">Spinach</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="proteinBtn" class="dropbtn">Protein</button>
+        <div id="proteinDropDown" class="dropdown-content">
+            <a href="#beef">Beef</a>
+            <a href="#eggs">Eggs</a>
+            <a href="#chicken">Chicken</a>
+            <a href="#vegetarian">Vegetarian</a>
+        </div>
+    </div>
+
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+    </div>
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
