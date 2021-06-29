@@ -10,7 +10,7 @@
 
 
 
-// RYAN'S CODE 
+// ********************** RYAN'S CODE **********************
 
 //FETCH THE PRODUCE API (LOCAL FARMERS MARKETS BASED ON ZIP)
 // function getProduce() {
@@ -39,8 +39,8 @@
 // FORMAT:  &apiKey=YOUR-API-KEY.
 // API KEY: b79ab8cbea19412a8dc76a8297bc9d42
 function getRecipe() {
-    var searchRecipe = "apples"
-   // document.querySelector("searchRecipe").value;
+
+    var searchRecipe = document.querySelector("#searchRecipe").value;
 
     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
@@ -53,7 +53,7 @@ function getRecipe() {
         var recipeTitle = response.results[0].title;
         console.log(recipeTitle);
 
-        var responseContainerEl = document.querySelector('#response-container');
+        var responseContainerEl = document.querySelector('#response-container-2');
 
         responseContainerEl.innerHTML = recipeTitle;
 
