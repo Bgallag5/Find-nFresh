@@ -13,24 +13,27 @@
 // ********************** RYAN'S CODE **********************
 
 //FETCH THE PRODUCE API (LOCAL FARMERS MARKETS BASED ON ZIP)
-// function getProduce() {
-//     var searchProduce = document.querySelector("#searchProduce").value;
+function getProduce() {
 
-//     fetch('' + searchProduce + '')
+    var searchProduce = "30075"
+     // document.querySelector("#searchProduce").value;
 
-//     .then(function (response) {
-//         return response.json
-//     })
+    fetch('' + searchProduce + '')
 
-//     .then(function(response) {
-//         var localMarket = response.list[0].city[0];
-//         console.log(localMarket);
+    .then(function (response) {
+        console.log(response.json());
+        return response.json();
+    })
 
-//         var responseContainerEl = document.querySelector('#response-container');
-//         responseContainerEl.innerHTML = localMarket.description;
+    .then(function(response) {
+        var localMarket = response;
+        console.log(localMarket);
 
-//     })
-// }
+        var responseContainerEl = document.querySelector('#response-container');
+        responseContainerEl.innerHTML = localMarket.description;
+
+    })
+}
 
 
 
