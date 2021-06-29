@@ -20,34 +20,34 @@
 
 
 // // FETCH NUTRITIONAL INFO FOR YOUR INGREDIENT
-// function getHealth() {
+function getHealth() {
 
-//     var searchProduce = "apple"
-//      // document.querySelector("#searchProduce").value;
+    var searchProduce = "apple"
+     // document.querySelector("#searchProduce").value;
 
-//     fetch('https://api.nal.usda.gov/fdc/v1/foods/search?query=' + searchProduce + '&api_key=nyDYT2Um4SpETFMeJhGqMrB0GNnwvVDQw1H5nx0K')
+    fetch('https://api.nal.usda.gov/fdc/v1/foods/search?query=' + searchProduce + '&api_key=nyDYT2Um4SpETFMeJhGqMrB0GNnwvVDQw1H5nx0K')
 
-//     .then(function (response) {
-//         //console.log(response.json());
-//         return response.json();
-//     })
+    .then(function (response) {
+        console.log(response.json());
+        return response.json();
+    })
 
-//     .then(function(response) {
-//         var healthInfo = response.foods[0].foodNutrients[0].nutrientName;
-//         console.log(healthInfo);
+    .then(function(response) {
+        var healthInfo = response.foods[0].foodNutrients[0].nutrientName;
+        console.log(healthInfo);
 
-//         var responseContainerEl = document.querySelector('#response-container-1');
-//         responseContainerEl.innerHTML = healthInfo;
+        var responseContainerEl = document.querySelector('#response-container-1');
+        responseContainerEl.innerHTML = healthInfo;
 
-//         var health = document.createElement("health");
-//         health.setAttribute('src', response.foods[0]);
+        var health = document.createElement("health");
+        health.setAttribute('src', response.foods[0]);
 
-//         responseContainerEl.appendChild(health);
+        responseContainerEl.appendChild(health);
 
-//     });
-// }
+    });
+}
 
-
+getHealth();
 
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
@@ -162,12 +162,38 @@
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
 // BEN START
-//
+//Notes:
+// use the API id of each recipe to eventually link to the spoonful recipe page
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 
+function getRecipes(){
+
+    var spoonKey = "20af9545e7844540b4be28a453355597"
+    var searchTerm = window.prompt("What ingredients did you get?")
+
+fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonKey + "&query=" + searchTerm)
+.then(function(response) {
+    return response.json();
+})
+.then(function(response){
+    console.log(response)
+    console.log(response.results[1])
+})
+
+fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + spoonKey + "&ingredients=" + searchTerm)
+.then(function(response) {
+    return response.json();
+})
+.then(function(response){
+    console.log(response)
+    console.log(response[1])
+})
+}
 
 
+
+getRecipes();
 
 
 
