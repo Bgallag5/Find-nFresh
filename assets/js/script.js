@@ -13,26 +13,38 @@
 // ********************** RYAN'S CODE **********************
 
 //FETCH THE PRODUCE API (LOCAL FARMERS MARKETS BASED ON ZIP)
-function getProduce() {
+function getMarkets() {
 
-    var searchProduce = "30075"
+}
+
+
+
+// FETCH NUTRITIONAL INFO FOR YOUR INGREDIENT
+function getHealth() {
+
+    var searchProduce = "apple"
      // document.querySelector("#searchProduce").value;
 
-    fetch('' + searchProduce + '')
+    fetch('https://api.nal.usda.gov/fdc/v1/foods/search?query=' + searchProduce + '&api_key=nyDYT2Um4SpETFMeJhGqMrB0GNnwvVDQw1H5nx0K')
 
     .then(function (response) {
-        console.log(response.json());
+        //console.log(response.json());
         return response.json();
     })
 
     .then(function(response) {
-        var localMarket = response;
-        console.log(localMarket);
+        var healthInfo = response.foods[0].foodNutrients[0].nutrientName;
+        console.log(healthInfo);
 
-        var responseContainerEl = document.querySelector('#response-container');
-        responseContainerEl.innerHTML = localMarket.description;
+        var responseContainerEl = document.querySelector('#response-container-1');
+        responseContainerEl.innerHTML = healthInfo;
 
-    })
+        var health = document.createElement("health");
+        health.setAttribute('src', response.foods[0]);
+
+        responseContainerEl.appendChild(health);
+
+    });
 }
 
 
