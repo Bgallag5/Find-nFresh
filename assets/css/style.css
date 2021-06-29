@@ -1,3 +1,15 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(/Users/bengallagher/Desktop/dogtinder/assets/resources/images/3.jpg);
+  background-size: cover;
+background-position: center;
+}
+
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -47,4 +59,13 @@ ul {
   
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .container h2{
+    margin: 0;
+    color: #fff;
+    font-weight:300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
   }
