@@ -1,21 +1,15 @@
-# dogtinder
+An app to help people find locally grown produce and match that with recipes for that ingredient. The farmers market API will show user where they can find locations of local produce. Then, based on what they bought at the market, the spoonful API’s can give recipe recommendations.
 
+USDA Farmers market api- show users local farmers markets based on their location; 
 
-https://github.com/public-apis/public-apis
-
-//API List: 
-1. Nasa
-2. Youtube
-3. New York Times
-4. Bible
-5. Apex legends stat tracker
-6. Maps
-7. Walmart/Wegmans 
-8. 
+Spoontastic API- based on what the local farmer market had: the user can find recipes that include that ingredient; and can also filter the recipes by different categories: (spoonful has a ton: cuisine type (italian, chinese), ingredients, calories, allergies, diet)
 
 
 
 
-Ideas:
-- Any kind of custom map. The map can use another api to diplay whatever: restaurants, stores, weather, 
-- Shopping App
+Roles
+Ben: Functionality, JS, Git
+Ani: Functionality, JS , Video for Presentation 
+Shane: Style, CSS, PowerPoint, JS, HTML
+Ryan: Style/Frame, CSS, HTML, APIs
+Gaye: Style, HTML

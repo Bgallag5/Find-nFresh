@@ -23,5 +23,7 @@ function getProduce() {
 // FETCH THE RECIPE API 
 
 function getRecipe() {
-    var 
+    var searchRecipe = document.querySelector("searchRecipe").value;
+
+    fetch('')
 }
