@@ -12,37 +12,55 @@
 
 // RYAN'S CODE 
 
-// FETCH THE PRODUCE API (LOCAL FARMERS MARKETS)
+//FETCH THE PRODUCE API (LOCAL FARMERS MARKETS BASED ON ZIP)
 // function getProduce() {
 //     var searchProduce = document.querySelector("#searchProduce").value;
 
-//     fetch('')
+//     fetch('' + searchProduce + '')
+
+//     .then(function (response) {
+//         return response.json
+//     })
+
+//     .then(function(response) {
+//         var localMarket = response.list[0].city[0];
+//         console.log(localMarket);
+
+//         var responseContainerEl = document.querySelector('#response-container');
+//         responseContainerEl.innerHTML = localMarket.description;
+
+//     })
 // }
 
-function getDetails(id) {
-    $.ajax({
-        type: "GET",
-        contentType: "application/json; charset=utf-8",
-        // submit a get request to the restful service mktDetail.
-        url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + id,
-        dataType: 'jsonp',
-        jsonpCallback: 'detailResultHandler'
+
+
+
+//FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
+// FORMAT:  &apiKey=YOUR-API-KEY.
+// API KEY: b79ab8cbea19412a8dc76a8297bc9d42
+function getRecipe() {
+    var searchRecipe = "apples"
+   // document.querySelector("searchRecipe").value;
+
+    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+
+    .then(function (response) {
+        //console.log(response.json());
+        return response.json();
+    })
+
+    .then(function (response) {
+        var recipeTitle = response.results[0].title;
+        console.log(recipeTitle);
+
+        var responseContainerEl = document.querySelector('#response-container');
+
+        responseContainerEl.innerHTML = recipeTitle;
+
+        var recipe = document.createElement("recipe");
+        recipe.setAttribute('src', response.results[0]);
+
+        responseContainerEl.appendChild(recipe);
     });
 }
-//iterate through the JSON result object.
-function detailResultHandler(detailresults) {
-    for (var key in detailresults) {
-        alert(key);
-        var results = detailresults[key];
-        alert(results['GoogleLink']);
-    }
-}
 
-
-// FETCH THE RECIPE API 
-
-// function getRecipe() {
-//     var searchRecipe = document.querySelector("searchRecipe").value;
-
-//     fetch('')
-// }
