@@ -46,10 +46,34 @@
     </header>
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
-    <section class="hero ">
-        <h2>
-            Feel.Explore.Taste.
-        </h2>
+    <section class="hero">
+        <div id="zipBox" class="container">
+            <h2>Input your zipcode here</h2>
+            <input style="color: white;" type="text" id="zipCode" placeholder="zipcode" value=""/>
+            <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()"> Enter</button>
+        </div>
+
+        <div class="container row justify-content-around" id="market-display" style="display: none;">
+
+            <div id="market-1" class="col-6 single-market">
+                <h3 id="title-1">Market Title</h3>
+                <a href="" target="_blank" id="map-1">Google Maps Link</a>
+            </div>
+            <div id="market-2" class="col-6 single-market">
+                <h3 id="title-2">Market Title</h3>
+                <a href="" target="_blank" id="map-2">Google Maps Link</a>
+            </div>
+            <div id="market-3" class="col-6 single-market">
+                <h3 id="title-3">Market Title</h3>
+                <a href="" target="_blank" id="map-3">Google Maps Link</a>
+            </div>
+            <div id="market-4" class="col-6 single-market">
+                <h3 id="title-4">Market Title</h3>
+                <a href="" target="_blank" id="map-4">Google Maps Link</a>
+            </div>
+
+        </div>
+    
     </section>
 
     <section class="container">
