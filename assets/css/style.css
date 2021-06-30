@@ -56,6 +56,16 @@ ul li a:hover {
   height: 450px ;
 }
 
+footer {
+  background: var(--first);
+  color: var(--sixth);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px;
+}
+
 /* 
 ul {
     list-style-type: none;
