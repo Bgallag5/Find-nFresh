@@ -1149,7 +1149,7 @@ function getRecipe() {
 function getRecipes(){
 
     var spoonKey = "20af9545e7844540b4be28a453355597"
-    var searchTerm = window.prompt("What ingredients did you get?")
+    // var searchTerm = window.prompt("What ingredients did you get?")
 
 fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonKey + "&query=" + searchTerm)
 .then(function(response) {
