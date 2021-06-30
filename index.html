@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FindFresh</title>
-    <!--?-------------Materialized CDN--------------->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <!--?-----Google Fonts used Permanent Marker----->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Suez+One&display=swap" rel="stylesheet">
+    <!--?---------Google Fonts used Nunito Sans-->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <!--?-------Import Google Icons----->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--?--Import materialize.css----->
@@ -45,11 +46,53 @@
     </header>
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
-    <section class="hero">
-    
+    <section class="hero ">
+        <h2>
+            Feel.Explore.Taste.
+        </h2>
+    </section>
+
+    <section class="container">
+        <!--************************************RYAN"S SEARCH BARS (SOMEONE CAN CHANGEE FROM onCLICK TO KEYUP)**************************-->
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col">
+                    <input type="text" class="search-term" id="searchProduce" value="" placeholder="INGREDIENT" />
+                    <button type="button" class="btn" id="search-button" onclick="getHealth()">Find Nutritional Information
+                        Now!</button>
+                </div>
+                
+                <div class="col">
+
+                </div>
+                
+                <div class="col">
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="fetch-ingredient container">
+            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
+            <button type="button" class="btn btn-primary" id="search-button" onclick="getRecipe()">Find Recipes
+                Now!</button>
+        </div>
+
+        <div class="container-nutrition" id="response-container-1">
+            <h2>SEE NUTRITIONAL INFO HERE</h2>
+        </div>
+
+        <div class="container-recipe" id="response-container-2">
+            <h2>SEE RECIPE HERE</h2>
+        </div>
+
     </section>
 
 
+   
 
 
 
@@ -71,27 +114,9 @@
 
 
 
-<!--************************************RYAN"S SEARCH BARS (SOMEONE CAN CHANGEE FROM onCLICK TO KEYUP)**************************-->
-    <div class="container">
-        <input type="text" class="search-term" id="searchProduce" value="" placeholder="INGREDIENT" />
-        <button type="button" class="btn btn-primary" id="search-button" onclick="getHealth()">Find Nutritional Information
-            Now!</button>
-    </div>
 
 
-    <div class="container">
-        <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
-        <button type="button" class="btn btn-primary" id="search-button" onclick="getRecipe()">Find Recipes
-            Now!</button>
-    </div>
 
-    <div class="container" id="response-container-1">
-        <h2>SEE NUTRITIONAL INFO HERE</h2>
-    </div>
-
-    <div class="container" id="response-container-2">
-        <h2>SEE RECIPE HERE</h2>
-    </div>
 
     <!----------------------------------------Ani's Dropdowns & Nav -------------------------------------------------------------------------->
     <div class="dropdown">
@@ -127,14 +152,9 @@
 
 
 
-<footer>
-    <h4>FindFresh &copy 2021</h4>
-</footer>
-
-
-
-
-
+    <footer>
+        <h6>FindFresh &copy 2021</h6>
+    </footer>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
