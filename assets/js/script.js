@@ -223,7 +223,7 @@ function findMarkets(){
           map2.href = link;
           console.log(link);
 
-          })
+          });
         fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
         .then(function(response){
             return response.json();
@@ -238,7 +238,7 @@ function findMarkets(){
           map3.href = link;
           console.log(link);
 
-          })
+          });
           fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market4)
           .then(function(response){
               return response.json();
@@ -251,7 +251,7 @@ function findMarkets(){
             }
           title4.textContent = response.marketdetails.Address;
           map4.href = link;
-          console.log(link);
+          console.log(link); 
 
             })
     })
