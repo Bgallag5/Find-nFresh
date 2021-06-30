@@ -200,6 +200,7 @@ function findMarkets(){
             return response.json();
         })
         .then(function(response){
+            console.log(response.marketdetails.GoogleLink)
             var link = response.marketdetails.GoogleLink;
             link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
             if (!link.includes("Farmers")){
@@ -214,6 +215,7 @@ function findMarkets(){
             return response.json();
         })
         .then(function(response){
+            console.log(response.marketdetails.GoogleLink)
             var link = response.marketdetails.GoogleLink;
             link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
             if (!link.includes("Farmers")){
@@ -229,6 +231,7 @@ function findMarkets(){
             return response.json();
         })
         .then(function(response){
+            console.log(response.marketdetails.GoogleLink);
             var link = response.marketdetails.GoogleLink;
             link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
             if (!link.includes("Farmers")){
@@ -244,6 +247,7 @@ function findMarkets(){
               return response.json();
           })
           .then(function(response){
+            console.log(response.marketdetails.GoogleLink)
             var link = response.marketdetails.GoogleLink;
             link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
             if (!link.includes("Farmers")){
