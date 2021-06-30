@@ -28,7 +28,7 @@ function getHealth() {
     fetch('https://api.nal.usda.gov/fdc/v1/foods/search?query=' + searchProduce + '&api_key=nyDYT2Um4SpETFMeJhGqMrB0GNnwvVDQw1H5nx0K')
 
     .then(function (response) {
-        console.log(response.json());
+       // console.log(response.json());
         return response.json();
     })
 
