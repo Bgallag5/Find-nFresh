@@ -5,7 +5,7 @@
 // LINES 2001-2500: GAYE
 
 var ingredient = document.getElementById("searchRecipe");
-
+var zipCode = document.getElementById("zipCode")
 
 
 
@@ -169,7 +169,20 @@ function getRecipe() {
 
 
 function findMarkets(){
-    var zip = "22182";
+    var zip = zipCode.value;
+    var markets = document.getElementById("market-display");
+    var zipInput = document.getElementById("zipBox");
+    var title1 = document.getElementById("title-1");
+    var map1 = document.getElementById("map-1");
+    var title2 = document.getElementById("title-2");
+    var map2 = document.getElementById("map-2");
+    var title3 = document.getElementById("title-3");
+    var map3 = document.getElementById("map-3");
+    var title4 = document.getElementById("title-4");
+    var map4 = document.getElementById("map-4");
+
+    zipInput.style.display = "none";
+    markets.style.display="flex";
 
     fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
     .then(function(response) {
@@ -179,27 +192,45 @@ function findMarkets(){
         var market1 = response.results[0].id
         var market2 = response.results[1].id
         var market3 = response.results[2].id
+        var market4 = response.results[3].id
 
         fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
         .then(function(response){
-            console.log(response);
             return response.json();
         })
         .then(function(response){
           console.log(response.marketdetails.Address);
           console.log(response.marketdetails.GoogleLink);
+          title1.textContent = response.marketdetails.Address;
+          map1.href = response.marketdetails.GoogleLink;
         })
         fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
         .then(function(response){
-            console.log(response.json());
+            return response.json();
         })
+        .then(function(response){
+            title2.textContent = response.marketdetails.Address;
+            map2.href = response.marketdetails.GoogleLink;
+          })
         fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
         .then(function(response){
-            console.log(response.json());
+            return response.json();
         })
+        .then(function(response){
+            title3.textContent = response.marketdetails.Address;
+            map3.href = response.marketdetails.GoogleLink;
+          })
+          fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market4)
+          .then(function(response){
+              return response.json();
+          })
+          .then(function(response){
+            title4.textContent = response.marketdetails.Address;
+            map4.href = response.marketdetails.GoogleLink;
+            })
     })
 }
-findMarkets();
+
 
 
 

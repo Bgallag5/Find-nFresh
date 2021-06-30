@@ -57,11 +57,11 @@ ul li a:hover {
 }
 
 #market-display{
-  /* display: none; */
+  display: none;
 border: red 2px solid;
 width: 80%;
 align-items: center;
-display: flex;
+/* display: flex; */
 width: 900px;
 height: 500px;
 background-color: rgb(255, 0, 0, .5);
