@@ -164,8 +164,7 @@ function getRecipe() {
 // BEN START
 //Notes:
 // use the API id of each recipe to eventually link to the spoonful recipe page
-//combine USDA API with Google maps- No Images for the USDA API, can we use google maps as the visual element
-//on the market-display section?
+//combine USDA API with Google maps
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 
@@ -200,59 +199,34 @@ function findMarkets(){
             return response.json();
         })
         .then(function(response){
-            var link = response.marketdetails.GoogleLink;
-            link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
-            if (!link.includes("Farmers")){
-                link = link.concat("+Farmers+Market");
-            }
+          console.log(response.marketdetails.Address);
+          console.log(response.marketdetails.GoogleLink);
           title1.textContent = response.marketdetails.Address;
-          map1.href = link;
-          console.log(link);
+          map1.href = response.marketdetails.GoogleLink;
         })
         fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
         .then(function(response){
             return response.json();
         })
         .then(function(response){
-            var link = response.marketdetails.GoogleLink;
-            link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
-            if (!link.includes("Farmers")){
-                link = link.concat("+Farmers+Market");
-            }
-          title2.textContent = response.marketdetails.Address;
-          map2.href = link;
-          console.log(link);
-
+            title2.textContent = response.marketdetails.Address;
+            map2.href = response.marketdetails.GoogleLink;
           })
         fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
         .then(function(response){
             return response.json();
         })
         .then(function(response){
-            var link = response.marketdetails.GoogleLink;
-            link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
-            if (!link.includes("Farmers")){
-                link = link.concat("+Farmers+Market");
-            }
-          title3.textContent = response.marketdetails.Address;
-          map3.href = link;
-          console.log(link);
-
+            title3.textContent = response.marketdetails.Address;
+            map3.href = response.marketdetails.GoogleLink;
           })
           fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market4)
           .then(function(response){
               return response.json();
           })
           .then(function(response){
-            var link = response.marketdetails.GoogleLink;
-            link = link.replace(/[^a-z+/.:?=]/gi, '').replace([".C."], '');
-            if (!link.includes("Farmers")){
-                link = link.concat("+Farmers+Market");
-            }
-          title4.textContent = response.marketdetails.Address;
-          map4.href = link;
-          console.log(link);
-
+            title4.textContent = response.marketdetails.Address;
+            map4.href = response.marketdetails.GoogleLink;
             })
     })
 }
