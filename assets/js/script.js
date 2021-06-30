@@ -169,7 +169,7 @@ function getRecipe() {
 
 
 function findMarkets(){
-    var zip = prompt("Please enter your Zipcode")
+    var zip = "22182";
 
     fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
     .then(function(response) {
@@ -182,7 +182,12 @@ function findMarkets(){
 
         fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
         .then(function(response){
-            console.log(response.json());
+            console.log(response);
+            return response.json();
+        })
+        .then(function(response){
+          console.log(response.marketdetails.Address);
+          console.log(response.marketdetails.GoogleLink);
         })
         fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
         .then(function(response){
