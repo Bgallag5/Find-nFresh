@@ -4,27 +4,36 @@
 // LINES 1501-2000: SHANE
 // LINES 2001-2500: GAYE
 
+var ingredient = document.getElementById("searchRecipe");
+
+
 
 
 
 // ********************** RYAN'S CODE **********************
 
 //FETCH THE PRODUCE API (LOCAL FARMERS MARKETS BASED ON ZIP)
+// function getMarkets() {
+
+// }
+
+
 
 // // FETCH NUTRITIONAL INFO FOR YOUR INGREDIENT
 function getHealth() {
 
-    var searchProduce = document.querySelector("#searchProduce").value;
+    var searchProduce = "apple"
+     // document.querySelector("#searchProduce").value;
 
     fetch('https://api.nal.usda.gov/fdc/v1/foods/search?query=' + searchProduce + '&api_key=nyDYT2Um4SpETFMeJhGqMrB0GNnwvVDQw1H5nx0K')
 
     .then(function (response) {
-       // console.log(response.json());
+        console.log(response.json());
         return response.json();
     })
 
     .then(function(response) {
-        var healthInfo = response.foods[0].description;
+        var healthInfo = response.foods[0].foodNutrients[0].nutrientName;
         console.log(healthInfo);
 
         var responseContainerEl = document.querySelector('#response-container-1');
@@ -37,6 +46,9 @@ function getHealth() {
 
     });
 }
+
+// getHealth();
+
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
@@ -147,1032 +159,78 @@ function getRecipe() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
 // BEN START
 //Notes:
 // use the API id of each recipe to eventually link to the spoonful recipe page
+//combine USDA API with Google maps
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 
-function getRecipes(){
+function findMarkets(){
+    var zip = "22182";
 
-    var spoonKey = "20af9545e7844540b4be28a453355597"
-    // var searchTerm = window.prompt("What ingredients did you get?")
+    fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response){
+        var market1 = response.results[0].id
+        var market2 = response.results[1].id
+        var market3 = response.results[2].id
 
-fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonKey + "&query=" + searchTerm)
-.then(function(response) {
-    return response.json();
-})
-.then(function(response){
-    console.log(response)
-    console.log(response.results[1])
-})
-
-fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + spoonKey + "&ingredients=" + searchTerm)
-.then(function(response) {
-    return response.json();
-})
-.then(function(response){
-    console.log(response)
-    console.log(response[1])
-})
+        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
+        .then(function(response){
+            console.log(response);
+            return response.json();
+        })
+        .then(function(response){
+          console.log(response.marketdetails.Address);
+          console.log(response.marketdetails.GoogleLink);
+        })
+        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
+        .then(function(response){
+            console.log(response.json());
+        })
+        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
+        .then(function(response){
+            console.log(response.json());
+        })
+    })
 }
+findMarkets();
 
 
 
-getRecipes();
+
+// function getRecipes(){
+//     var spoonKey = "20af9545e7844540b4be28a453355597"
+//     var searchTerm = "broccoli";
+//     // var searchTerm = ingredient.value;
+//     // console.log(searchTerm);
+
+// fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonKey + "&query=" + searchTerm)
+// .then(function(response) {
+//     return response.json();
+// })
+// .then(function(response){
+//     console.log(response)
+//     console.log(response.results[2])
+// })
+
+// fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + spoonKey + "&ingredients=" + searchTerm)
+// .then(function(response) {
+//     return response.json();
+// })
+// .then(function(response){
+//     console.log(response)
+//     console.log(response[1])
+// })
+// }
+
+// getRecipes();
+
 
 
 
