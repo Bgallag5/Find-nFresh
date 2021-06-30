@@ -171,7 +171,7 @@ function getRecipe() {
 function findMarkets(){
     var zip = "22182";
 
-    fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
+    fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
     .then(function(response) {
       return response.json();
     })
@@ -180,7 +180,7 @@ function findMarkets(){
         var market2 = response.results[1].id
         var market3 = response.results[2].id
 
-        fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
+        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
         .then(function(response){
             console.log(response);
             return response.json();
@@ -189,11 +189,11 @@ function findMarkets(){
           console.log(response.marketdetails.Address);
           console.log(response.marketdetails.GoogleLink);
         })
-        fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
+        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
         .then(function(response){
             console.log(response.json());
         })
-        fetch("http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
+        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
         .then(function(response){
             console.log(response.json());
         })
