@@ -15,7 +15,6 @@
 }
 
 body {
-  /* background-image: url("images/3.jpg"); */
   background-size: cover;
   background-position: center;
 }
@@ -47,14 +46,53 @@ ul li a {
 ul li a:hover {
   color: var(--second);
 }
+/* //////////////////////////////HERO SECTION////////////////////////////////////////////////////// */
 
 .hero {
   background-image: url("../images/background.jpeg");
   background-size: cover;
   color: white;
   background-position: 20;
-  height: 450px ;
+  height: 650px ;
 }
+
+#market-display{
+  /* display: none; */
+border: red 2px solid;
+width: 80%;
+align-items: center;
+display: flex;
+width: 900px;
+height: 500px;
+background-color: rgb(255, 0, 0, .5);
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -210px 0 0 -450px; 
+}
+
+#market-display .single-market{
+border: blue 2px solid;
+padding: 50px;
+}
+
+
+
+/* //////////////////////////////HERO SECTION END////////////////////////////////////////////////////// */
+
+
+/* //////////////////////////////REUSABLE ASSETS////////////////////////////////////////////////////// */
+
+
+
+
+/* //////////////////////////////RESUABLE ASSETS END ////////////////////////////////////////////////////// */
+
+
+
+
+
 
 footer {
   background: var(--first);
