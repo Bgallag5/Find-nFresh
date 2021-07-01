@@ -8,8 +8,6 @@ var ingredient = document.getElementById("searchRecipe");
 var zipCode = document.getElementById("zipCode")
 
 
-
-
 // ********************** RYAN'S CODE **********************
 
 
@@ -30,7 +28,7 @@ function getRecipe() {
             return response.json();
         })
 
-
+        // RECIPE IMAGE, TITLE, LINK 1
 
         .then(function (response) {
             console.log(response);
@@ -61,7 +59,7 @@ function getRecipe() {
 
 
 
-            // RECIPE 2
+            // RECIPE IMAGE, TITLE, LINK 2
 
             var recipeTitleI = response.results[1].title;
             console.log(recipeTitleI);
@@ -89,7 +87,7 @@ function getRecipe() {
             responseContainerEl.appendChild(imageI);
 
 
-            // RECIPE 3
+            // RECIPE IMAGE, TITLE, LINK 3
 
             var recipeTitleII = response.results[2].title;
             console.log(recipeTitleII);
@@ -116,22 +114,45 @@ function getRecipe() {
 
             responseContainerEl.appendChild(imageII);
 
-     
+
+
+            // RECIPE 1 : 
+
             var id = response.results[0].id;
             console.log(id);
 
-            fetch("https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false")
+            fetch("https://api.spoonacular.com/recipes/" + id + "/information?")
 
-                .then (function(response) {
+                .then(function (response) {
                     console.log(response);
-                    return response(json);
+                    return response.json();
                 })
 
-                .then (function(response) {
-                   // console.log(response);
+                .then(function (response) {
+                    var recipeLink = response.url
+                    console.log(recipeLink);
 
-                   // var cookTime = response.results.readyInMinutes;
-                   // console.log(cookTime);
+                    // var responseContainerEl = document.querySelector('#response-container-ii');
+                    // responseContainerEl.innerHTML = recipeTitleII;
+
+                    // var recipeII = document.createElement("recipe");
+                    // recipeII.setAttribute('src', response.results[2]);
+
+                    // responseContainerEl.appendChild(recipeII);
+
+
+                    // var recipeImageII = response.results[2].image;
+                    // console.log(recipeImageII);
+
+                    // var responseContainerEl = document.querySelector('#card-3');
+                    // responseContainerEl.innerHTML = recipeImageII;
+
+                    // var imageII = document.createElement("img");
+                    // imageII.setAttribute('src', " ");
+                    // imageII.setAttribute('src', response.results[2].image);
+
+
+                    // responseContainerEl.appendChild(imageII);
 
                 })
         });
