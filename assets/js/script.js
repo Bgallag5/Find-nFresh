@@ -59,6 +59,64 @@ function getRecipe() {
 
             responseContainerEl.appendChild(image);
 
+
+
+            // RECIPE 2
+
+            var recipeTitleI = response.results[1].title;
+            console.log(recipeTitleI);
+
+            var responseContainerEl = document.querySelector('#response-container-i');
+            responseContainerEl.innerHTML = recipeTitleI;
+
+            var recipeI = document.createElement("recipe");
+            recipeI.setAttribute('src', response.results[1]);
+
+            responseContainerEl.appendChild(recipeI);
+
+
+            var recipeImageI = response.results[1].image;
+            console.log(recipeImageI);
+
+            var responseContainerEl = document.querySelector('#card-2');
+            responseContainerEl.innerHTML = recipeImageI;
+
+            var imageI = document.createElement("img");
+            imageI.setAttribute('src', " ");
+            imageI.setAttribute('src', response.results[1].image);
+
+
+            responseContainerEl.appendChild(imageI);
+
+
+            // RECIPE 3
+
+            var recipeTitleII = response.results[2].title;
+            console.log(recipeTitleII);
+
+            var responseContainerEl = document.querySelector('#response-container-ii');
+            responseContainerEl.innerHTML = recipeTitleII;
+
+            var recipeII = document.createElement("recipe");
+            recipeII.setAttribute('src', response.results[2]);
+
+            responseContainerEl.appendChild(recipeII);
+
+
+            var recipeImageII = response.results[2].image;
+            console.log(recipeImageII);
+
+            var responseContainerEl = document.querySelector('#card-3');
+            responseContainerEl.innerHTML = recipeImageII;
+
+            var imageII = document.createElement("img");
+            imageII.setAttribute('src', " ");
+            imageII.setAttribute('src', response.results[2].image);
+
+
+            responseContainerEl.appendChild(imageII);
+
+     
             var id = response.results[0].id;
             console.log(id);
 
@@ -76,9 +134,6 @@ function getRecipe() {
                    // console.log(cookTime);
 
                 })
-
-
-
         });
 }
 
