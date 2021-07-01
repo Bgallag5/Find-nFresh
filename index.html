@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- ?---------------------------BULMA CSS------------------------------------
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <!-- ?---------------------------BULMA CSS------------------------------------>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!--?--------------------local CSS stylesheet---------------------------------->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -60,7 +60,7 @@
 
     <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
     <div class ="container row recipe-container">
-        <div class="card col s4 m6 13">
+        <div class="card col s12 m6 13">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator recipe-img" src="./assets/images/recipe1.jpeg">
             </div>
@@ -129,21 +129,31 @@
     <div class="container">
         <div class="row">
             <div class=" card col s12 m6">
-                    <div class="card-content">
+                 <!--BEN THIS NEEDS AN ID SO IT CAN BE HIDDEN ON CLICK-->
+                    <div class="container card" id="">
+                        <!--IS THIS NOT SUPPOSED OT HAVE A CLASS? CAN I USE A CLASS FOR THIS?-->
                         <div id="zipBox" class="">
                             <h2>Input your zipcode here</h2>
                             <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value=""/>
-                            <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()"> Enter</button>
+                            <div class="enterButton" id="zipButtonContainer">
+                                <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()">Enter</button>
+                            </div>    
                         </div>
                     </div>
                     <div class="card-tabs">
                         <ul class="tabs tabs-fixed-width">
-                            <li class="tab"><a href="#test4">Test 1</a></li>
-                            <li class="tab"><a href="#test5"> Test 2</a></li>
-                            <li class="tab"><a href="#test6">Test 3</a></li>
+                            <li class="tab">
+                                <a href="#Map1">Test 1</a>
+                            </li>
+                            <li class="tab">
+                                <a href="#Map2"> Test 2</a>
+                            </li>
+                            <li class="tab">
+                                <a href="#Map3">Test 3</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="card-content grey lighten-4">
+                    <div class="card grey lighten-4">
                         <div id="Map1">Map 1 should go here</div>
                         <div id="Map2">Map 2 should go here</div>
                         <div id="Map3">Map 3 should go here</div>
@@ -151,31 +161,12 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-        <div id="zipBox" class="">
-            <h2>Input your zipcode here</h2>
-            <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value=""/>
-            <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()"> Enter</button>
-        </div>
 
 
 
 
 
-
-
-
-
-
-
-
-    <!--!-------------------THESE ARE THE CODES TO ------------------>
-
-    
+    <!--!-------------------THESE ARE THE CODES TO MOVE AROUND ------------------>
 
     <div class="container row justify-content-around" id="market-display" style="display: none;">
 
@@ -195,8 +186,11 @@
             <h3 id="title-4">Market Title</h3>
             <a href="" target="_blank" id="map-4">Google Maps Link</a>
         </div>
-
     </div>
+
+    
+
+   
 
     <section class="container">
         <!--************************************RYAN"S SEARCH BARS (SOMEONE CAN CHANGEE FROM onCLICK TO KEYUP)**************************-->

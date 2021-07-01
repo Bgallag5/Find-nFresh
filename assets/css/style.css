@@ -60,6 +60,18 @@ ul li a:hover {
   padding-top: 20px;
 }
 
+/*?---------------------FOOTER SECTION---------------------*/
+
+footer {
+  background: var(--first);
+  color: var(--third);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px;
+}
+
 /*?---------------------HERO SECTION -----------------------*/
 .hero {
   background-image: url("../images/background.jpeg");
@@ -79,10 +91,32 @@ ul li a:hover {
 
 
 
-/* .background-light {
-  opacity: 10%;
-  align-items: center;
-} */
+/*?----------------ZIP CODE CONTAINER----------------*/
+
+.container .card {
+  padding-top: 20px;
+  padding-bottom: 20px; 
+}
+
+.enterButton {
+text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -114,15 +148,7 @@ padding: 50px;
 
 
 
-footer {
-  background: var(--first);
-  color: var(--third);
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  padding: 20px;
-}
+
 
 
 

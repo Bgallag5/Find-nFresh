@@ -47,15 +47,7 @@
   ul li a:hover {
     color: var(--second);
   }
-  
-  .hero {
-    background-image: url("../images/background.jpeg");
-    background-size: cover;
-    color: white;
-    background-position: 20;
-    height: 450px ;
-  }
-  
+
   footer {
     background: var(--first);
     color: var(--sixth);
@@ -65,6 +57,16 @@
     align-items: left;
     padding: 20px;
   }
+  
+  .hero {
+    background-image: url("../images/background.jpeg");
+    background-size: cover;
+    color: white;
+    background-position: 20;
+    height: 600px;
+  }
+  
+ 
   
   /* 
   ul {
