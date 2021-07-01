@@ -25,43 +25,61 @@ function getRecipe() {
 
     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
-            .then(function (response) {
+        .then(function (response) {
             //console.log(response.json());
-                return response.json();
-            })
+            return response.json();
+        })
 
 
 
-                .then(function (response) {
+        .then(function (response) {
+            console.log(response);
+            var recipeTitle = response.results[0].title;
+            console.log(recipeTitle);
+
+            var responseContainerEl = document.querySelector('#response-container-2');
+            responseContainerEl.innerHTML = recipeTitle;
+
+            var recipe = document.createElement("recipe");
+            recipe.setAttribute('src', response.results[0]);
+
+            responseContainerEl.appendChild(recipe);
+
+
+            var recipeImage = response.results[0].image;
+            console.log(recipeImage);
+
+            var responseContainerEl = document.querySelector('#card-1');
+            responseContainerEl.innerHTML = recipeImage;
+
+            var image = document.createElement("img");
+            image.setAttribute('src', " ");
+            image.setAttribute('src', response.results[0].image);
+
+
+            responseContainerEl.appendChild(image);
+
+            var id = response.results[0].id;
+            console.log(id);
+
+            fetch("https://api.spoonacular.com/recipes/" + id + "/information?includeNutrition=false")
+
+                .then (function(response) {
                     console.log(response);
-                    var recipeTitle = response.results[0].title;
-                    console.log(recipeTitle);
+                    return response(json);
+                })
 
-                    var responseContainerEl = document.querySelector('#response-container-2');
-                    responseContainerEl.innerHTML = recipeTitle;
+                .then (function(response) {
+                   // console.log(response);
 
-                    var recipe = document.createElement("recipe");
-                    recipe.setAttribute('src', response.results[0]);
-                    
-                    responseContainerEl.appendChild(recipe);
+                   // var cookTime = response.results.readyInMinutes;
+                   // console.log(cookTime);
 
-
-                    var recipeImage = response.results[0].image;
-                    console.log(recipeImage);
-
-                    var responseContainerEl = document.querySelector('#card-1');
-                    responseContainerEl.innerHTML = recipeImage;
-
-                    var image = document.createElement("img");
-                    image.setAttribute('src', " ");
-                    image.setAttribute('src', response.results[0].image);
+                })
 
 
-                    responseContainerEl.appendChild(image);
 
-        fetch ('https://api.spoonacular.com/recipes/{id}/information')
-
-    });
+        });
 }
 
 
@@ -153,7 +171,7 @@ function getRecipe() {
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 
-function findMarkets(){
+function findMarkets() {
     var zip = zipCode.value;
     var markets = document.getElementById("market-display");
     var zipInput = document.getElementById("zipBox");
@@ -167,53 +185,53 @@ function findMarkets(){
     var map4 = document.getElementById("map-4");
 
     zipInput.style.display = "none";
-    markets.style.display="flex";
+    markets.style.display = "flex";
 
     fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + zip)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(response){
-        var market1 = response.results[0].id
-        var market2 = response.results[1].id
-        var market3 = response.results[2].id
-        var market4 = response.results[3].id
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            var market1 = response.results[0].id
+            var market2 = response.results[1].id
+            var market3 = response.results[2].id
+            var market4 = response.results[3].id
 
-        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
-        .then(function(response){
-            return response.json();
+            fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market1)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    console.log(response.marketdetails.Address);
+                    console.log(response.marketdetails.GoogleLink);
+                    title1.textContent = response.marketdetails.Address;
+                    map1.href = response.marketdetails.GoogleLink;
+                })
+            fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    title2.textContent = response.marketdetails.Address;
+                    map2.href = response.marketdetails.GoogleLink;
+                })
+            fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    title3.textContent = response.marketdetails.Address;
+                    map3.href = response.marketdetails.GoogleLink;
+                })
+            fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market4)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    title4.textContent = response.marketdetails.Address;
+                    map4.href = response.marketdetails.GoogleLink;
+                })
         })
-        .then(function(response){
-          console.log(response.marketdetails.Address);
-          console.log(response.marketdetails.GoogleLink);
-          title1.textContent = response.marketdetails.Address;
-          map1.href = response.marketdetails.GoogleLink;
-        })
-        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market2)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(response){
-            title2.textContent = response.marketdetails.Address;
-            map2.href = response.marketdetails.GoogleLink;
-          })
-        fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market3)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(response){
-            title3.textContent = response.marketdetails.Address;
-            map3.href = response.marketdetails.GoogleLink;
-          })
-          fetch("https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + market4)
-          .then(function(response){
-              return response.json();
-          })
-          .then(function(response){
-            title4.textContent = response.marketdetails.Address;
-            map4.href = response.marketdetails.GoogleLink;
-            })
-    })
 }
 
 
