@@ -19,18 +19,22 @@ body {
   background-position: center;
 }
 
+/*?-----------------Header and navigation----------------*/
+
 header {
   background: var(--first);
   color: white;
   font-family: 'Permanent Marker', cursive;
   padding: 10px 30px; 
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: left;
   font-size: 30px;
   width: 100%;
   position: fixed;
+  z-index: 9999;
 }
+
 header h1 {
   padding-top: 10px;
 }
@@ -51,28 +55,72 @@ ul li a {
 ul li a:hover {
   color: var(--second);
 }
-/* //////////////////////////////HERO SECTION////////////////////////////////////////////////////// */
 
 .nav-link {
   padding-top: 20px;
 }
 
+/*?---------------------FOOTER SECTION---------------------*/
+
+footer {
+  background: var(--first);
+  color: var(--third);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px;
+}
+
+/*?---------------------HERO SECTION -----------------------*/
 .hero {
   background-image: url("../images/background.jpeg");
   background-size: cover;
   color: white;
-  background-position: 20;
-  height: 650px ;
+  background-position: 40;
+  height: 350px ;
+  z-index:8888;
 }
 
-<<<<<<< HEAD
-.background-light {
-  opacity: 10%;
-
-  align-items: center;
+.hero h2 {
+ padding: 150px 100px;
+ color: white;
+ font-family: 'Dancing Script', cursive;
+ font-size: 75px;
 }
 
-=======
+
+
+/*?----------------ZIP CODE CONTAINER----------------*/
+
+.container .card {
+  padding-top: 20px;
+  padding-bottom: 20px; 
+}
+
+.enterButton, .ziptextinput {
+text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Zip Code and map codes*/
 #market-display{
   display: none;
 border: red 2px solid;
@@ -96,31 +144,11 @@ padding: 50px;
 
 
 
-/* //////////////////////////////HERO SECTION END////////////////////////////////////////////////////// */
-
-
-/* //////////////////////////////REUSABLE ASSETS////////////////////////////////////////////////////// */
-
-
-
-
-/* //////////////////////////////RESUABLE ASSETS END ////////////////////////////////////////////////////// */
 
 
 
 
 
-
->>>>>>> 6cdc93b62d0073a16d6cb4364f47c3b4626d8c07
-footer {
-  background: var(--first);
-  color: var(--third);
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
-  padding: 20px;
-}
 
 
 
