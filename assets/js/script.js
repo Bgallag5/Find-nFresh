@@ -130,7 +130,9 @@ function findMarkets() {
         .then(function (response) {
           // console.log(response.marketdetails.GoogleLink)
           var link = response.marketdetails.GoogleLink;
+          //edit the google link to remove long/lat and make it a normal location search
           link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
+          //add "Farmers Market" to search to prevent related, non farmers market locations
           if (!link.includes("Farmers")) {
             link = link.concat("+Farmers+Market");
           }
