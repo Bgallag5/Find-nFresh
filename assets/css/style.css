@@ -98,7 +98,7 @@ footer {
   padding-bottom: 20px; 
 }
 
-.enterButton {
+.enterButton, .ziptextinput {
 text-align: center;
 }
 
