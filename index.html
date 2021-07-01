@@ -7,19 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FindFresh</title>
 
-    <!--?-----Google Fonts used Permanent Marker----->
+    <!--?-----------------------Google Fonts used Permanent Marker---------------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Suez+One&display=swap" rel="stylesheet">
-    <!--?---------Google Fonts used Nunito Sans-->
+    <!--?------------------------Google Fonts used Nunito Sans--------------------->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <!--?-------Import Google Icons----->
+    <!--?------------------------Google Fonts used Nunito Sans--------------------->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!--?---------------------------Import Google Icons---------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--?--Import materialize.css----->
+    <!--?-----------------------Import materialize.css----------------------------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--?--Import Bootstrap----->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!--?--local CSS stylesheet----->
+    <!--?-------------------------Import Bootstrap--------------------------------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- ?---------------------------BULMA CSS------------------------------------
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <!--?--------------------local CSS stylesheet---------------------------------->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -29,32 +33,149 @@
             <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
             FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
         </h1>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Recommendations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
-            </li>
-          </ul>
+            <div class="nav-wrapper">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Recommendations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
     </header>
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
+        <h2>A farm to table experience.</h2>
     </section>
     <!--?-----------END HERO SECTION--------------------------------------->
 
-    <div id="zipBox" class="container">
-        <h2>Input your zipcode here</h2>
-        <input style="color: white;" type="text" id="zipCode" placeholder="zipcode" value=""/>
-        <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()"> Enter</button>
+
+    <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
+    <div class ="container row recipe-container">
+        <div class="card col s4 m6 13">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator recipe-img" src="./assets/images/recipe1.jpeg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">
+                    <a href="https://www.patagoniaprovisions.com/blogs/recipes/fried-anchovy-broccoli-salad" target="_blank">
+                    Fried White Anchovy, Broccoli and Roasted Almond Salad
+                    <i class="material-icons right">more_vert</i>
+                    </a>
+                </span>
+                    
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Ingredients<i class="material-icons right">close</i></span>
+              <p>
+                1 lb. broccoli
+                <br>
+                2 cans Patagonia Provisions Spanish White Anchovies (Roasted Garlic)
+                <br>
+                Several big handfuls baby spinach
+                <br>
+                1½ tbsp. extra-virgin olive oil, divided
+                <br>
+                2 tsp. lemon juice, plus more to taste
+                <br>
+                ½ tsp. kosher salt
+                <br>
+                1 tsp. smoked Spanish paprika
+                <br>
+                ⅓ cup Marcona, Guara or regular roasted almonds, coarsely chopped
+                </p>
+            </div>
+        </div>
+    
+        <div class="card col s4 m6 13 ">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="./assets/images/recipe2.jpeg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    
+        <div class="card col s4 m6 13">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="./assets/images/recipe3.jpeg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
     </div>
+
+    <!--!-------------FOR BEN's MAP and ZIP CODE GOES HERE-------------------->
+        
+    <div class="container">
+        <div class="row">
+            <div class=" card col s12 m6">
+                    <div class="card-content">
+                        <div id="zipBox" class="">
+                            <h2>Input your zipcode here</h2>
+                            <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value=""/>
+                            <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()"> Enter</button>
+                        </div>
+                    </div>
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab"><a href="#test4">Test 1</a></li>
+                            <li class="tab"><a href="#test5"> Test 2</a></li>
+                            <li class="tab"><a href="#test6">Test 3</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-content grey lighten-4">
+                        <div id="Map1">Map 1 should go here</div>
+                        <div id="Map2">Map 2 should go here</div>
+                        <div id="Map3">Map 3 should go here</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+        <div id="zipBox" class="">
+            <h2>Input your zipcode here</h2>
+            <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value=""/>
+            <button type="button" class="btn btn-success" id="zipButton" onclick="findMarkets()"> Enter</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--!-------------------THESE ARE THE CODES TO ------------------>
+
+    
 
     <div class="container row justify-content-around" id="market-display" style="display: none;">
 
@@ -181,7 +302,9 @@
         <h6>FindFresh &copy 2021</h6>
     </footer>
 
-
+    <!--?----- Compiled and minified JavaScript for MATERIALIZED------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
