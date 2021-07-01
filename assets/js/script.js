@@ -21,7 +21,8 @@ function getRecipe() {
 
     var searchRecipe = document.querySelector("#searchRecipe").value;
 
-    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+
 
         .then(function (response) {
             //console.log(response.json());
@@ -116,12 +117,12 @@ function getRecipe() {
 
 
 
-            // RECIPE 1 : 
+            // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
 
             var id = response.results[0].id;
             console.log(id);
 
-            fetch("https://api.spoonacular.com/recipes/" + id + "/information?")
+            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=b79ab8cbea19412a8dc76a8297bc9d42`)
 
                 .then(function (response) {
                     console.log(response);
