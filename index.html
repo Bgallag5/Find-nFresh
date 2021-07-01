@@ -57,14 +57,23 @@
     </section>
     <!--?-----------END HERO SECTION--------------------------------------->
 
+    <!---------------------------------RECIPE SEARCH---------------------------->
+    <section class="container">
+
+        <div class="fetch-ingredient container">
+            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
+            <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search Recipes</button>
+        </div>
+
+    </section>
 
     <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
     <div class ="container row recipe-container">
         <div class="card col s12 m6 13">
-            <div class="card-image waves-effect waves-block waves-light">
+            <div class="card-image waves-effect waves-block waves-light" id="card-1">
               <img class="activator recipe-img" src="./assets/images/recipe1.jpeg">
             </div>
-            <div class="card-content">
+            <div class="card-content" id="response-container-2">
                 <span class="card-title activator grey-text text-darken-4">
                     <a href="https://www.patagoniaprovisions.com/blogs/recipes/fried-anchovy-broccoli-salad" target="_blank">
                     Fried White Anchovy, Broccoli and Roasted Almond Salad
@@ -96,10 +105,10 @@
         </div>
     
         <div class="card col s4 m6 13 ">
-            <div class="card-image waves-effect waves-block waves-light">
+            <div class="card-image waves-effect waves-block waves-light" id="card-2">
               <img class="activator" src="./assets/images/recipe2.jpeg">
             </div>
-            <div class="card-content">
+            <div class="card-content" id="response-container-i">
               <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
               <p><a href="#">This is a link</a></p>
             </div>
@@ -110,10 +119,10 @@
         </div>
     
         <div class="card col s4 m6 13">
-            <div class="card-image waves-effect waves-block waves-light">
+            <div class="card-image waves-effect waves-block waves-light" id="card-3">
               <img class="activator" src="./assets/images/recipe3.jpeg">
             </div>
-            <div class="card-content">
+            <div class="card-content" id="response-container-ii">
               <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
               <p><a href="#">This is a link</a></p>
             </div>
@@ -188,76 +197,10 @@
         </div>
     </div>
 
-    
 
-   
-
-    <section class="container">
-        <!--************************************RYAN"S SEARCH BARS (SOMEONE CAN CHANGEE FROM onCLICK TO KEYUP)**************************-->
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col">
-                    <input type="text" class="search-term" id="searchProduce" value="" placeholder="INGREDIENT" />
-                    <button type="button" class="btn" id="search-button" onclick="getHealth()">Find Nutritional Information
-                        Now!</button>
-                </div>
-                
-                <div class="col">
-
-                </div>
-                
-                <div class="col">
-
-                </div>
-
-            </div>
-        </div>
-
-
-
-        <div class="fetch-ingredient container">
-            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
-            <button type="button" class="btn btn-primary" id="search-button" onclick="getRecipe()">Find Recipes
-                Now!</button>
-        </div>
-
-        <div class="container-nutrition" id="response-container-1">
-            <h2>SEE NUTRITIONAL INFO HERE</h2>
-        </div>
-
-        <div class="container-recipe" id="response-container-2">
-            <h2>SEE RECIPE HERE</h2>
-        </div>
-
-    </section>
 
 
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!----------------------------------------Ani's Dropdowns & Nav -------------------------------------------------------------------------->
     <div class="dropdown">
         <button onclick="starchDrop()" id="starchBtn" class="dropbtn">Starch</button>
