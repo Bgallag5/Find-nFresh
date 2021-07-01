@@ -207,14 +207,14 @@ showMaps = function (link, link2) {
   var map1 = document.getElementById("mapBox");
   map1.setAttribute("src", embedLink);
 
-  var market = link2.split("q=");
-  var marketName = market[1];
-  var embedLink =
-    "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
-    marketName;
-  var map2 = document.createElement("iframe")
-  map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
-mapContainer.appendChild(map2);
+//   var market = link2.split("q=");
+//   var marketName = market[1];
+//   var embedLink =
+//     "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
+//     marketName;
+//   var map2 = document.createElement("iframe")
+//   map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
+// mapContainer.appendChild(map2);
 };
 
 // function getRecipes(){
