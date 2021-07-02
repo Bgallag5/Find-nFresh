@@ -39,6 +39,7 @@ function getRecipe() {
             console.log(recipeTitle);
             ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
             window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));
             //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-2');
@@ -92,8 +93,6 @@ function getRecipe() {
             //     }, false);
             // }
 
-            window.localStorage.setItem("")
-
             /////////////////////END ANI'S LOCAL STORAGE////////////////////////////////////////////////////////////////
 
 
@@ -113,6 +112,10 @@ function getRecipe() {
 
             var recipeTitleI = response.results[1].title;
             console.log(recipeTitleI);
+            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
+            window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
+            //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-i');
             responseContainerEl.innerHTML = recipeTitleI;
@@ -141,6 +144,10 @@ function getRecipe() {
 
             var recipeTitleII = response.results[2].title;
             console.log(recipeTitleII);
+            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
+            window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
+            //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-ii');
             responseContainerEl.innerHTML = recipeTitleII;
