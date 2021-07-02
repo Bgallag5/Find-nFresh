@@ -142,7 +142,9 @@ border: blue 2px solid;
 padding: 50px;
 }
 
-
+#mapContainer{
+  display: flex;
+}
 
 
 
