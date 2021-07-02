@@ -4,11 +4,13 @@
 // LINES 1501-2000: SHANE
 // LINES 2001-2500: GAYE
 
-var ingredient = document.getElementById("searchRecipe");
+// var ingredient = document.getElementById("searchRecipe");
 
 var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById('mapContainer')
+var pastRecipeEl = document.getElementById("pastRecipe");
+// var searchRecipeInput = document.getElementById("searchRecipe")
 
 //////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
 if (window.localStorage) {
@@ -55,7 +57,6 @@ function getRecipe() {
             window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle))
             window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle))
 
-
             //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-2');
@@ -81,6 +82,14 @@ function getRecipe() {
 
 
             responseContainerEl.appendChild(image);
+            ////////////////////////////////////////  ANI LOCAL STORAGE ///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
 
 
 
