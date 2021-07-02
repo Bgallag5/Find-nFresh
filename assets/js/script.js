@@ -10,6 +10,19 @@ var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById('mapContainer')
 
+//////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
+if (window.localStorage) {
+    var storeZip = document.getElementById("zipCode");
+    storeZip.value = localStorage.getItem("zipCode");
+
+    storeZip.addEventListener("input", function () {
+        localStorage.setItem("zipCode", storeZip.value);
+    }, false);
+
+};
+/////////////////////////////////// End Ani Storing Zip Code/////////////////////////////////////////////////////////////
+
+
 // ********************** RYAN'S CODE **********************
 
 
@@ -37,9 +50,12 @@ function getRecipe() {
             console.log(response);
             var recipeTitle = response.results[0].title;
             console.log(recipeTitle);
-            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
-            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
-            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));
+
+            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE 1///////////////////////////////////////////
+            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle))
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle))
+
+
             //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-2');
@@ -47,6 +63,7 @@ function getRecipe() {
 
             var recipe = document.createElement("recipe");
             recipe.setAttribute('src', response.results[0]);
+            recipe.setAttribute("id", "recipeOne");
 
             responseContainerEl.appendChild(recipe);
 
@@ -69,6 +86,8 @@ function getRecipe() {
 
 
 
+
+
             //////////////////// Ani's local storage///////////////////////////////////////////////////////////////////////
             ////////////////////////ONLY SAVES RETURNED INGREDIENT RIGHT NOW/////////////////////////////////////////
             if (window.localStorage) {
@@ -81,30 +100,7 @@ function getRecipe() {
                 }, false);
             }
 
-
-
-            /// Don't think I can use event listener to grab recipe since it's not input haha will work on it more tonight and tomorrow morning//
-            // if (window.localStorage) {
-            //     var recipeOneSave = document.getElementById("response-container-2"); //dynamically created html id 
-            //     recipeOneSave.value = localStorage.getItem("response-container-2");
-
-            //     recipeOneSave.addEventListener("recipe", function () {
-            //         localStorage.setItem("response-container-2", recipeOneSave.value.recipe)
-            //     }, false);
-            // }
-
-            /////////////////////END ANI'S LOCAL STORAGE////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
+            /////////////////////////End Ani's local storage//////////////////////////////////////////////////////////
 
 
 
@@ -112,7 +108,7 @@ function getRecipe() {
 
             var recipeTitleI = response.results[1].title;
             console.log(recipeTitleI);
-            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
+            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE 2///////////////////////////////////////////
             window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));
             window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
             //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
@@ -144,7 +140,7 @@ function getRecipe() {
 
             var recipeTitleII = response.results[2].title;
             console.log(recipeTitleII);
-            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
+            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE 3///////////////////////////////////////////
             window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
             window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
             //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
