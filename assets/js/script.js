@@ -69,11 +69,11 @@ function getRecipe() {
             ////////////////////////ONLY SAVES RETURNED INGREDIENT RIGHT NOW/////////////////////////////////////////
             if (window.localStorage) {
 
-                var recipeOneSave = document.getElementById("searchRecipe") //html input id
-                recipeOneSave.value = localStorage.getItem("searchRecipe")
+                var saveIndgredient = document.getElementById("searchRecipe") //html input id
+                saveIndgredient.value = localStorage.getItem("searchRecipe")
 
-                recipeOneSave.addEventListener("input", function () {
-                    localStorage.setItem("searchRecipe", recipeOneSave.value);
+                saveIndgredient.addEventListener("input", function () {
+                    localStorage.setItem("searchRecipe", saveIndgredient.value);
                 }, false);
             }
 
@@ -84,8 +84,8 @@ function getRecipe() {
             //     var recipeOneSave = document.getElementById("response-container-2"); //dynamically created html id 
             //     recipeOneSave.value = localStorage.getItem("response-container-2");
 
-            //     recipeOneSave.addEventListener("input", function () {
-            //         localStorage.setItem("response-container-2", recipeOneSave.value.response)
+            //     recipeOneSave.addEventListener("recipe", function () {
+            //         localStorage.setItem("response-container-2", recipeOneSave.value.recipe)
             //     }, false);
             // }
 
