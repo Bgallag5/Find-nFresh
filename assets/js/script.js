@@ -37,6 +37,9 @@ function getRecipe() {
             console.log(response);
             var recipeTitle = response.results[0].title;
             console.log(recipeTitle);
+            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE///////////////////////////////////////////
+            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
+            //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-2');
             responseContainerEl.innerHTML = recipeTitle;
@@ -88,6 +91,8 @@ function getRecipe() {
             //         localStorage.setItem("response-container-2", recipeOneSave.value.recipe)
             //     }, false);
             // }
+
+            window.localStorage.setItem("")
 
             /////////////////////END ANI'S LOCAL STORAGE////////////////////////////////////////////////////////////////
 
