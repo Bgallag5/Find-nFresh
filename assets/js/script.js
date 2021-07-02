@@ -275,12 +275,12 @@ function findMarkets() {
   var zipInput = document.getElementById("zipBox");
   var title1 = document.getElementById("title-1");
   var map1 = document.getElementById("map-1");
-  var title2 = document.getElementById("title-2");
-  var map2 = document.getElementById("map-2");
-  var title3 = document.getElementById("title-3");
-  var map3 = document.getElementById("map-3");
-  var title4 = document.getElementById("title-4");
-  var map4 = document.getElementById("map-4");
+  // var title2 = document.getElementById("title-2");
+  // var map2 = document.getElementById("map-2");
+  // var title3 = document.getElementById("title-3");
+  // var map3 = document.getElementById("map-3");
+  // var title4 = document.getElementById("title-4");
+  // var map4 = document.getElementById("map-4");
 
   zipInput.style.display = "none";
   markets.style.display = "flex";
@@ -325,7 +325,7 @@ function findMarkets() {
         })
         .then(function (response) {
           // console.log(response.marketdetails.GoogleLink)
-          var link2 = response.marketdetails.GoogleLink;
+          var link2 = response.marketdtetails.GoogleLink;
           link2 = link2.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
           if (!link2.includes("Farmers")) {
             link2 = link2.concat("+Farmers+Market");
