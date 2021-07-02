@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FindFresh</title>
+    <title>FindFresh </title>
+    <link rel="shorcut icon" type="image" href="./assets/images/leaf.png"/>
 
     <!--?-----------------------Google Fonts used Permanent Marker---------------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,25 +169,19 @@
                                 onclick="findMarkets()">Enter</button>
                         </div>
                     </div>
-                </div>
-                <div class="card-tabs">
-                    <ul class="tabs tabs-fixed-width">
-                        <li class="tab">
-                            <a href="#Map1">Test 1</a>
-                        </li>
-                        <li class="tab">
-                            <a href="#Map2"> Test 2</a>
-                        </li>
-                        <li class="tab">
-                            <a href="#Map3">Test 3</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card grey lighten-4">
-                    <div id="Map1">Map 1 should go here</div>
-                    <div id="Map2">Map 2 should go here</div>
-                    <div id="Map3">Map 3 should go here</div>
-                </div>
+                   
+                    <div class="card grey lighten-4">
+                        <div id="mapContainer" class="container row">
+                            <iframe src="" id="mapBox" class="col-6"
+                             width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="container row justify-content-around" id="market-display" style="display: none;">
+                            <div id="market-1" class="col-6 single-market">
+                                <h3 id="title-1">Market Title</h3>
+                                <a href="" target="_blank" id="map-1">Google Maps Link</a>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
 
@@ -199,13 +194,8 @@
 
     <!--!-------------------THESE ARE THE CODES TO MOVE AROUND ------------------>
 
-    <div class="container row justify-content-around" id="market-display" style="display: none;">
-
-        <div id="market-1" class="col-6 single-market">
-            <h3 id="title-1">Market Title</h3>
-            <a href="" target="_blank" id="map-1">Google Maps Link</a>
-        </div>
-        <div id="market-2" class="col-6 single-market">
+  
+        <!-- <div id="market-2" class="col-6 single-market">
             <h3 id="title-2">Market Title</h3>
             <a href="" target="_blank" id="map-2">Google Maps Link</a>
         </div>
@@ -217,17 +207,19 @@
             <h3 id="title-4">Market Title</h3>
             <a href="" target="_blank" id="map-4">Google Maps Link</a>
         </div>
-    </div>
+    </div> -->
 
 
 
 
 
     <!----------------------------------------Ani's RecipeHistory Divs -------------------------------------------------------------------------->
-    <div id="pastRecipe" class="pastRecipe">
+   
+   <!---WASNT SURE WHETHER TO KEEP LINES 241 - 243 -->
+    <!-- <div id="pastRecipe" class="pastRecipe">
 
 
-    </div>
+    </div> -->
 
     <!-- <main class="col-12 col-lg-9 d-flex flex-column">
         <div class="m-5 row justify-content-around">
@@ -263,32 +255,9 @@
             <a href="#more">More</a>
         </div>
     </div>
-
-    <div class="dropdown">
-        <button id="vegetableBtn" class="dropbtn">Vegetable</button>
-        <div id="vegetableDropDown" class="dropdown-content">
-            <a href="#tomatoes">Tomatoes</a>
-            <a href="#carrots">Carrots</a>
-            <a href="#spinach">Spinach</a>
-        </div>
-    </div>
-
-    <div class="dropdown">
-        <button id="proteinBtn" class="dropbtn">Protein</button>
-        <div id="proteinDropDown" class="dropdown-content">
-            <a href="#beef">Beef</a>
-            <a href="#eggs">Eggs</a>
-            <a href="#chicken">Chicken</a>
-            <a href="#vegetarian">Vegetarian</a>
-        </div>
-    </div> -->
-
-
-    <div id="mapContainer" class="container row">
-        <iframe src="" id="mapBox" class="col-6" width="400" height="300" style="border:0;" allowfullscreen=""
-            loading="lazy"></iframe>
-    </div>
-
+   
+    <--------------------------------------Ani's Dropdowns & Nav -------------------------------------------------------------------------->
+ 
 
     <footer>
         <h6>FindFresh &copy 2021</h6>
