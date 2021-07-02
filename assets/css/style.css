@@ -83,8 +83,8 @@ footer {
 }
 
 .hero h2 {
- padding: 150px 100px;
- color: white;
+ padding: 150px 70px;
+ color: wheat;
  font-family: 'Dancing Script', cursive;
  font-size: 75px;
 }
@@ -104,7 +104,7 @@ text-align: center;
 
 iframe {
   margin: auto;
-  
+
 }
 
 
