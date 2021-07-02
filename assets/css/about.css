@@ -15,10 +15,16 @@
     box-sizing: border-box;
   }
 
-  body {
-    margin: 0;
-    padding: 0;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/AboutUs.jpeg"); 
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 99999999;
+}
+
   
   /* body {
     background-size: cover;
@@ -38,7 +44,7 @@
     font-size: 30px;
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 99999;
   }
   
   header h1 {
@@ -67,17 +73,7 @@
   }
 
  /*?---------------------HERO SECTION -----------------------*/
-.hero  {
-    background-image: url("../images/AboutUs.jpeg");
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
 
-  
 .hero h2 {
   color: rgb(233, 47, 0);
   font-family: 'Dancing Script', cursive;
@@ -87,32 +83,25 @@
 }
 
 
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    justify-content: center;
+.circle {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
 }
 
-.col .card-panel {
-    max-height: 200px;
-    max-width: 350px;
-    display: flex;
-    justify-content: center;
-    margin-left: 80px;
-    font-weight: bold;
-    color:rgb(233, 47, 0);
-    font-size: 22px;
-    
-   
-    
+.team {
+  color: rgb(233, 47, 0);
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-
+.team-text{
+  flex-direction: ;
+}
 
 /*?---------------------FOOTER SECTION---------------------*/
-
-
 
 footer {
     background: var(--first);
@@ -122,4 +111,7 @@ footer {
     justify-content: space-between;
     align-items: left;
     padding: 20px;
-  }
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
