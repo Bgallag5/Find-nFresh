@@ -18,18 +18,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../images/AboutUs.jpeg"); 
-  background-size: cover;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 99999999;
 }
 
-  
-  /* body {
-    background-size: cover;
-    background-position: center;
-  } */
   
   /*?-----------------Header and navigation----------------*/
   
@@ -43,8 +33,7 @@ body {
     align-items: left;
     font-size: 30px;
     width: 100%;
-    position: fixed;
-    z-index: 99999;
+    
   }
   
   header h1 {
@@ -74,32 +63,40 @@ body {
 
  /*?---------------------HERO SECTION -----------------------*/
 
+.hero {
+  background-image: url("../images/AboutUs.jpeg"); 
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+}
+
 .hero h2 {
   color: rgb(233, 47, 0);
   font-family: 'Dancing Script', cursive;
   font-size: 100px;
   margin-left: 950px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 
 .circle {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 250px;
+  max-height: 250px;
   border-radius: 50%;
 }
 
 .team {
   color: rgb(233, 47, 0);
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: column;
+  text-align: center;
 }
 
-.team-text{
-  flex-direction: ;
+.container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 50px;
 }
+
 
 /*?---------------------FOOTER SECTION---------------------*/
 
