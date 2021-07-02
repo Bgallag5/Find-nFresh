@@ -9,21 +9,6 @@
 var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById('mapContainer')
-var pastRecipeEl = document.getElementById("pastRecipe");
-// var searchRecipeInput = document.getElementById("searchRecipe")
-
-//////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
-if (window.localStorage) {
-    var storeZip = document.getElementById("zipCode");
-    storeZip.value = localStorage.getItem("zipCode");
-
-    storeZip.addEventListener("input", function () {
-        localStorage.setItem("zipCode", storeZip.value);
-    }, false);
-
-};
-/////////////////////////////////// End Ani Storing Zip Code/////////////////////////////////////////////////////////////
-
 
 // ********************** RYAN'S CODE **********************
 
@@ -40,7 +25,6 @@ function getRecipe() {
 
     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
-
         .then(function (response) {
             //console.log(response.json());
             return response.json();
@@ -52,12 +36,6 @@ function getRecipe() {
             console.log(response);
             var recipeTitle = response.results[0].title;
             console.log(recipeTitle);
-
-            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE 1///////////////////////////////////////////
-            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle))
-            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle))
-
-            //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-2');
             responseContainerEl.innerHTML = recipeTitle;
@@ -82,45 +60,13 @@ function getRecipe() {
 
 
             responseContainerEl.appendChild(image);
-            ////////////////////////////////////////  ANI LOCAL STORAGE ///////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //////////////////// Ani's local storage///////////////////////////////////////////////////////////////////////
-            ////////////////////////ONLY SAVES RETURNED INGREDIENT RIGHT NOW/////////////////////////////////////////
-            if (window.localStorage) {
-
-                var saveIndgredient = document.getElementById("searchRecipe") //html input id
-                saveIndgredient.value = localStorage.getItem("searchRecipe")
-
-                saveIndgredient.addEventListener("input", function () {
-                    localStorage.setItem("searchRecipe", saveIndgredient.value);
-                }, false);
-            }
-
-            /////////////////////////End Ani's local storage//////////////////////////////////////////////////////////
-
-
+            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));  ////// ANI LOCAL STORAGE
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));  ///// ANI LOCAL STORAGE
 
             // RECIPE IMAGE, TITLE, LINK 2
 
             var recipeTitleI = response.results[1].title;
             console.log(recipeTitleI);
-            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE 2///////////////////////////////////////////
-            window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));
-            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
-            //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-i');
             responseContainerEl.innerHTML = recipeTitleI;
@@ -143,16 +89,13 @@ function getRecipe() {
 
 
             responseContainerEl.appendChild(imageI);
-
+            window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));  ///// ANI LOCAL STORAGE
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));   //// ANI LOCAL STORAGE 
 
             // RECIPE IMAGE, TITLE, LINK 3
 
             var recipeTitleII = response.results[2].title;
             console.log(recipeTitleII);
-            ///// ////////ANI LOCAL STORAGE LOGS BASIC RECIPE TITLE 3///////////////////////////////////////////
-            window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
-            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
-            //////////////END ANI LOCAL STORAGE/////////////////////////////////////////////////////////////////
 
             var responseContainerEl = document.querySelector('#response-container-ii');
             responseContainerEl.innerHTML = recipeTitleII;
@@ -173,10 +116,9 @@ function getRecipe() {
             imageII.setAttribute('src', " ");
             imageII.setAttribute('src', response.results[2].image);
 
-
             responseContainerEl.appendChild(imageII);
-
-
+            window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 
             // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
 
@@ -219,6 +161,69 @@ function getRecipe() {
                 })
         });
 }
+
+
+//////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
+if (window.localStorage) {
+    var storeZip = document.getElementById("zipCode");
+    storeZip.value = localStorage.getItem("zipCode");
+
+    storeZip.addEventListener("input", function () {
+        localStorage.setItem("zipCode", storeZip.value);
+    }, false);
+
+};
+///////////////////////////////////ANI STORING FIRST RECIPE RETURNED //////////////////////////////////////////////////////////
+// window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
+// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));
+/////////////////////////////////// ANI STORING SECOND RECIPE RETURNED //////////////////////////////////////////////////////
+// window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));
+// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
+////////////////////////////////// ANI STORING THIRD RECIPE RETURNED ///////////////////////////////////////////////////////////
+// window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
+// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
+///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
+if (window.localStorage) {
+
+    var saveIndgredient = document.getElementById("searchRecipe") //html input id
+    saveIndgredient.value = localStorage.getItem("searchRecipe")
+
+    saveIndgredient.addEventListener("input", function () {
+        localStorage.setItem("searchRecipe", saveIndgredient.value);
+    }, false);
+}
+////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -431,7 +436,7 @@ function findMarkets() {
                 });
         });
 
-}
+};
 
 showMaps = function (link, link2) {
     console.log(link);
@@ -454,6 +459,7 @@ showMaps = function (link, link2) {
     //   map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
     // mapContainer.appendChild(map2);
 };
+
 
 // function getRecipes(){
 //     var spoonKey = "20af9545e7844540b4be28a453355597"
