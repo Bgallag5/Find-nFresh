@@ -23,6 +23,7 @@ function getRecipe() {
 
     var searchRecipe = document.querySelector("#searchRecipe").value;
 
+
   fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
 
@@ -161,8 +162,6 @@ function getRecipe() {
                 })
         });
 }
-
-
 
 
 
