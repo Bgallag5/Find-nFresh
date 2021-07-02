@@ -23,7 +23,7 @@ function getRecipe() {
 
     var searchRecipe = document.querySelector("#searchRecipe").value;
 
-    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
 
         .then(function (response) {
             //console.log(response.json());
@@ -125,7 +125,7 @@ function getRecipe() {
             var id = response.results[0].id;
             console.log(id);
 
-            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=b79ab8cbea19412a8dc76a8297bc9d42`)
+            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=53ed151123a740f094ac3e8409f6c1f3`)
 
                 .then(function (response) {
                     console.log(response);
@@ -525,8 +525,9 @@ function findMarkets() {
                 //   var map2 = document.createElement("iframe")
                 //   map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
                 // mapContainer.appendChild(map2);
-            });
-}
+            })
+};
+
 // function getRecipes(){
 //     var spoonKey = "20af9545e7844540b4be28a453355597"
 //     var searchTerm = "broccoli";
@@ -558,4 +559,4 @@ function findMarkets() {
 //
 // BEN END
 //
-//---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------
+//---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------/
