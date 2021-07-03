@@ -67,18 +67,25 @@
     <!--?-----------END HERO SECTION--------------------------------------->
 
     <!---------------------------------RECIPE SEARCH---------------------------->
-    <section class="container">
-
+     <section class="container">
         <div class="fetch-ingredient container">
             <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
             <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search
                 Recipes</button>
+        </div>  
 
+        <!-----------------------Search button on Enter key-------------------------->
+
+    <!-- <section class="container">
+        <div class="fetch-ingredient container">
+            <form>
+                <input type='text' class="search-term" id="searchRecipe" value="" placeholder='Ingredient'>
+                <button id='search-button' class="btn btn-success" type='button' onsubmit="getRecipe()">Search Recipes</button>
+            </form>
         </div>
+    </section> -->
 
-    </section>
-
-    <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
+    <!------------------------------CARD CONTENT RECIPE SECTION---------------------------------->
     <div class="container row recipe-container">
         <div class="card col s12 m6 13">
             <div class="card-image waves-effect waves-block waves-light" id="card-1">

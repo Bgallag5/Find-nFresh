@@ -4,6 +4,8 @@
 // LINES 1501-2000: SHANE
 // LINES 2001-2500: GAYE
 
+// document.getElementById('search-button').onsubmit = getRecipe()
+
 var ingredient = document.getElementById("searchRecipe");
 
 var zipCode = document.getElementById("zipCode");
@@ -21,8 +23,7 @@ var mapContainer = document.getElementById('mapContainer')
 
 function getRecipe() {
 
-  var searchRecipe = "peppers"
-  //document.querySelector("#searchRecipe").value;
+  var searchRecipe = document.querySelector("#searchRecipe").value;
 
 
   fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
@@ -175,8 +176,12 @@ function getRecipe() {
 };
 
 
-
-
+// $('#search-button').keydown(function (event) {
+//   if (event.keyCode == 13) { 
+//        // Call your function here or add code here
+//        getRecipe()
+//   }
+// });
 
 
 
