@@ -55,4 +55,5 @@ Shane Crisostomo: Style, CSS, PowerPoint, JS, HTML
 Ryan Jolley: Style/Frame, CSS, HTML, APIs
 Gaye Proctor: Style, HTML
 
-<img width="1440" alt="Screen Shot 2021-06-30 at 8 16 53 PM" src="https://user-images.githubusercontent.com/82895658/124046555-3630c680-d9e0-11eb-8d2b-54fd5f464b05.png">
+![FindFresh](https://user-images.githubusercontent.com/84213096/124351810-853a4f80-dbca-11eb-9385-64f64ab6dce6.jpg)
+
