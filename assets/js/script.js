@@ -17,14 +17,14 @@
 //   }
 // });
 
-document.getElementById('searchRecipe')
-    .addEventListener('keyup', function(event) {
-        if (event.code === 'Enter')
-        {
-            event.preventDefault();
-            document.querySelector('form').submit();
-        }
-    });
+// document.getElementById('searchRecipe')
+//     .addEventListener('keyup', function(event) {
+//         if (event.code === 'Enter')
+//         {
+//             event.preventDefault();
+//             document.querySelector('form').submit();
+//         }
+//     });
 
 // document.getElementById('search-button').onsubmit = getRecipe()
 
@@ -43,11 +43,11 @@ var mapContainer = document.getElementById('mapContainer')
 
 // FETCH THE RECIPE AND NUTRITION APIS
 
+var searchRecipe = document.querySelector("#searchRecipe").value;
+
 function getRecipe() {
 
-  var searchRecipe = document.querySelector("#searchRecipe").value;
-
-
+  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
 
         .then(function (response) {
             //console.log(response.json());
@@ -129,6 +129,7 @@ function getRecipe() {
             var recipeII = document.createElement("recipe");
             recipeII.setAttribute('src', response.results[2]);
 
+   fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
 
     .then(function (response) {
       //console.log(response.json());
