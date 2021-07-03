@@ -294,29 +294,6 @@ if (window.localStorage) {
 
 
 
-//     var searchRecipe = document.querySelector("#searchRecipe").value;
-
-//     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
-
-//     .then(function (response) {
-//         //console.log(response.json());
-//         return response.json();
-//     })
-
-//     .then(function (response) {
-//         var recipeTitle = response.results[0].title;
-//         console.log(recipeTitle);
-
-//         var responseContainerEl = document.querySelector('#response-container-2');
-
-//         responseContainerEl.innerHTML = recipeTitle;
-
-//         var recipe = document.createElement("recipe");
-//         recipe.setAttribute('src', response.results[0]);
-
-//         responseContainerEl.appendChild(recipe);
-//     });
-// }
 
 // "http://maps.google.com/?q=38.776991%2C%20-77.263568%20(%22Burke+%22)"
 // "http://maps.google.com/?q=Burke++Farmers+Market"
@@ -378,14 +355,15 @@ function findMarkets() {
             var market2 = response.results[1].id;
             var market3 = response.results[2].id;
             var market4 = response.results[3].id;
-
+                
             fetch(
                 "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
                 market1
             )
                 .then(function (response) {
                     return response.json();
-                })
+                }) //capture google link and edit it to make it a better google maps search term (the link is originally given... 
+                //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
                 .then(function (response) {
                     // console.log(response.marketdetails.GoogleLink)
                     var link = response.marketdetails.GoogleLink;
@@ -545,32 +523,7 @@ function findMarkets() {
             })
 };
 
-// function getRecipes(){
-//     var spoonKey = "20af9545e7844540b4be28a453355597"
-//     var searchTerm = "broccoli";
-//     // var searchTerm = ingredient.value;
-//     // console.log(searchTerm);
 
-// fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonKey + "&query=" + searchTerm)
-// .then(function(response) {
-//     return response.json();
-// })
-// .then(function(response){
-//     console.log(response)
-//     console.log(response.results[2])
-// })
-
-// fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + spoonKey + "&ingredients=" + searchTerm)
-// .then(function(response) {
-//     return response.json();
-// })
-// .then(function(response){
-//     console.log(response)
-//     console.log(response[1])
-// })
-// }
-
-// getRecipes();
 
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
