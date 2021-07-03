@@ -4,6 +4,28 @@
 // LINES 1501-2000: SHANE
 // LINES 2001-2500: GAYE
 
+// $('#search-button').keydown(function (event) {
+//   if (event.keyCode == 13) { 
+//        // Call your function here or add code here
+//        getRecipe()
+//   }
+// });
+
+// document.getElementById('searchRecipe').addEventListener('keypress', getRecipe(event) {
+//   if (event.keyCode == 13) {
+//       event.preventDefault();
+//   }
+// });
+
+document.getElementById('searchRecipe')
+    .addEventListener('keyup', function(event) {
+        if (event.code === 'Enter')
+        {
+            event.preventDefault();
+            document.querySelector('form').submit();
+        }
+    });
+
 // document.getElementById('search-button').onsubmit = getRecipe()
 
 var ingredient = document.getElementById("searchRecipe");
@@ -176,12 +198,7 @@ function getRecipe() {
 };
 
 
-// $('#search-button').keydown(function (event) {
-//   if (event.keyCode == 13) { 
-//        // Call your function here or add code here
-//        getRecipe()
-//   }
-// });
+
 
 
 
