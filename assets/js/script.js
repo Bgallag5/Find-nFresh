@@ -48,7 +48,86 @@ function getRecipe() {
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
 
-  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
+
+        .then(function (response) {
+            //console.log(response.json());
+            return response.json();
+        })
+
+        // RECIPE IMAGE, TITLE, LINK 1
+
+        .then(function (response) {
+            console.log(response);
+            var recipeTitle = response.results[0].title;
+            console.log(recipeTitle);
+
+            var responseContainerEl = document.querySelector('#response-container-2');
+            responseContainerEl.innerHTML = recipeTitle;
+
+            var recipe = document.createElement("recipe");
+            recipe.setAttribute('src', response.results[0]);
+            recipe.setAttribute("id", "recipeOne");
+
+            responseContainerEl.appendChild(recipe);
+
+
+            var recipeImage = response.results[0].image;
+            console.log(recipeImage);
+
+            var responseContainerEl = document.querySelector('#card-1');
+            responseContainerEl.innerHTML = "";
+            //responseContainerEl.innerHTML = recipeImage;
+
+
+            var image = document.createElement("img");
+            image.setAttribute('src', " ");
+            image.setAttribute('src', response.results[0].image);
+
+
+            responseContainerEl.appendChild(image);
+            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));  ////// ANI LOCAL STORAGE
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));  ///// ANI LOCAL STORAGE
+
+            // RECIPE IMAGE, TITLE, LINK 2
+
+            var recipeTitleI = response.results[1].title;
+            console.log(recipeTitleI);
+
+            var responseContainerEl = document.querySelector('#response-container-i');
+            responseContainerEl.innerHTML = recipeTitleI;
+
+            var recipeI = document.createElement("recipe");
+            recipeI.setAttribute('src', response.results[1]);
+
+            responseContainerEl.appendChild(recipeI);
+
+
+            var recipeImageI = response.results[1].image;
+            console.log(recipeImageI);
+
+            var responseContainerEl = document.querySelector('#card-2');
+
+            responseContainerEl.innerHTML = "";
+
+            var imageI = document.createElement("img");
+            imageI.setAttribute('src', " ");
+            imageI.setAttribute('src', response.results[1].image);
+
+
+            responseContainerEl.appendChild(imageI);
+            window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));  ///// ANI LOCAL STORAGE
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));   //// ANI LOCAL STORAGE 
+
+            // RECIPE IMAGE, TITLE, LINK 3
+
+            var recipeTitleII = response.results[2].title;
+            console.log(recipeTitleII);
+
+            var responseContainerEl = document.querySelector('#response-container-ii');
+            responseContainerEl.innerHTML = recipeTitleII;
+
+            var recipeII = document.createElement("recipe");
+            recipeII.setAttribute('src', response.results[2]);
 
 
     .then(function (response) {
@@ -58,10 +137,10 @@ function getRecipe() {
 
     // RECIPE IMAGE, TITLE, LINK 1
 
-    .then(function (response) {
-      console.log(response);
-      var recipeTitle = response.results[0].title;
-      console.log(recipeTitle);
+            var responseContainerEl = document.querySelector('#card-3');
+
+            responseContainerEl.innerHTML = "";
+
 
       var responseContainerEl = document.querySelector('#response-container-2');
       responseContainerEl.innerHTML = recipeTitle;
