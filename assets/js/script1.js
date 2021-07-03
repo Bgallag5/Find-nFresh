@@ -21,12 +21,9 @@
 // grab history object from localstorage
 // parse it
 // and use all key value pairs, to display cards, with keys as title and vaues as src attribute to images
-//         }
 
+///////////////////////LAST THREE RECIPES FROM HOME PAGE ARE BEING STORED IN THE CONSOLE IN USERPICK PAGE, I JUST NEED TO PUSH THEM TO DISPLAY ON THE PAGE////////////////////
 
-//         )
-// }
-///////////////////////LAST THREE RECIPES FROM HOME PAGE ARE BEING STORED IN THE CONSOLE, I JUST NEED TO PUSH THEM TO THE PAGE////////////////////
 var displayLastThreeRecipes = function () {
     var recipesArray = localStorage.getItem("lastThreeRecipes");
     var lastThreeRecipes = JSON.parse(recipesArray);

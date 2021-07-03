@@ -120,8 +120,8 @@ function getRecipe() {
             imageII.setAttribute('src', response.results[2].image);
 
             responseContainerEl.appendChild(imageII);
-            window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
-            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
+            window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));  //// ANI STORAGE
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));    /// ANI STORAGE 
 
             // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
 
