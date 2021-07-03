@@ -15,7 +15,7 @@ var mapContainer = document.getElementById('mapContainer')
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
-// API KEY: b79ab8cbea19412a8dc76a8297bc9d42
+// API KEY: 53ed151123a740f094ac3e8409f6c1f3
 
 // FETCH THE RECIPE AND NUTRITION APIS
 
@@ -25,7 +25,7 @@ function getRecipe() {
   //document.querySelector("#searchRecipe").value;
 
 
-  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
 
 
     .then(function (response) {
@@ -124,7 +124,7 @@ function getRecipe() {
 
       // RECIPE 1 
 
-      fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=b79ab8cbea19412a8dc76a8297bc9d42&ingredients=" + searchRecipe)
+      fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=53ed151123a740f094ac3e8409f6c1f3&ingredients=" + searchRecipe)
 
         .then(function (response) {
           return response.json();
@@ -135,7 +135,7 @@ function getRecipe() {
           var id = response[0].id;
           console.log(id);
 
-          fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=b79ab8cbea19412a8dc76a8297bc9d42")
+          fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=53ed151123a740f094ac3e8409f6c1f3")
             .then(function (response) {
               return response.json();
             })
@@ -244,7 +244,7 @@ function getRecipe() {
 
 //     var searchRecipe = document.querySelector("#searchRecipe").value;
 
-//     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+//     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
 
 //     .then(function (response) {
 //         //console.log(response.json());
