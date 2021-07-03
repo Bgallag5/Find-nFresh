@@ -17,16 +17,16 @@
 //   }
 // });
 
-document.getElementById('searchRecipe')
-    .addEventListener('keyup', function(event) {
-        if (event.code === 'Enter')
-        {
-            event.preventDefault();
-            document.querySelector('form').submit();
-        }
-    });
+// document.getElementById('test')
+//     .addEventListener('keyup', function(event) {
+//         if (event.code === 'Enter')
+//         {
+//             event.preventDefault();
+//             document.querySelector('form').submit();
+//         }
+//     });
 
-// document.getElementById('search-button').onsubmit = getRecipe()
+// document.getElementById('searchRecipe').onsubmit = getRecipe()
 
 var ingredient = document.getElementById("searchRecipe");
 
@@ -142,8 +142,6 @@ function getRecipe() {
 
 
       responseContainerEl.appendChild(imageII);
-
-
 
       // RECIPE 1 
 
