@@ -29,7 +29,7 @@ Ani Carr: Functionality, JS, CSS, HTML
 
 Shane Crisostomo: Style, CSS, PowerPoint, JS, HTML
 
-Ryan Jolley: APIs, JS, Style/Frame, CSS, HTML
+Ryan Jolley: APIs, JS, Git, Style, HTML
 
 Gaye Proctor: Style, HTML 
 
