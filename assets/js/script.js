@@ -48,7 +48,6 @@ function getRecipe() {
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
 
-
         .then(function (response) {
             //console.log(response.json());
             return response.json();
