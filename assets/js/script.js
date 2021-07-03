@@ -51,7 +51,8 @@ function getRecipe() {
             console.log(recipeImage);
 
             var responseContainerEl = document.querySelector('#card-1');
-            responseContainerEl.innerHTML = recipeImage;
+            responseContainerEl.innerHTML = "";
+            //responseContainerEl.innerHTML = recipeImage;
 
 
             var image = document.createElement("img");
@@ -81,7 +82,8 @@ function getRecipe() {
             console.log(recipeImageI);
 
             var responseContainerEl = document.querySelector('#card-2');
-            responseContainerEl.innerHTML = recipeImageI;
+
+            responseContainerEl.innerHTML = "";
 
             var imageI = document.createElement("img");
             imageI.setAttribute('src', " ");
@@ -110,7 +112,8 @@ function getRecipe() {
             console.log(recipeImageII);
 
             var responseContainerEl = document.querySelector('#card-3');
-            responseContainerEl.innerHTML = recipeImageII;
+
+            responseContainerEl.innerHTML = "";
 
             var imageII = document.createElement("img");
             imageII.setAttribute('src', " ");

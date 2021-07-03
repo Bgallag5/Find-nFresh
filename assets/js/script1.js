@@ -11,19 +11,19 @@
 // API KEY: b79ab8cbea19412a8dc76a8297bc9d42
 
 // FETCH THE RECIPE AND NUTRITION APIS
-var zipCode = document.getElementById("zipCode");
-var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
-var mapContainer = document.getElementById('mapContainer');
+// var zipCode = document.getElementById("zipCode");
+// var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
+// var mapContainer = document.getElementById('mapContainer');
 
-var rememberdivEl = document.querySelector(".remember");
-var forgetdivEl = document.querySelector(".forget");
-var formEl = document.querySelector("form");
-var userPicksEl = document.querySelector("#userPicks");
-var saveSearchEl = document.querySelector("#saveSearch");
-var forgetUserPicksEl = document.querySelector("#forgetUserPicks");
+// var rememberdivEl = document.querySelector(".remember");
+// var forgetdivEl = document.querySelector(".forget");
+// var formEl = document.querySelector("form");
+// var userPicksEl = document.querySelector("#userPicks");
+// var saveSearchEl = document.querySelector("#saveSearch");
+// var forgetUserPicksEl = document.querySelector("#forgetUserPicks");
 
-var h1 = document.querySelector(h1);
-var pThanksel = document.querySelector(".thankYou");
+// var h1 = document.querySelector(h1);
+// var pThanksel = document.querySelector(".thankYou");
 
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
@@ -44,6 +44,21 @@ function getRecipe() {
         })
 
         // RECIPE IMAGE, TITLE, LINK 1
+
+        // everytime the website loads for the first time, check to see if there is history object
+        // in the localstorage, and if there is parse it, and set it as the initial value of the history object
+        // if there isn't set history object to be empty {}
+        //first declare an object which stores previous recipes
+        // when we look for recipes store a key -value pair in our history object
+        // object key = {title} value = {link}
+        // localstorage key history = value {stringified object}
+        // stringify history object, and write it to localstorage 
+
+
+        // when we click on previously viewed page
+        // grab history object from localstorage
+        // parse it
+        // and use all key value pairs, to display cards, with keys as title and vaues as src attribute to images
 
         .then(function (response) {
             console.log(response);
@@ -77,6 +92,12 @@ function getRecipe() {
             window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));  ///// ANI LOCAL STORAGE
 
             var savedRecipes = {};
+
+            //create variables to better define recipe title & image...Do I need to do this or can I pull from previous function??
+            // my goal is to display previously viewed recipes (based on user ingredient search) to a seperate page in seperate JS file
+            var recipeDisplay = $("<li>")
+
+
 
 
 
