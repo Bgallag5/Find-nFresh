@@ -79,7 +79,6 @@ body {
   margin-top: 50px;
 }
 
-
 .circle {
   max-width: 250px;
   max-height: 250px;
@@ -90,7 +89,6 @@ body {
   color: white;
   text-align: center;
   font-size: 25px;
-  position: relative;
   width: 50%;
 }
 
@@ -99,7 +97,9 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
+
 
 .name {
   position: absolute;
@@ -115,8 +115,14 @@ body {
   border-radius: 20%;
 }
 
+.name h3{
+  color:black;
+  font-weight: bold;
+}
+
 .team:hover .name {
-  opacity: 1;
+  opacity: 80%;
+  box-shadow: 5px 10px gray;
 }
 
 .text {
@@ -132,9 +138,9 @@ body {
 }
 
 .container {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
-  margin-right: 50px;
+  margin-right: 190px;
 }
 
 
