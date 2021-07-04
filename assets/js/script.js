@@ -21,146 +21,140 @@ var mapContainer = document.getElementById('mapContainer')
 
 function getRecipe() {
 
-    var searchRecipe = document.querySelector("#searchRecipe").value;
+  var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
 
+    .then(function (response) {
+      //console.log(response.json());
+      return response.json();
+    })
+
+    // RECIPE IMAGE, TITLE, LINK 1
+
+    .then(function (response) {
+      console.log(response);
+      var recipeTitle = response.results[0].title;
+      console.log(recipeTitle);
+
+      var responseContainerEl = document.querySelector('#response-container-2');
+      responseContainerEl.innerHTML = recipeTitle;
+
+      var recipe = document.createElement("recipe");
+      recipe.setAttribute('src', response.results[0]);
+
+      responseContainerEl.appendChild(recipe);
+
+
+      var recipeImage = response.results[0].image;
+      console.log(recipeImage);
+
+      var responseContainerEl = document.querySelector('#card-1');
+      responseContainerEl.innerHTML = recipeImage;
+
+
+      var image = document.createElement("img");
+      image.setAttribute('src', " ");
+      image.setAttribute('src', response.results[0].image);
+
+
+      responseContainerEl.appendChild(image);
+      window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));  ////// ANI LOCAL STORAGE
+      window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));  ///// ANI LOCAL STORAGE
+
+
+
+      // RECIPE IMAGE, TITLE, LINK 2
+
+      var recipeTitleI = response.results[1].title;
+      console.log(recipeTitleI);
+
+      var responseContainerEl = document.querySelector('#response-container-i');
+      responseContainerEl.innerHTML = recipeTitleI;
+
+      var recipeI = document.createElement("recipe");
+      recipeI.setAttribute('src', response.results[1]);
+
+      responseContainerEl.appendChild(recipeI);
+
+
+      var recipeImageI = response.results[1].image;
+      console.log(recipeImageI);
+
+      var responseContainerEl = document.querySelector('#card-2');
+      responseContainerEl.innerHTML = recipeImageI;
+
+      var imageI = document.createElement("img");
+      imageI.setAttribute('src', " ");
+      imageI.setAttribute('src', response.results[1].image);
+
+
+      responseContainerEl.appendChild(imageI);
+      window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));  ///// ANI LOCAL STORAGE
+      window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));   //// ANI LOCAL STORAGE 
+
+
+      // RECIPE IMAGE, TITLE, LINK 3
+
+      var recipeTitleII = response.results[2].title;
+      console.log(recipeTitleII);
+
+      var responseContainerEl = document.querySelector('#response-container-ii');
+      responseContainerEl.innerHTML = recipeTitleII;
+
+      var recipeII = document.createElement("recipe");
+      recipeII.setAttribute('src', response.results[2]);
+
+      responseContainerEl.appendChild(recipeII);
+
+
+      var recipeImageII = response.results[2].image;
+      console.log(recipeImageII);
+
+      var responseContainerEl = document.querySelector('#card-3');
+      responseContainerEl.innerHTML = recipeImageII;
+
+      var imageII = document.createElement("img");
+      imageII.setAttribute('src', " ");
+      imageII.setAttribute('src', response.results[2].image);
+
+
+      responseContainerEl.appendChild(imageII);
+
+
+
+      // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
+
+      var id = response.results[0].id;
+      console.log(id);
+
+      // RECIPE 1 
+
+      fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=53ed151123a740f094ac3e8409f6c1f3&ingredients=" + searchRecipe)
+
         .then(function (response) {
-            //console.log(response.json());
-            return response.json();
+          return response.json();
         })
 
-        // RECIPE IMAGE, TITLE, LINK 1
-
         .then(function (response) {
-            console.log(response);
-            var recipeTitle = response.results[0].title;
-            console.log(recipeTitle);
+          console.log(response);
+          var id = response[0].id;
+          console.log(id);
 
-            var responseContainerEl = document.querySelector('#response-container-2');
-            responseContainerEl.innerHTML = recipeTitle;
-
-            var recipe = document.createElement("recipe");
-            recipe.setAttribute('src', response.results[0]);
-
-            responseContainerEl.appendChild(recipe);
-
-
-            var recipeImage = response.results[0].image;
-            console.log(recipeImage);
-
-            var responseContainerEl = document.querySelector('#card-1');
-            responseContainerEl.innerHTML = recipeImage;
-
-
-            var image = document.createElement("img");
-            image.setAttribute('src', " ");
-            image.setAttribute('src', response.results[0].image);
-
-
-            responseContainerEl.appendChild(image);
-
-
-
-            // RECIPE IMAGE, TITLE, LINK 2
-
-            var recipeTitleI = response.results[1].title;
-            console.log(recipeTitleI);
-
-            var responseContainerEl = document.querySelector('#response-container-i');
-            responseContainerEl.innerHTML = recipeTitleI;
-
-            var recipeI = document.createElement("recipe");
-            recipeI.setAttribute('src', response.results[1]);
-
-            responseContainerEl.appendChild(recipeI);
-
-
-            var recipeImageI = response.results[1].image;
-            console.log(recipeImageI);
-
-            var responseContainerEl = document.querySelector('#card-2');
-            responseContainerEl.innerHTML = recipeImageI;
-
-            var imageI = document.createElement("img");
-            imageI.setAttribute('src', " ");
-            imageI.setAttribute('src', response.results[1].image);
-
-
-            responseContainerEl.appendChild(imageI);
-
-
-            // RECIPE IMAGE, TITLE, LINK 3
-
-            var recipeTitleII = response.results[2].title;
-            console.log(recipeTitleII);
-
-            var responseContainerEl = document.querySelector('#response-container-ii');
-            responseContainerEl.innerHTML = recipeTitleII;
-
-            var recipeII = document.createElement("recipe");
-            recipeII.setAttribute('src', response.results[2]);
-
-            responseContainerEl.appendChild(recipeII);
-
-
-            var recipeImageII = response.results[2].image;
-            console.log(recipeImageII);
-
-            var responseContainerEl = document.querySelector('#card-3');
-            responseContainerEl.innerHTML = recipeImageII;
-
-            var imageII = document.createElement("img");
-            imageII.setAttribute('src', " ");
-            imageII.setAttribute('src', response.results[2].image);
-
-
-            responseContainerEl.appendChild(imageII);
-
-
-
-            // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
-
-            var id = response.results[0].id;
-            console.log(id);
-
-            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=b79ab8cbea19412a8dc76a8297bc9d42`)
-
-                .then(function (response) {
-                    console.log(response);
-                    return response.json();
-                })
-
-                .then(function (response) {
-                    var recipeLink = response.url
-                    console.log(recipeLink);
-
-                    // var responseContainerEl = document.querySelector('#response-container-ii');
-                    // responseContainerEl.innerHTML = recipeTitleII;
-
-                    // var recipeII = document.createElement("recipe");
-                    // recipeII.setAttribute('src', response.results[2]);
-
-                    // responseContainerEl.appendChild(recipeII);
-
-
-                    // var recipeImageII = response.results[2].image;
-                    // console.log(recipeImageII);
-
-                    // var responseContainerEl = document.querySelector('#card-3');
-                    // responseContainerEl.innerHTML = recipeImageII;
-
-                    // var imageII = document.createElement("img");
-                    // imageII.setAttribute('src', " ");
-                    // imageII.setAttribute('src', response.results[2].image);
-
-
-                    // responseContainerEl.appendChild(imageII);
-
-                })
-        });
-}
+          fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=53ed151123a740f094ac3e8409f6c1f3")
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (response) {
+              console.log(response);
+              console.log(response[0].title);
+              console.log(response[0].image);
+              console.log(response[0].instructions);
+              console.log(response[0].spoonacularSourceUrl);
+            })
+        })
+    })
 
 
 
@@ -288,7 +282,7 @@ function findMarkets() {
 
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-      zip
+    zip
   )
     .then(function (response) {
       return response.json();
@@ -301,7 +295,7 @@ function findMarkets() {
 
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-          market1
+        market1
       )
         .then(function (response) {
           return response.json();
@@ -319,7 +313,7 @@ function findMarkets() {
         });
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-          market2
+        market2
       )
         .then(function (response) {
           return response.json();
@@ -337,7 +331,7 @@ function findMarkets() {
         });
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-          market3
+        market3
       )
         .then(function (response) {
           return response.json();
@@ -355,7 +349,7 @@ function findMarkets() {
         });
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-          market4
+        market4
       )
         .then(function (response) {
           return response.json();
@@ -387,14 +381,14 @@ showMaps = function (link, link2) {
   var map1 = document.getElementById("mapBox");
   map1.setAttribute("src", embedLink);
 
-//   var market = link2.split("q=");
-//   var marketName = market[1];
-//   var embedLink =
-//     "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
-//     marketName;
-//   var map2 = document.createElement("iframe")
-//   map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
-// mapContainer.appendChild(map2);
+  //   var market = link2.split("q=");
+  //   var marketName = market[1];
+  //   var embedLink =
+  //     "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
+  //     marketName;
+  //   var map2 = document.createElement("iframe")
+  //   map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
+  // mapContainer.appendChild(map2);
 };
 
 // function getRecipes(){
