@@ -29,9 +29,14 @@ var displayLastThreeRecipes = function () {
     var lastThreeRecipes = JSON.parse(recipesArray);
     console.log(lastThreeRecipes);
     for (let i = 0; i < lastThreeRecipes.length; i++) {
+        document.getElementById("arrayPrint").innerHTML = JSON.stringify(recipesArray); /// this made the page add array info
         var newDiv = document.createElement("div");
-        newDiv.appendChild(lastThreeRecipes);
-        console.log(lastThreeRecipes[i]);
+        // newDiv.innerHTML = lastThreeRecipes.title
+        newDiv.appendChild(recipesArray[i]);
+        console.log(lastThreeRecipes);
+
+
+
 
     }
 
@@ -41,6 +46,7 @@ var displayLastThreeRecipes = function () {
 displayLastThreeRecipes();
 
 
-lastThreeRecipes = response.results.slice(0, 3);
-localStorage.setItem("lastThreeRecipes", JSON.stringify(lastThreeRecipes));
-console.log(lastThreeRecipes);
+// lastThreeRecipes = response.results.slice(0, 3);
+// localStorage.setItem("lastThreeRecipes", JSON.stringify(lastThreeRecipes));
+// console.log(lastThreeRecipes);
+// new.appendChild(lastThreeRecipes);
