@@ -60,9 +60,10 @@
   }
 
 .contact-info {
+    color: --sixth;
 
 }
 
 .contact-form {
-
+    color: --third;
 }
