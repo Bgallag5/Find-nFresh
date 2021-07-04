@@ -62,19 +62,20 @@ function getRecipe() {
       window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle)); ///// ANI LOCAL STORAGE
 
       // RECIPE IMAGE, TITLE, LINK 2
-
-      var recipeTitleI = response.results[1].title;
+      var x = Math.floor(Math.random() * 9);
+      console.log(x)
+      var recipeTitleI = response.results[x].title;
       console.log(recipeTitleI);
 
       var responseContainerEl = document.querySelector("#response-container-i");
       responseContainerEl.innerHTML = recipeTitleI;
 
       var recipeI = document.createElement("recipe");
-      recipeI.setAttribute("src", response.results[1]);
+      recipeI.setAttribute("src", response.results[x]);
 
       responseContainerEl.appendChild(recipeI);
 
-      var recipeImageI = response.results[1].image;
+      var recipeImageI = response.results[x].image;
       console.log(recipeImageI);
 
       var responseContainerEl = document.querySelector("#card-2");
@@ -82,7 +83,7 @@ function getRecipe() {
 
       var imageI = document.createElement("img");
       imageI.setAttribute("src", " ");
-      imageI.setAttribute("src", response.results[1].image);
+      imageI.setAttribute("src", response.results[x].image);
 
       responseContainerEl.appendChild(imageI);
       window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI)); ///// ANI LOCAL STORAGE
@@ -123,64 +124,67 @@ function getRecipe() {
       // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
 
       var id = response.results[0].id;
+      var id2 = response.results[1].id;
+      var id3 = response.results[2].id;
       console.log(id);
-
-      fetch(
-        `https://api.spoonacular.com/recipes/${id}/summary&apiKey=53ed151123a740f094ac3e8409f6c1f3`
-      )
-        .then(function (response) {
-          console.log(response);
-          return response.json();
-        })
-
-        .then(function (response) {
-          var recipeLink = response.url;
-          console.log(recipeLink);
-
-          // var responseContainerEl = document.querySelector('#response-container-ii');
-          // responseContainerEl.innerHTML = recipeTitleII;
-
-          // var recipeII = document.createElement("recipe");
-          // recipeII.setAttribute('src', response.results[2]);
-
-          // responseContainerEl.appendChild(recipeII);
-
-          // var recipeImageII = response.results[2].image;
-          // console.log(recipeImageII);
-
-          // var responseContainerEl = document.querySelector('#card-3');
-          // responseContainerEl.innerHTML = recipeImageII;
-
-          // var imageII = document.createElement("img");
-          // imageII.setAttribute('src', " ");
-          // imageII.setAttribute('src', response.results[2].image);
-
-          // responseContainerEl.appendChild(imageII);
-        });
+        getRecipeData(id, id2, id3);
     });
+  }
+
+    function getRecipeData(id, id2, id3){
+      fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "&apiKey=53ed151123a740f094ac3e8409f6c1f3")
+      .then(function(response){
+    return response.json();
+      })
+      .then(function(response){
+        console.log(response);
+        console.log(response[0].title);             //these capture/output the recipe Name, image.jpg, instructions, and link to recipe 
+        console.log(response[0].image);
+        console.log(response[0].instructions);
+        console.log(response[0].spoonacularSourceUrl);
+        console.log(response[0].summary);
+
+    });
+    fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id2 + "&apiKey=53ed151123a740f094ac3e8409f6c1f3")
+    .then(function(response){
+  return response.json();
+    })
+    .then(function(response){
+      console.log(response[0].title);             
+      console.log(response[0].image);
+      console.log(response[0].spoonacularSourceUrl);
+
+  });
+  fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id3 + "&apiKey=53ed151123a740f094ac3e8409f6c1f3")
+  .then(function(response){
+return response.json();
+  })
+  .then(function(response){
+    console.log(response[0].title);            
+    console.log(response[0].image);
+    console.log(response[0].spoonacularSourceUrl);
+
+});
 }
+      // var responseContainerEl = document.querySelector('#response-container-ii');
+      // responseContainerEl.innerHTML = recipeTitleII;
 
+      // var recipeII = document.createElement("recipe");
+      // recipeII.setAttribute('src', response.results[2]);
 
+      // responseContainerEl.appendChild(recipeII);
 
+      // var recipeImageII = response.results[2].image;
+      // console.log(recipeImageII);
 
+      // var responseContainerEl = document.querySelector('#card-3');
+      // responseContainerEl.innerHTML = recipeImageII;
 
+      // var imageII = document.createElement("img");
+      // imageII.setAttribute('src', " ");
+      // imageII.setAttribute('src', response.results[2].image);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      // responseContainerEl.appendChild(imageII);
 
 //////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
 if (window.localStorage) {
@@ -219,56 +223,6 @@ if (window.localStorage) {
 }
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // "http://maps.google.com/?q=38.776991%2C%20-77.263568%20(%22Burke+%22)"
 // "http://maps.google.com/?q=Burke++Farmers+Market"
 // "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.543957590443!2d-77.30029918465263!3d38.797087779586235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64e1b5983a451%3A0x311f6970ab8a1a77!2sBurke%20Farmers%20Market!5e0!3m2!1sen!2sus!4v1625148725193!5m2!1sen!2sus"
@@ -281,6 +235,7 @@ if (window.localStorage) {
 //Notes:
 // use the API id of each recipe to eventually link to the spoonful recipe page
 //combine USDA API with Google maps
+// use response.results[math.random] to "cheat" showing different results each time (in the recipe pulls)
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
@@ -288,14 +243,14 @@ function findMarkets() {
   var zipInput = document.getElementById("zipBox");
 
   zipInput.style.display = "none";
-//fetch local farmers markets from zipcode search
+  //fetch local farmers markets from zipcode search
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
       zip
   )
     .then(function (response) {
       return response.json();
-    })//grab id's of the two closest markets
+    }) //grab id's of the two closest markets
     .then(function (response) {
       var market1 = response.results[0].id;
       var market2 = response.results[1].id;
@@ -347,13 +302,12 @@ showMaps = function (link, link2) {
   var embedLink =
     "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
     marketName;
-//push it to the page
+  //push it to the page
   var map1 = document.getElementById("mapBox1");
   map1.setAttribute("src", embedLink);
 
-  console.log(link2);
+ 
   var market2 = link2.split("q=");
-  console.log(market2[1]);
   var marketName2 = market2[1];
   var embedLink2 =
     "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
