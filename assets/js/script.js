@@ -4,31 +4,7 @@
 // LINES 1501-2000: SHANE
 // LINES 2001-2500: GAYE
 
-// $('#search-button').keydown(function (event) {
-//   if (event.keyCode == 13) { 
-//        // Call your function here or add code here
-//        getRecipe()
-//   }
-// });
-
-// document.getElementById('searchRecipe').addEventListener('keypress', getRecipe(event) {
-//   if (event.keyCode == 13) {
-//       event.preventDefault();
-//   }
-// });
-
-document.getElementById('searchRecipe')
-    .addEventListener('keyup', function(event) {
-        if (event.code === 'Enter')
-        {
-            event.preventDefault();
-            document.querySelector('form').submit();
-        }
-    });
-
-// document.getElementById('search-button').onsubmit = getRecipe()
-
-var ingredient = document.getElementById("searchRecipe");
+// var ingredient = document.getElementById("searchRecipe");
 
 var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
@@ -38,14 +14,13 @@ var mapContainer = document.getElementById("mapContainer");
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
-// API KEY: 53ed151123a740f094ac3e8409f6c1f3
+// API KEY: b79ab8cbea19412a8dc76a8297bc9d42
 
 // FETCH THE RECIPE AND NUTRITION APIS
 
 function getRecipe() {
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
-<<<<<<< HEAD
   fetch(
     "https://api.spoonacular.com/recipes/complexSearch?query=" +
       searchRecipe +
@@ -55,30 +30,6 @@ function getRecipe() {
       //console.log(response.json());
       return response.json();
     })
-=======
-  var searchRecipe = document.querySelector("#searchRecipe").value;
-
-  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
-
-        .then(function (response) {
-            //console.log(response.json());
-            return response.json();
-        })
-
-        // RECIPE IMAGE, TITLE, LINK 1
-
-        .then(function (response) {
-            console.log(response);
-            var recipeTitle = response.results[0].title;
-            console.log(recipeTitle);
-
-            var responseContainerEl = document.querySelector('#response-container-2');
-            responseContainerEl.innerHTML = recipeTitle;
-
-            var recipe = document.createElement("recipe");
-            recipe.setAttribute('src', response.results[0]);
-            recipe.setAttribute("id", "recipeOne");
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
     // RECIPE IMAGE, TITLE, LINK 1
 
@@ -90,15 +41,9 @@ function getRecipe() {
       var responseContainerEl = document.querySelector("#response-container-2");
       responseContainerEl.innerHTML = recipeTitle;
 
-<<<<<<< HEAD
       var recipe = document.createElement("recipe");
       recipe.setAttribute("src", response.results[0]);
       recipe.setAttribute("id", "recipeOne");
-=======
-            var responseContainerEl = document.querySelector('#card-1');
-            responseContainerEl.innerHTML = "";
-            //responseContainerEl.innerHTML = recipeImage;
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
       responseContainerEl.appendChild(recipe);
 
@@ -132,14 +77,8 @@ function getRecipe() {
       var recipeImageI = response.results[1].image;
       console.log(recipeImageI);
 
-<<<<<<< HEAD
       var responseContainerEl = document.querySelector("#card-2");
       responseContainerEl.innerHTML = recipeImageI;
-=======
-            var responseContainerEl = document.querySelector('#card-2');
-
-            responseContainerEl.innerHTML = "";
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
       var imageI = document.createElement("img");
       imageI.setAttribute("src", " ");
@@ -162,17 +101,10 @@ function getRecipe() {
       var recipeII = document.createElement("recipe");
       recipeII.setAttribute("src", response.results[2]);
 
-<<<<<<< HEAD
       responseContainerEl.appendChild(recipeII);
 
       var recipeImageII = response.results[2].image;
       console.log(recipeImageII);
-=======
-            var recipeII = document.createElement("recipe");
-            recipeII.setAttribute('src', response.results[2]);
-    
-            responseContainerEl.appendChild(recipeII);
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
       var responseContainerEl = document.querySelector("#card-3");
       responseContainerEl.innerHTML = recipeImageII;
@@ -190,7 +122,6 @@ function getRecipe() {
 
       // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
 
-<<<<<<< HEAD
       var id = response.results[0].id;
       console.log(id);
 
@@ -205,45 +136,10 @@ function getRecipe() {
         .then(function (response) {
           var recipeLink = response.url;
           console.log(recipeLink);
-=======
-
-            responseContainerEl.appendChild(imageII);
-
-
-      // RECIPE 1 
-    
-       var id = response.results[0].id;
-       console.log(id);
-
-      fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=53ed151123a740f094ac3e8409f6c1f3&ingredients=" + searchRecipe)
-
-        .then(function (response) {
-          return response.json();
-        })
-
-        .then(function (response) {
-          console.log(response);
-          var id = response[0].id;
-          console.log(id);
-
-          fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=53ed151123a740f094ac3e8409f6c1f3")
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (response) {
-              console.log(response);
-              console.log(response[0].title);
-              console.log(response[0].image);
-              console.log(response[0].instructions);
-              console.log(response[0].spoonacularSourceUrl);
-            })
-        })
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
           // var responseContainerEl = document.querySelector('#response-container-ii');
           // responseContainerEl.innerHTML = recipeTitleII;
 
-<<<<<<< HEAD
           // var recipeII = document.createElement("recipe");
           // recipeII.setAttribute('src', response.results[2]);
 
@@ -251,20 +147,10 @@ function getRecipe() {
 
           // var recipeImageII = response.results[2].image;
           // console.log(recipeImageII);
-=======
-      // var responseContainerEl = document.querySelector('#response-container-ii');
-      // responseContainerEl.innerHTML = recipeTitleII;
-
-      // var recipeII = document.createElement("recipe");
-      // recipeII.setAttribute('src', response.results[2]);
-
-      // responseContainerEl.appendChild(recipeII);
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
           // var responseContainerEl = document.querySelector('#card-3');
           // responseContainerEl.innerHTML = recipeImageII;
 
-<<<<<<< HEAD
           // var imageII = document.createElement("img");
           // imageII.setAttribute('src', " ");
           // imageII.setAttribute('src', response.results[2].image);
@@ -310,22 +196,11 @@ if (window.localStorage) {
   );
 }
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
-=======
-      // var recipeImageII = response.results[2].image;
-      // console.log(recipeImageII);
 
-      // var responseContainerEl = document.querySelector('#card-3');
-      // responseContainerEl.innerHTML = recipeImageII;
 
-      // var imageII = document.createElement("img");
-      // imageII.setAttribute('src', " ");
-      // imageII.setAttribute('src', response.results[2].image);
 
 
-      // responseContainerEl.appendChild(imageII);
 
-    })
-};
 
 
 
@@ -379,23 +254,6 @@ if (window.localStorage) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
 // "http://maps.google.com/?q=38.776991%2C%20-77.263568%20(%22Burke+%22)"
 // "http://maps.google.com/?q=Burke++Farmers+Market"
@@ -429,11 +287,7 @@ function findMarkets() {
 
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-<<<<<<< HEAD
       zip
-=======
-    zip
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
   )
     .then(function (response) {
       return response.json();
@@ -443,7 +297,6 @@ function findMarkets() {
       var market2 = response.results[1].id;
       var market3 = response.results[2].id;
       var market4 = response.results[3].id;
-<<<<<<< HEAD
 
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
@@ -502,91 +355,6 @@ function findMarkets() {
         });
     });
 }
-=======
-      
-            fetch(
-                "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-                market1
-            )
-                .then(function (response) {
-                    return response.json();
-                }) //capture google link and edit it to make it a better google maps search term (the link is originally given... 
-                //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
-                .then(function (response) {
-                    // console.log(response.marketdetails.GoogleLink)
-                    var link = response.marketdetails.GoogleLink;
-                    link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                    if (!link.includes("Farmers")) {
-                        link = link.concat("+Farmers+Market");
-                    }
-                    title1.textContent = response.marketdetails.Address;
-                    map1.href = link;
-                    showMaps(link);
-                });
-            fetch(
-                "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-                market2
-            )
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (response) {
-                    // console.log(response.marketdetails.GoogleLink)
-                    var link2 = response.marketdtetails.GoogleLink;
-                    link2 = link2.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                    if (!link2.includes("Farmers")) {
-                        link2 = link2.concat("+Farmers+Market");
-                    }
-                    title2.textContent = response.marketdetails.Address;
-                    map2.href = link2;
-                    showMaps(link2);
-                });
-            fetch(
-                "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-                market3
-            )
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (response) {
-                    // console.log(response.marketdetails.GoogleLink);
-                    var link3 = response.marketdetails.GoogleLink;
-                    link3 = link3.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                    if (!link3.includes("Farmers")) {
-                        link3 = link3.concat("+Farmers+Market");
-                    }
-                    title3.textContent = response.marketdetails.Address;
-                    map3.href = link3;
-                    showMaps(link3);
-                });
-
-        },
-
-            showMaps = function (link, link2) {
-                console.log(link);
-                var market = link.split("q=");
-                console.log(market[1]);
-                var marketName = market[1];
-                var embedLink =
-                    "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
-                    marketName;
-
-                var map1 = document.getElementById("mapBox");
-                map1.setAttribute("src", embedLink);
-
-                //   var market = link2.split("q=");
-                //   var marketName = market[1];
-                //   var embedLink =
-                //     "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
-                //     marketName;
-                //   var map2 = document.createElement("iframe")
-                //   map2.setAttribute({"src": embedLink, "width": "500", "height": "500", "style": "border:0", "allowfullscreen": "", "loading": "lazy", "class": "col-4"})
-                // mapContainer.appendChild(map2);
-            })
-
-};
-
->>>>>>> 673d98e3556b81b1740d37e354dad4e86c15c390
 
 showMaps = function (link, link2) {
   console.log(link);
@@ -614,4 +382,4 @@ showMaps = function (link, link2) {
 //
 // BEN END
 //
-//---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
+//---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------/

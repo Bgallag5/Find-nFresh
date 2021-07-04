@@ -1,0 +1,170 @@
+:root {
+    --first: #414243;
+    --second: #8db030;
+    --third: #b7af9e;
+    --fourth: #664B4D;
+    --fifth: #81b622;
+    --sixth: #3d550c;
+    --seventh: rgb(233, 47, 0);
+    /* font color primary- white */
+    /* font color secondary --grey */
+  }
+
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+
+  header {
+    background: var(--first);
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    padding: 10px 30px; 
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: left;
+    font-size: 30px;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  header h1 {
+    padding-top: 10px;
+  }
+  
+  header img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  
+  ul li a {
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+  ul li a:hover {
+    color: var(--second);
+  }
+  
+  .nav-link {
+    padding-top: 20px;
+  }
+
+  .hero {
+    background-image: url("/assets/images/farm2table.jpeg");
+    background-size: cover;
+    color: white;
+    background-position: 40;
+    height: 350px ;
+    z-index:8888;
+  }
+  
+  .hero h2 {
+   padding: 150px 70px;
+   color: wheat;
+   font-family: 'Dancing Script', cursive;
+   font-size: 75px;
+  }
+
+  /* MAKE BELOW STYLES FIT US NOT RUNBUDDY */
+
+  .contact {
+    background: #3d550c;
+  }
+  
+  .contact h2 {
+    color: #81b622;
+  }
+  
+  .contact-info iframe {
+    height: 400px;
+  }
+  
+  .contact-info div {
+    color: white;
+  }
+
+
+  .contact-info {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .contact-info > * {
+    flex: 1;
+    margin: 15px;
+  }
+  
+  .contact-info h4 {
+    color: #81b622;
+    font-size: 32px;
+    font-family:'Permanent Marker';
+  }
+  
+  .contact-info p,
+  .contact-info address {
+    margin: 20px 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Nunito Sans', sans-serif
+  }
+  
+  .contact-form input, .contact-form textarea {
+    border: 1px solid #3d550c;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #b7af9e;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: --third;
+  }
+
+  .contact-form input:focus, .contact-form textarea:focus {
+    background-color: --third;
+    outline: none;
+  }
+
+  .contact-form button {
+    width: 100%;
+    border: none;
+    background: #81b622;
+    color: #3d550c;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    border-radius: 10px;
+
+  }
+
+  .contact-form button:hover {
+    color:--fourth;
+    background: #39a6b2;
+  }
+
+  .contact-info a {
+    color: #81b622;
+  }
+
+.footer {
+        background: var(--first);
+        color: var(--third);
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        padding: 20px;
+      }
