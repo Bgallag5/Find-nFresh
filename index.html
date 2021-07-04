@@ -58,7 +58,7 @@
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
-
+<!-- Gaye: Can you make this text appear white? cause right now it doesnt look good. Just inline stying is fine.   -->
         <h2>A farm to table experience.</h2>
     </section>
     <!--?-----------END HERO SECTION--------------------------------------->
@@ -148,9 +148,9 @@
         <div class="row">
             <div class=" card col s12 m6">
                  <!--BEN THIS NEEDS AN ID SO IT CAN BE HIDDEN ON CLICK-->
-                    <div class="container card" id="">
+                    <div class="container card" id="zipBox">
                         <!--IS THIS NOT SUPPOSED OT HAVE A CLASS? CAN I USE A CLASS FOR THIS?-->
-                        <div id="zipBox" class="">
+                        <div id="" class="">
                             <h2>Input your zipcode here</h2>
                             <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value="" class="ziptextinput"/>
                             <div class="enterButton" id="zipButtonContainer">
@@ -161,15 +161,12 @@
                    
                     <div class="card grey lighten-4">
                         <div id="mapContainer" class="container row">
-                            <iframe src="" id="mapBox" class="col-6"
+                            <iframe src="" id="mapBox1" class="col-5"
+                             width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="" id="mapBox2" class="col-5"
                              width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
-                        <div class="container row justify-content-around" id="market-display" style="display: none;">
-                            <div id="market-1" class="col-6 single-market">
-                                <h3 id="title-1">Market Title</h3>
-                                <a href="" target="_blank" id="map-1">Google Maps Link</a>
-                            </div>
-                        </div>
+                    
                     </div>
             </div>
         </div>
