@@ -60,7 +60,7 @@
   }
 
   .hero {
-    background-image: url("../images/background.jpeg");
+    background-image: url(/assets/images/farm2table.jpeg);
     background-size: cover;
     color: white;
     background-position: 40;
