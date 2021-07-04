@@ -88,6 +88,7 @@
   .contact-info iframe {
     height: 400px;
   }
+
   
   .contact-info div {
     color: white;
@@ -104,9 +105,10 @@
     margin: 15px;
   }
   
-  .contact-info h3 {
+  .contact-info h4 {
     color: #81b622;
     font-size: 32px;
+    font-family:'Permanent Marker';
   }
   
   .contact-info p,
@@ -115,6 +117,7 @@
     line-height: 1.5;
     font-size: 16px;
     font-style: normal;
+    font-family: 'Nunito Sans', sans-serif
   }
   
   .contact-form input, .contact-form textarea {
@@ -122,7 +125,7 @@
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #3d550c;
+    color: #b7af9e;
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
@@ -148,7 +151,7 @@
   }
 
   .contact-form button:hover {
-    color:#81b622;
+    color:--fourth;
     background: #39a6b2;
   }
 
