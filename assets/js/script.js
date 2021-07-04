@@ -4,30 +4,6 @@
 // LINES 1501-2000: SHANE
 // LINES 2001-2500: GAYE
 
-// $('#search-button').keydown(function (event) {
-//   if (event.keyCode == 13) { 
-//        // Call your function here or add code here
-//        getRecipe()
-//   }
-// });
-
-// document.getElementById('searchRecipe').addEventListener('keypress', getRecipe(event) {
-//   if (event.keyCode == 13) {
-//       event.preventDefault();
-//   }
-// });
-
-document.getElementById('searchRecipe')
-    .addEventListener('keyup', function(event) {
-        if (event.code === 'Enter')
-        {
-            event.preventDefault();
-            document.querySelector('form').submit();
-        }
-    });
-
-// document.getElementById('search-button').onsubmit = getRecipe()
-
 var ingredient = document.getElementById("searchRecipe");
 
 var zipCode = document.getElementById("zipCode");
@@ -39,7 +15,7 @@ var mapContainer = document.getElementById('mapContainer')
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
-// API KEY: 53ed151123a740f094ac3e8409f6c1f3
+// API KEY: b79ab8cbea19412a8dc76a8297bc9d42
 
 // FETCH THE RECIPE AND NUTRITION APIS
 
@@ -146,6 +122,11 @@ function getRecipe() {
             responseContainerEl.appendChild(imageII);
 
 
+      // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
+
+      var id = response.results[0].id;
+      console.log(id);
+
       // RECIPE 1 
     
        var id = response.results[0].id;
@@ -174,32 +155,10 @@ function getRecipe() {
               console.log(response[0].spoonacularSourceUrl);
             })
         })
-
-
-      // var responseContainerEl = document.querySelector('#response-container-ii');
-      // responseContainerEl.innerHTML = recipeTitleII;
-
-      // var recipeII = document.createElement("recipe");
-      // recipeII.setAttribute('src', response.results[2]);
-
-      // responseContainerEl.appendChild(recipeII);
-
-
-      // var recipeImageII = response.results[2].image;
-      // console.log(recipeImageII);
-
-      // var responseContainerEl = document.querySelector('#card-3');
-      // responseContainerEl.innerHTML = recipeImageII;
-
-      // var imageII = document.createElement("img");
-      // imageII.setAttribute('src', " ");
-      // imageII.setAttribute('src', response.results[2].image);
-
-
-      // responseContainerEl.appendChild(imageII);
-
     })
-};
+
+
+
 
 
 
