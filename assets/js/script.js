@@ -155,7 +155,7 @@ function getRecipe() {
       console.log(response[0].spoonacularSourceUrl);
       var recipeLink = response[0].spoonacularSourceUrl;
       var responseContainerEl = document.querySelector("#card-2");
-     responseContainerEl.a.setAttribute("href", recipeLink);
+     responseContainerEl.setAttribute("href", recipeLink);
 
 
   });
@@ -315,6 +315,12 @@ if (window.localStorage) {
 //combine USDA API with Google maps
 // use response.results[math.random] to "cheat" showing different results each time (in the recipe pulls)...
 //...and to avoid duplicates we can say random 0-3, 4-6, 7-9.
+
+
+//MUST DO BEFORE WEDNESDAY CLASS:
+//Display random recipes on search With working links to recipes
+//My Meals page that can store recipes the user chooses
+//
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
@@ -367,6 +373,7 @@ function findMarkets() {
               }
               console.log(link2);
               showMaps(link, link2);
+              
             });
         });
     });
