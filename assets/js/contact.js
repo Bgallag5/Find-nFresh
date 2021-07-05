@@ -1,19 +1,18 @@
 var userName = document.getElementById("contact-name").value;
 var userEmail = document.getElementById("contact-email").value;
-var userMessage = document.getElementById("uder-message")
-var userRating = document.getElementById(:)
+var userMessage = document.getElementById("user-message").value;
+var userRating = document.getElementById("user-rating").value;
 
 // WHEN USER CLICKS SAVE, THE TEXT VALUE IS OBTAINED
-$(".saveBtn").on("click", function () {
+$("#submit-button").on("click", function () {
     // OBTAIN TEXT VALUES FROM ROW CLASS AND ID 
-    var textValue = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
+    // var textValue = $(this).siblings(".description").val();
 
     // SET TO SAVE IN LOCALSTORAGE
-    localStorage.setItem(userName, textValue);
-    localStorage.setItem(userEmail, textValue);
-    localStorage.setItem(userMessage, textValue);
-    localStorage.setItem(userRating, textValue);
+    localStorage.setItem("user-name" textValue);
+    localStorage.setItem("user-email", textValue);
+    localStorage.setItem("user-message", textValue);
+    localStorage.setItem("user-rating", textValue);
 });
 
 // Set Name to localStorage
