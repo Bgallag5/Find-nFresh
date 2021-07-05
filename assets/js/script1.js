@@ -1,236 +1,199 @@
-// var userRecipes = {};
-// var recipesContainerEl = document.getElementById("recipesContainer");
 
-// var want2Savebtnel = document.createElement("button");
-// want2Savebtnel.setAttribute("id", "saveRecipeBtn")
 
+//create variables to better define recipe title & image...Do I need to do this or can I pull from previous function??
+// my goal is to display previously viewed recipes (based on user ingredient search) to a seperate page in seperate JS file
+//first declare an object which stores previous recipes
+// var savedRecipes = {};
+// everytime the website loads for the first time, check to see if there is history object
 
+// in the localstorage, and if there is parse it, and set it as the initial value of the history object
+// if there isn't set history object to be empty {}
+// if (!savedRecipes) {
+//     savedRecipes = {};
+// }
+// when we look for recipes store a key -value pair in our history object
+// object key = {title} value = {link}
+// localstorage key history = value {stringified object}
+// stringify history object, and write it to localstorage 
 
-//FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
-// FORMAT:  &apiKey=YOUR-API-KEY.
-// API KEY: b79ab8cbea19412a8dc76a8297bc9d42
 
-// FETCH THE RECIPE AND NUTRITION APIS
-// var zipCode = document.getElementById("zipCode");
-// var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
-// var mapContainer = document.getElementById('mapContainer');
+// when we click on previously viewed page
+// grab history object from localstorage
+// parse it
+// and use all key value pairs, to display cards, with keys as title and vaues as src attribute to images
 
-// var rememberdivEl = document.querySelector(".remember");
-// var forgetdivEl = document.querySelector(".forget");
-// var formEl = document.querySelector("form");
-// var userPicksEl = document.querySelector("#userPicks");
-// var saveSearchEl = document.querySelector("#saveSearch");
-// var forgetUserPicksEl = document.querySelector("#forgetUserPicks");
+///////////////////////LAST THREE RECIPES FROM HOME PAGE ARE BEING STORED IN THE CONSOLE IN USERPICK PAGE, I JUST NEED TO PUSH THEM TO DISPLAY ON THE PAGE////////////////////
 
-// var h1 = document.querySelector(h1);
-// var pThanksel = document.querySelector(".thankYou");
+var arrayPrintEl = document.getElementById("arrayPrint");
 
+var displayLastThreeRecipes = function () {
+    var recipesArray = localStorage.getItem("lastThreeRecipes");
+    var lastThreeRecipes = JSON.parse(recipesArray);
+    console.log(lastThreeRecipes);
+    console.log(lastThreeRecipes[0].id); /// use this format in for loop to grab other parts of array 
+    for (let i = 0; i < lastThreeRecipes.length; i++) {
+        arrayPrintEl.innerHTML = lastThreeRecipes[0].title; /// displays title   ***********************
+        // arrayPrintEl.appendChild.lastThreeRecipes[1].title;
+        // document.getElementById("arrayPrint").innerHTML = JSON.stringify(recipesArray); // displays array as is
+        var image = document.createElement("img");
+        image.setAttribute('src', " ");
+        image.setAttribute('src', lastThreeRecipes[0].image);
+        arrayPrintEl.appendChild(image);       ///// first image is displayed
 
-//FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
-// FORMAT:  &apiKey=YOUR-API-KEY.
-// API KEY: b79ab8cbea19412a8dc76a8297bc9d42
+        var image1 = document.createElement("img");
+        image1.setAttribute('src', " ");
+        image1.setAttribute('src', lastThreeRecipes[1].image1);
+        arrayPrintEl.appendChild(image);         /////// second image is not displayed......
 
-// FETCH THE RECIPE AND NUTRITION APIS
 
-function getRecipe() {
+        // var newDiv = document.createElement("div");
+        // newDiv.innerHTML = lastThreeRecipes[1].title;
+        // newDiv.appendChild(recipesArray[i]);
+        console.log(lastThreeRecipes);
+        /////////////onto something here/////////////////////////////////////////////
+        ///////////// maybe empty out innerHTML then try again///////////////////
+        // document.getElementById("arrayPrint").innerHTML = "";
+        var recipeTitle1 = lastThreeRecipes[1].title;
+        console.log(recipeTitle);   /////////successfully console logged first recipe title
 
-    var searchRecipe = document.querySelector("#searchRecipe").value;
+        newDiv.appendChild(recipeTitle1);  /// when i user innerHTML here instead of append, I get three responses back to console. 
+        newDiv.innerHTML = lastThreeRecipes[1].title;
 
-    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
+        lastThreeRecipes.find(x => x.b === 3)
 
-        .then(function (response) {
-            //console.log(response.json());
-            return response.json();
-        })
 
-        // RECIPE IMAGE, TITLE, LINK 1
+        // var titleEl = document.createElement("span");
+        // recipeTitle.textContent = lastThreeRecipes.title;
 
-        // everytime the website loads for the first time, check to see if there is history object
-        // in the localstorage, and if there is parse it, and set it as the initial value of the history object
-        // if there isn't set history object to be empty {}
-        //first declare an object which stores previous recipes
-        // when we look for recipes store a key -value pair in our history object
-        // object key = {title} value = {link}
-        // localstorage key history = value {stringified object}
-        // stringify history object, and write it to localstorage 
+        // titleEl.append(lastThreeRecipes.textContent);  
+    }
+}
+displayLastThreeRecipes();
 
+// var displayRecipeOne = function () {
+//     var firstRecipe = localStorage.getItem("recipeTitle");
+//     var recipeOne = JSON.parse(firstRecipe);
+//     console.log(recipeOne);
+// }
+recipeImageEl = document.getElementById('recipeImage');
+imgData = getBase64Image(recipeImage);
+localStorage.setItem("lastThreeRecipes", imgData);
 
-        // when we click on previously viewed page
-        // grab history object from localstorage
-        // parse it
-        // and use all key value pairs, to display cards, with keys as title and vaues as src attribute to images
+function getBase64Image(img) {            ////// LOCAL STORAGE ONLY SUPPORTS STRINGS (APPROX 5MB) SO MUST USE BASE64 DATA THEN CONVERT USING CANVAS
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
 
-        .then(function (response) {
-            console.log(response);
-            let recipeTitle = response.results[0].title;
-            console.log(recipeTitle);
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
 
-            var responseContainerEl = document.querySelector('#response-container-2');
-            responseContainerEl.innerHTML = recipeTitle;
+    var dataURL = canvas.toDataURL("image/png");
 
-            var recipe = document.createElement("recipe");
-            recipe.setAttribute('src', response.results[0]);
-            recipe.setAttribute("id", "recipeOne");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
-            responseContainerEl.appendChild(recipe);
+var dataImage = localStorage.getItem('imgData');
+recipeImageEl = document.getElementById('recipeImage');
+recipeImage.src = "data:image/png;base64," + dataImage;
 
 
-            var recipeImage = response.results[0].image;
-            console.log(recipeImage);
 
-            var responseContainerEl = document.querySelector('#card-1');
-            responseContainerEl.innerHTML = recipeImage;
 
 
-            var image = document.createElement("img");
-            image.setAttribute('src', " ");
-            image.setAttribute('src', response.results[0].image);
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// document.appendChild(lastThreeRecipes[0].id)
 
-            responseContainerEl.appendChild(image);
-            window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));  ////// ANI LOCAL STORAGE
-            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));  ///// ANI LOCAL STORAGE
 
-            var savedRecipes = {};
 
-            //create variables to better define recipe title & image...Do I need to do this or can I pull from previous function??
-            // my goal is to display previously viewed recipes (based on user ingredient search) to a seperate page in seperate JS file
-            var recipeDisplay = $("<li>")
 
+// body.append(recipeTitle.lastThreeRecipes[0].image)
 
+// document.getElementById("arrayPrint").innerHTML = JSON.stringify(recipesArray[0].image.); // may be better 
+// var newDiv = document.createElement("div");
+// newDiv.innerHTML = lastThreeRecipes.title
+// newDiv.appendChild(recipesArray[i]);
+// img.append(recipesArray[i].image[0]);
+// img.append(recipesArray[i].image[1]);
+// img.append(recipesArray[i].image[2]);
 
 
 
 
 
+// lastThreeRecipes = response.results.slice(0, 3);
+// localStorage.setItem("lastThreeRecipes", JSON.stringify(lastThreeRecipes));
+// console.log(lastThreeRecipes);
+// new.appendChild(lastThreeRecipes);
 
+// function getNumbers(min, max) {
+//     min = Math.ceil(0);
+//     max = Math.floor(9);
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 
-            // $("#search-button").on("click", function () {
-            //     //get values from input
-            //     var textValue = $(this).siblings(".search-term").val();
-            //     var favRecipe = $(this).parent().attr("id");
+// console.log(getNumbers);
 
-            //     //set to save in localstorage
-            //     localStorage.setItem(textValue, favRecipe);
-            // })
+// getNumbers();
 
-            // $("#searchRecipe .search-term,").val(localStorage.getItem("searchRecipe"));
+// Math.floor(Math.random() * 10) - 1;
 
+// var myMin = 0;
+// var myMax = 9;
 
-            // var newDiv = document.createElement("div")
-            // newDiv.appendChild("recipeTitle");
+// function randomNumber(myMin, myMax) {
+//     return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+// }
 
+// console.log(randomNumber(myMin, myMax));
 
+// var randomNumbers = [];  // create empty array 
 
+// var createRandom = function (arr) {
+//     if (arr.length >= 9) return;
+//     var newNumber = Math.floor(Math.random() * 9 + 1);
+//     if (arr.indexOf(newNumber) < 0) {
+//         arr.push(newNumber);
+//     }
+//     createRandom(arr);
+// };
 
-            // //form does not submit if pressed 
-            // formEl.addEventListener("submit", function (e) {
-            //     e.preventDefault();
-            // });
+// createRandom(randomNumbers);
 
-            // //run this function if user clicks saveSearch button
-            // saveSearchEl.addEventListener("click", function () {
-            //     // store the recipe 
-            //     localStorage.setItem("recipeTitle", JSON.stringify);
-            //     // run displayRecipeCheck
-            //     displayRecipeCheck();
-            // });
+// console.log(createRandom(randomNumbers));
 
-            // // run function  if foget button clicked
-            // forgetUserPicksEl.addEventListener("click", function () {
-            //     // remove the stored recipe from storage
-            //     localStorage.removeItem("recipeImage");
-            //     //run display check to display generic page again
-            //     displayRecipeCheck();
-            // });
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-            // //define the displayRecipeCheck function
-            // function displayRecipeCheck() {
-            //     //check if recipe data is stored
-            //     if (localStorage.getItem("recipeTitle")) {
-            //         //if it is, display recipe
-            //         recipeTitle = localStorage.getItem("recipeTitle");
-            //         h1.textContent = "Here are your recipes!"
-            //         //hide the 'remember' part of the form and show 'forgtet' part
-            //         forgetdivEl.style.display = "block";
-            //         rememberdivEl.style.display = "none";
-            //     } else {
-            //         // if not, display generic
-            //         h1.textContent = "Welcome to FindFresh ";
-            //         //hide forget part and show remember
-            //         forgetdivEl.style.display = "none";
-            //         rememberdivEl.style.display = "block";
-            //     }
+var numbers = [];   // make empty array
+var min = 0;
+var max = 9;
+// how many numbers to extract
+var stop = 3;
 
-            // }
 
-            // ////// run this function on load to see if a recipe was previously set and if so show the recipe//
-            // document.body.onload = displayRecipeCheck;
+// loop through numbers array 
+for (let i = 0; i < stop; i++) {
+    var n = Math.floor(Math.random() * max) + min;
+    var check = numbers.includes(n);
 
+    if (check === false) {       //check that num isn't in array already
+        numbers.push(n);
+    } else {
+        while (check === true) {
+            n = Math.floor(Math.random() * max) + min;
+            check = numbers.includes(n);
+            if (check === false) {
+                numbers.push(n);
+            }
+        }
+    }
+}
 
 
+console.log(numbers);
+// sort();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // function getRecipe() {
-
-            //     var searchRecipe = document.querySelector("#searchRecipe").value;
-
-            //     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=53ed151123a740f094ac3e8409f6c1f3')
-
-            //         .then(function (response) {
-            //             //console.log(response.json());
-            //             return response.json();
-            //         })
-
-            //         // RECIPE IMAGE, TITLE, LINK 1
-
-            //         .then(function (response) {
-            //             console.log(response);
-            //             var recipeTitle = response.results[0].title;
-            //             console.log(recipeTitle);
-
-            //             var responseContainerEl = document.querySelector('#response-container-2');
-            //             responseContainerEl.innerHTML = recipeTitle;
-
-            //             var recipe = document.createElement("recipe");
-            //             recipe.setAttribute('src', response.results[0]);
-            //             recipe.setAttribute("id", "recipeOne");
-
-            //             responseContainerEl.appendChild(recipe);
-
-
-            //             var recipeImage = response.results[0].image;
-            //             console.log(recipeImage);
-
-            //             var responseContainerEl = document.querySelector('#card-1');
-            //             responseContainerEl.innerHTML = recipeImage;
-
-
-            //             var image = document.createElement("img");
-            //             image.setAttribute('src', " ");
-            //             image.setAttribute('src', response.results[0].image);
-
-
-            //             responseContainerEl.appendChild(image);
-            //             window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));  ////// ANI LOCAL STORAGE
-            //             window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));  ///// ANI LOCAL STORAGE/////
+// //Sort array in ascending order
+// function sort() {
+//     numbers.sort(function (a, b) { return a - b });
+//     document.getElementById("array_number").innerHTML = numbers.join(" - ");
+// }
+// console.log(numbers);  

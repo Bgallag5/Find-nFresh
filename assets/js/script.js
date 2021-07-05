@@ -1,3 +1,4 @@
+
 // LINES 1-500: BEN
 // LINES 501-1000: ANI
 // LINES 1001-1500: RYAN
@@ -10,6 +11,7 @@ var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById('mapContainer')
 
+
 // ********************** RYAN'S CODE **********************
 
 
@@ -21,9 +23,11 @@ var mapContainer = document.getElementById('mapContainer')
 
 function getRecipe() {
 
+
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+
 
         .then(function (response) {
             //console.log(response.json());
@@ -34,6 +38,9 @@ function getRecipe() {
 
         .then(function (response) {
             console.log(response);
+            const lastThreeRecipes = response.results.slice(0, 3);
+            localStorage.setItem("lastThreeRecipes", JSON.stringify(lastThreeRecipes));
+            console.log(lastThreeRecipes);
             var recipeTitle = response.results[0].title;
             console.log(recipeTitle);
 
@@ -107,6 +114,7 @@ function getRecipe() {
     
             responseContainerEl.appendChild(recipeII);
 
+            responseContainerEl.appendChild(recipeII);
 
             var recipeImageII = response.results[2].image;
             console.log(recipeImageII);
@@ -114,12 +122,104 @@ function getRecipe() {
             var responseContainerEl = document.querySelector('#card-3');
             responseContainerEl.innerHTML = recipeImageII;
 
+
+            responseContainerEl.innerHTML = "";
+
             var imageII = document.createElement("img");
             imageII.setAttribute('src', " ");
             imageII.setAttribute('src', response.results[2].image);
 
-
             responseContainerEl.appendChild(imageII);
+            window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
+            window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
+
+            // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
+
+            var id = response.results[0].id;
+            console.log(id);
+
+            fetch(`https://api.spoonacular.com/recipes/${id}/summary&apiKey=53ed151123a740f094ac3e8409f6c1f3`)
+
+                .then(function (response) {
+                    console.log(response);
+                    return response.json();
+                })
+
+                .then(function (response) {
+                    var recipeLink = response.url
+                    console.log(recipeLink);
+
+                    // var responseContainerEl = document.querySelector('#response-container-ii');
+                    // responseContainerEl.innerHTML = recipeTitleII;
+
+                    // var recipeII = document.createElement("recipe");
+                    // recipeII.setAttribute('src', response.results[2]);
+
+                    // responseContainerEl.appendChild(recipeII);
+
+
+                    // var recipeImageII = response.results[2].image;
+                    // console.log(recipeImageII);
+
+                    // var responseContainerEl = document.querySelector('#card-3');
+                    // responseContainerEl.innerHTML = recipeImageII;
+
+                    // var imageII = document.createElement("img");
+                    // imageII.setAttribute('src', " ");
+                    // imageII.setAttribute('src', response.results[2].image);
+
+
+                    // responseContainerEl.appendChild(imageII);
+
+                })
+        });
+}
+
+
+//////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
+if (window.localStorage) {
+    var storeZip = document.getElementById("zipCode");
+    storeZip.value = localStorage.getItem("zipCode");
+
+    storeZip.addEventListener("input", function () {
+        localStorage.setItem("zipCode", storeZip.value);
+    }, false);
+
+};
+///////////////////////////////////ANI STORING FIRST RECIPE RETURNED //////////////////////////////////////////////////////////
+// window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
+// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle));
+/////////////////////////////////// ANI STORING SECOND RECIPE RETURNED //////////////////////////////////////////////////////
+// window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI));
+// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI));
+////////////////////////////////// ANI STORING THIRD RECIPE RETURNED ///////////////////////////////////////////////////////////
+// window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
+// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
+///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
+if (window.localStorage) {
+
+    var saveIndgredient = document.getElementById("searchRecipe") //html input id
+    saveIndgredient.value = localStorage.getItem("searchRecipe")
+
+    saveIndgredient.addEventListener("input", function () {
+        localStorage.setItem("searchRecipe", saveIndgredient.value);
+    }, false);
+}
+////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
@@ -127,21 +227,10 @@ function getRecipe() {
       var id = response.results[0].id;
       console.log(id);
 
-      // RECIPE 1 
-    
-       var id = response.results[0].id;
-       console.log(id);
 
-      fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=53ed151123a740f094ac3e8409f6c1f3&ingredients=" + searchRecipe)
 
-        .then(function (response) {
-          return response.json();
-        })
 
-        .then(function (response) {
-          console.log(response);
-          var id = response[0].id;
-          console.log(id);
+
 
           fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=53ed151123a740f094ac3e8409f6c1f3")
             .then(function (response) {
@@ -224,6 +313,10 @@ function getRecipe() {
 
 
 
+//     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+
+
+
 
 
 
@@ -245,6 +338,7 @@ function getRecipe() {
 
 
 function findMarkets() {
+
   var zip = zipCode.value;
   var markets = document.getElementById("market-display");
   var zipInput = document.getElementById("zipBox");
@@ -273,14 +367,17 @@ function findMarkets() {
       var market3 = response.results[2].id;
       var market4 = response.results[3].id;
       
+
             fetch(
                 "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
                 market1
             )
                 .then(function (response) {
                     return response.json();
+
                 }) //capture google link and edit it to make it a better google maps search term (the link is originally given... 
                 //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
+
                 .then(function (response) {
                     // console.log(response.marketdetails.GoogleLink)
                     var link = response.marketdetails.GoogleLink;
@@ -329,6 +426,7 @@ function findMarkets() {
                     showMaps(link3);
                 });
 
+
         },
 
             showMaps = function (link, link2) {
@@ -355,10 +453,37 @@ function findMarkets() {
 
 };
 
+            // function getRecipes(){
+            //     var spoonKey = "20af9545e7844540b4be28a453355597"
+            //     var searchTerm = "broccoli";
+            //     // var searchTerm = ingredient.value;
+            //     // console.log(searchTerm);
+
+            // fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=" + spoonKey + "&query=" + searchTerm)
+            // .then(function(response) {
+            //     return response.json();
+            // })
+            // .then(function(response){
+            //     console.log(response)
+            //     console.log(response.results[2])
+            // })
+
+            // fetch("https://api.spoonacular.com/recipes/findByIngredients?apiKey=" + spoonKey + "&ingredients=" + searchTerm)
+            // .then(function(response) {
+            //     return response.json();
+            // })
+            // .then(function(response){
+            //     console.log(response)
+            //     console.log(response[1])
+            // })
+            // }
+
+            // getRecipes();
+
+            //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
+            //
+            // BEN END
+            //
+            //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------/
 
 
-//---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
-//
-// BEN END
-//
-//---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
