@@ -24,9 +24,9 @@ var mapContainer = document.getElementById('mapContainer')
 function getRecipe() {
 
 
-  var searchRecipe = document.querySelector("#searchRecipe").value;
+    var searchRecipe = document.querySelector("#searchRecipe").value;
 
-  fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
+    fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
 
         .then(function (response) {
@@ -111,7 +111,7 @@ function getRecipe() {
 
             var recipeII = document.createElement("recipe");
             recipeII.setAttribute('src', response.results[2]);
-    
+
             responseContainerEl.appendChild(recipeII);
 
             responseContainerEl.appendChild(recipeII);
@@ -222,29 +222,29 @@ if (window.localStorage) {
 
 
 
-      // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
+// RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404 
 
-      var id = response.results[0].id;
-      console.log(id);
-
-
+var id = response.results[0].id;
+console.log(id);
 
 
 
 
-          fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=53ed151123a740f094ac3e8409f6c1f3")
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (response) {
-              console.log(response);
-              console.log(response[0].title);
-              console.log(response[0].image);
-              console.log(response[0].instructions);
-              console.log(response[0].spoonacularSourceUrl);
-            })
-        })
+
+
+fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "apiKey=53ed151123a740f094ac3e8409f6c1f3")
+    .then(function (response) {
+        return response.json();
     })
+    .then(function (response) {
+        console.log(response);
+        console.log(response[0].title);
+        console.log(response[0].image);
+        console.log(response[0].instructions);
+        console.log(response[0].spoonacularSourceUrl);
+    })
+
+
 
 
 
@@ -339,34 +339,34 @@ if (window.localStorage) {
 
 function findMarkets() {
 
-  var zip = zipCode.value;
-  var markets = document.getElementById("market-display");
-  var zipInput = document.getElementById("zipBox");
-  var title1 = document.getElementById("title-1");
-  var map1 = document.getElementById("map-1");
-  // var title2 = document.getElementById("title-2");
-  // var map2 = document.getElementById("map-2");
-  // var title3 = document.getElementById("title-3");
-  // var map3 = document.getElementById("map-3");
-  // var title4 = document.getElementById("title-4");
-  // var map4 = document.getElementById("map-4");
+    var zip = zipCode.value;
+    var markets = document.getElementById("market-display");
+    var zipInput = document.getElementById("zipBox");
+    var title1 = document.getElementById("title-1");
+    var map1 = document.getElementById("map-1");
+    // var title2 = document.getElementById("title-2");
+    // var map2 = document.getElementById("map-2");
+    // var title3 = document.getElementById("title-3");
+    // var map3 = document.getElementById("map-3");
+    // var title4 = document.getElementById("title-4");
+    // var map4 = document.getElementById("map-4");
 
-  zipInput.style.display = "none";
-  markets.style.display = "flex";
+    zipInput.style.display = "none";
+    markets.style.display = "flex";
 
-  fetch(
-    "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-    zip
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      var market1 = response.results[0].id;
-      var market2 = response.results[1].id;
-      var market3 = response.results[2].id;
-      var market4 = response.results[3].id;
-      
+    fetch(
+        "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
+        zip
+    )
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            var market1 = response.results[0].id;
+            var market2 = response.results[1].id;
+            var market3 = response.results[2].id;
+            var market4 = response.results[3].id;
+
 
             fetch(
                 "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
