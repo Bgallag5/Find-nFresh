@@ -11,11 +11,21 @@ function store() {
 
     var userRating = document.getElementById("user-rating");
     localStorage.setItem("user-rating", userRating.value);
+
+    function submission() {
+        window.alert("your form has been successfully submitted")
+    }
+
+    submission()
+
+    // function disableSubmit("submit-button") {
+    //     document.getElementById("submit-button").disabled = 'true'
+    // }
 }
 
 // GET ITEM 
 
-// var storedName = localStorage.getItem("user-name");
-// var storedEmail = localStorage.getItem("user-email");
-// var storedMessage = localStorage.getItem("user-message");
-// var storedRating = localStorage.getItem("user-rating");
+var storedName = localStorage.getItem("user-name");
+var storedEmail = localStorage.getItem("user-email");
+var storedMessage = localStorage.getItem("user-message");
+var storedRating = localStorage.getItem("user-rating");
