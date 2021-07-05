@@ -12,11 +12,14 @@ function store() {
     var userRating = document.getElementById("user-rating");
     localStorage.setItem("user-rating", userRating.value);
 
-    function submission() {
-        window.alert("your form has been successfully submitted")
-    }
+    // var button = getElementById("submit-button") .style. color="red";
+    // button.disabled = "disabled";
 
-    submission()
+    // function submission() {
+    //     window.alert("your form has been successfully submitted")
+    // }
+
+    // submission()
 
     // function disableSubmit("submit-button") {
     //     document.getElementById("submit-button").disabled = 'true'
