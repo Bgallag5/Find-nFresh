@@ -61,7 +61,7 @@ function getRecipe() {
       window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle)); ////// ANI LOCAL STORAGE
       window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle)); ///// ANI LOCAL STORAGE
 
-      // RECIPE IMAGE, TITLE, LINK 2
+      // RECIPE IMAGE, TITLE, LINK 2/////////////////////////////////////////////////////////
       var x = Math.floor(Math.random() * 9);
       console.log(x)
       var recipeTitleI = response.results[x].title;
@@ -89,7 +89,7 @@ function getRecipe() {
       window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI)); ///// ANI LOCAL STORAGE
       window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI)); //// ANI LOCAL STORAGE
 
-      // RECIPE IMAGE, TITLE, LINK 3
+      // RECIPE IMAGE, TITLE, LINK 3//////////////////////////////////////////////////////
 
       var recipeTitleII = response.results[2].title;
       console.log(recipeTitleII);
@@ -127,11 +127,13 @@ function getRecipe() {
       var id2 = response.results[1].id;
       var id3 = response.results[2].id;
       console.log(id);
+      //send three recipe id's into getRecipeData()
         getRecipeData(id, id2, id3);
     });
   }
 
     function getRecipeData(id, id2, id3){
+      //fetch three recipes, turn to JSON, then pull the data we need (link to recipe)
       fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id + "&apiKey=53ed151123a740f094ac3e8409f6c1f3")
       .then(function(response){
     return response.json();
@@ -150,9 +152,11 @@ function getRecipe() {
   return response.json();
     })
     .then(function(response){
-      console.log(response[0].title);             
-      console.log(response[0].image);
       console.log(response[0].spoonacularSourceUrl);
+      var recipeLink = response[0].spoonacularSourceUrl;
+      var responseContainerEl = document.querySelector("#card-2");
+     responseContainerEl.a.setAttribute("href", recipeLink);
+
 
   });
   fetch("https://api.spoonacular.com/recipes/informationBulk?ids=" + id3 + "&apiKey=53ed151123a740f094ac3e8409f6c1f3")
@@ -223,6 +227,80 @@ if (window.localStorage) {
 }
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // "http://maps.google.com/?q=38.776991%2C%20-77.263568%20(%22Burke+%22)"
 // "http://maps.google.com/?q=Burke++Farmers+Market"
 // "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.543957590443!2d-77.30029918465263!3d38.797087779586235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64e1b5983a451%3A0x311f6970ab8a1a77!2sBurke%20Farmers%20Market!5e0!3m2!1sen!2sus!4v1625148725193!5m2!1sen!2sus"
@@ -235,7 +313,8 @@ if (window.localStorage) {
 //Notes:
 // use the API id of each recipe to eventually link to the spoonful recipe page
 //combine USDA API with Google maps
-// use response.results[math.random] to "cheat" showing different results each time (in the recipe pulls)
+// use response.results[math.random] to "cheat" showing different results each time (in the recipe pulls)...
+//...and to avoid duplicates we can say random 0-3, 4-6, 7-9.
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
