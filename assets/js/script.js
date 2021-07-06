@@ -9,7 +9,7 @@
 var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById("mapContainer");
-// var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
+var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
 // ********************** RYAN'S CODE **********************
@@ -309,7 +309,7 @@ if (window.localStorage) {
 //MUST DO BEFORE WEDNESDAY CLASS:
 //Display random recipes on search With working links to recipes
 //My Meals page that can store recipes the user chooses
-//
+//have Link! read 'View recipe and related recipes'--Shane Style
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
