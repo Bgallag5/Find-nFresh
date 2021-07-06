@@ -63,17 +63,7 @@
     padding-top: 20px;
   }
   
-  /*?---------------------FOOTER SECTION---------------------*/
-  
-  footer {
-    background: var(--first);
-    color: var(--third);
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    padding: 20px;
-  }
+
   
   /*?---------------------HERO SECTION -----------------------*/
   .hero {
@@ -87,12 +77,13 @@
   
   .hero h2 {
    padding: 150px 70px;
-   color: var(--second);
+   color: white;
    font-family: 'Dancing Script', cursive;
    font-size: 75px;
    margin-bottom: 400px;
   }
 
+  
 
 
 
@@ -115,3 +106,15 @@
 }
 
 
+  /*?---------------------FOOTER SECTION---------------------*/
+  
+  footer {
+    background: var(--first);
+    color: white;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px;
+    text-decoration-style: none;
+  }
