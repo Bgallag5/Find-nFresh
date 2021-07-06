@@ -44,13 +44,13 @@ var displayLastThreeRecipes = function () {
         var image1 = document.createElement("img");
         image1.setAttribute('src', " ");
         image1.setAttribute('src', lastThreeRecipes[1].image);
-        cardTwoEl.appendChild(image1);         /////// second image is not displayed......
+        cardTwoEl.appendChild(image1);         /////// second image is displayed ***************************
 
 
         var image2 = document.createElement("img");
         image2.setAttribute('src', " ");
-        image2.setAttribute('src', lastThreeRecipes[2].image);   ///// third image is displayed *********************************
-        cardThreeEl.appendChild(image2);
+        image2.setAttribute('src', lastThreeRecipes[2].image);
+        cardThreeEl.appendChild(image2);                         ///// third image is displayed *********************************
         // cardThreeEl.innerHTML = lastThreeRecipes[2].title;   
 
 
