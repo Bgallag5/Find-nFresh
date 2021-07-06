@@ -1,14 +1,15 @@
-FreshFind
-
-FreshFind is an app to help people find locally grown produce and then match those ingredients with recipes they can make. The farmers market API will show users where they can purchase local produce. Then, based on what they bought at the market, the spoonful API can give recipe recommendations.
+![FindFresh (1)](https://user-images.githubusercontent.com/84213096/124351397-03492700-dbc8-11eb-89b2-ce285032b67e.gif)
 
 
-APIs Used
+FreshFind is an app that both helps people find recipes for their indgredient and farmers markets nearby where they might shop at. Using the Spoontastic API, we are able to display three recipes to the user based on the ingredient they searched for. The USDA Farmer's Market API along with Google Maps, allow people find markets close to their location based on zipcode. This way, users can see where they can buy local, fresh food, then explore various recipes that could be created from the desired ingredient.   
+
+
+
 USDA Farmers Market API - https://api.nal.usda.gov
 
 Spoontastic API - https://api.spoonacular.com
 
-<img width="1440" alt="Screen Shot 2021-06-30 at 8 16 53 PM" src="https://user-images.githubusercontent.com/82895658/124046555-3630c680-d9e0-11eb-8d2b-54fd5f464b05.png">
+
 
 
 Utilized: 
@@ -20,36 +21,18 @@ Utilized:
 *JQUERY 
 *ABOVE MENTIONED APIS
 
-
-
-Contributors 
-Ben Gallagher: Functionality, JS, Git
-Ani Carr: Functionality, JS , Video for Presentation 
-
-Roles
-Ben: Functionality, JS, Git
-Ani: Functionality, JS , Video for Presentation 
-Shane: Style, CSS, PowerPoint, JS, HTML
-Ryan: Style/Frame, CSS, HTML, APIs
-Gaye: Style, HTML
-
-
-FreshFind is an app to help people find locally grown produce and then match those ingredients with recipes they can make. The farmers market API will show users where they can purchase local produce. Then, based on what they bought at the market, the spoonful API can give recipe recommendations.
-APIs Used
-USDA Farmers Market API - https://api.nal.usda.gov
-Spoontastic API - https://api.spoonacular.com
-Utilized:
-*HTML
-*CSS
-*JAVASCRIPT
-*GIT
-*MATERIALIZE & BOOTSTRAP
-*JQUERY
-*ABOVE MENTIONED APIS
 Contributors
-Ben Gallagher: Functionality, JS, Git
-Ani Carr: Functionality, JS , Video for Presentation
+
+Ben Gallagher: Functionality, JS, Git, APIs
+
+Ani Carr: Functionality, JS, CSS, HTML 
 
 Shane Crisostomo: Style, CSS, PowerPoint, JS, HTML
-Ryan Jolley: Style/Frame, CSS, HTML, APIs
-Gaye Proctor: Style, HTML
+
+Ryan Jolley: APIs, JS, Git, Style, HTML
+
+Gaye Proctor: Style, HTML 
+
+
+![FindFresh](https://user-images.githubusercontent.com/84213096/124351810-853a4f80-dbca-11eb-9385-64f64ab6dce6.jpg)
+

@@ -1,0 +1,402 @@
+:root {
+    --first: #414243;
+    --second: #8db030;
+    --third: #b7af9e;
+    --fourth: #664B4D;
+    --fifth: #81b622;
+    --sixth: #3d550c;
+    --seventh: rgb(233, 47, 0);
+    /* font color primary- white */
+    /* font color secondary --grey */
+  }
+
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+
+  header {
+    background: var(--first);
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    padding: 10px 30px; 
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: left;
+    font-size: 30px;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  header h1 {
+    padding-top: 10px;
+  }
+  
+  header img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  
+  ul li a {
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+  ul li a:hover {
+    color: var(--second);
+  }
+  
+  .nav-link {
+    padding-top: 20px;
+  }
+
+  .hero {
+    background-image: url("/assets/images/farm2table.jpeg");
+    background-size: cover;
+    color: white;
+    background-position: 40;
+    height: 350px ;
+    z-index:8888;
+  }
+  
+  .hero h2 {
+   padding: 150px 70px;
+   color: wheat;
+   font-family: 'Dancing Script', cursive;
+   font-size: 75px;
+  }
+
+  /* MAKE BELOW STYLES FIT US NOT RUNBUDDY */
+
+  .contact {
+    background: #3d550c;
+  }
+  
+  .contact h2 {
+    color: #81b622;
+  }
+  
+  .contact-info iframe {
+    height: 400px;
+  }
+  
+  .contact-info div {
+    color: white;
+  }
+
+
+  .contact-info {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .contact-info > * {
+    flex: 1;
+    margin: 15px;
+  }
+  
+  .contact-info h4 {
+    color: #81b622;
+    font-size: 32px;
+    font-family:'Permanent Marker';
+  }
+  
+  .contact-info p,
+  .contact-info address {
+    margin: 20px 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Nunito Sans', sans-serif
+  }
+  
+  .contact-form input, .contact-form textarea {
+    border: 1px solid #3d550c;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #b7af9e;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: --third;
+  }
+
+  .contact-form input:focus, .contact-form textarea:focus {
+    background-color: --third;
+    outline: none;
+  }
+
+  .contact-form button {
+    width: 100%;
+    border: none;
+    background: #81b622;
+    color: #3d550c;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    border-radius: 10px;
+
+  }
+
+  .contact-form button:hover {
+    color:--fourth;
+    background: #39a6b2;
+  }
+
+  .contact-info a {
+    color: #81b622;
+  }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color:rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.4);
+
+}
+
+.modal-header h2 {
+    color: white;
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #3d550c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #3d550c;
+    color: #3d550c;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+
+  .rating {
+      background-color: #81b622
+  }
+
+  .rating h2 {
+      text-align: center;
+      color: #664B4D;
+      font-family: 'Permanent Marker';
+      font-size: 25px;
+  }
+
+  .review {
+      text-align: center;
+      background-color: #81b622;
+  }
+
+  .thank-you {
+      text-align: center;
+      background-color: #81b622;
+  }
+
+  .thank-you h3 {
+    margin-right: 5px;
+    color: #664B4D;
+    font-family: 'Permanent Marker';
+    padding: 5px;
+  }
+
+  .stars {
+    display:inline-block;
+    width:auto;
+    position:relative;
+    font-size:28px;
+    border:2px outset #8db030;
+    border-radius:5px;
+    background-color: #3d550c;
+    margin:5px;
+}
+
+/*
+the BEFORE:pseudo element. This will represent the number of stars in the actual rating.
+it floats above the AFTER element.
+*/
+.stars:BEFORE {
+    content:"★★★★★";
+    position:absolute;
+    overflow:hidden;
+    z-index:1;
+    left:0px;
+    top:0px;
+/* everything below here is optional. */
+    color:#8db030;
+    text-shadow:0px 1px 0 #000, 0 -1px 0 #fff;
+}
+/*
+the AFTER:pseudo element. This will represent the total possible  stars available. It is set to relative to ensure it takes up the proper amount of space.
+*/
+.stars:AFTER {
+    content:"★★★★★";
+    position:relative;
+    color:#fff;
+}
+/*
+if including user rating controls, float the AFTER element.
+*/
+.stars.rate:AFTER {
+    position:absolute;
+    left:0px;
+}
+/*
+default state for the  user rating controls. invisible, but floating above the BEFORE and AFTER elements
+*/
+.stars.rate > A {
+    color:transparent;
+    text-decoration:none;
+    position:relative;
+    z-index:2;
+}
+/*
+if the user is floating thier mouse above the rating, hide the display stars.
+*/
+.stars.rate:HOVER:BEFORE,
+.stars.rate:HOVER:AFTER {
+    display:none;
+}
+/*
+turn all sthe start "ON" by default.
+*/
+.stars.rate:HOVER > A {
+    color:#8db030;
+    text-shadow:0px 1px 0 #000, 0 -1px 0 #fff;
+}
+/*
+optional style for the specific star control a user is directly above.
+*/
+.stars.rate:HOVER > A:HOVER {
+    color:#8db030;
+    text-shadow:0px 2px 0 #000, 0 -1px 0 #fff;
+    top:-1px;
+}
+/*
+turn "OFF" all stars after the one the user is hovering over.
+*/
+.stars.rate >A:HOVER ~ A {
+    color:#fff;
+    text-shadow:none;
+}
+/* 
+all the styles below are used to display the apropriate portion of the BEFORE element based on percentage rating. unfortunately you will need to create a specific rule for each level of granularity you wish to display.
+
+
+if the CSS3 attr() function proposal ever gets implimented
+the remaining rules could all be replaced with the following:
+.stars[data-percent]:BEFORE {
+width:attr(data-percent,%,0);
+}
+
+*/
+.stars:NOT([data-percent]):BEFORE,
+.stars[data-percent="0"]:BEFORE {
+    display:none;
+}
+/* 1/2 a star */
+.stars[data-percent="10"]:BEFORE {
+    width:10%;
+}
+/* 1 star */
+.stars[data-percent="20"]:BEFORE {
+    width:20%;
+}
+/* 1 & 1/2 stars */
+.stars[data-percent="30"]:BEFORE {
+    width:30%;
+}
+/* etc. */
+.stars[data-percent="40"]:BEFORE {
+    width:40%;
+}
+.stars[data-percent="50"]:BEFORE {
+    width:50%;
+}
+.stars[data-percent="60"]:BEFORE {
+    width:60%;
+}
+.stars[data-percent="70"]:BEFORE {
+    width:70%;
+}
+.stars[data-percent="80"]:BEFORE {
+    width:80%;
+}
+.stars[data-percent="90"]:BEFORE {
+    width:90%;
+}
+.stars[data-percent="100"]:BEFORE {
+    width:100%;
+}
+
+.footer {
+        background: var(--first);
+        color: var(--third);
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        padding: 20px;
+      }

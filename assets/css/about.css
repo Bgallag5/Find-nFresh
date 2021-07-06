@@ -1,0 +1,160 @@
+:root {
+    --first: #414243;
+    --second: #8db030;
+    --third: #b7af9e;
+    --fourth: #664B4D;
+    --fifth: #81b622;
+    --sixth: #3d550c;
+    --seventh: rgb(233, 47, 0);
+    /* font color primary- white */
+    /* font color secondary --grey */
+  }
+  
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+  
+  /*?-----------------Header and navigation----------------*/
+  
+  header {
+    background: var(--first);
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    padding: 10px 30px; 
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: left;
+    font-size: 30px;
+    width: 100%;
+    
+  }
+  
+  header h1 {
+    padding-top: 10px;
+  }
+
+  header img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  
+  ul li a {
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+  ul li a:hover {
+    color: var(--seventh);
+  }
+  
+  .nav-link {
+    padding-top: 20px;
+  }
+
+ /*?---------------------HERO SECTION -----------------------*/
+
+.hero {
+  background-image: url("../images/AboutUs.jpeg"); 
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+}
+
+.hero h2 {
+  color: rgb(233, 47, 0);
+  font-family: 'Dancing Script', cursive;
+  font-size: 100px;
+  margin-left: 950px;
+  margin-top: 50px;
+}
+
+.circle {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+}
+
+.team {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  width: 50%;
+}
+
+.circle {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.name {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:rgb(233, 47, 0);
+  border-radius: 20%;
+}
+
+.name h3{
+  color:black;
+  font-weight: bold;
+}
+
+.team:hover .name {
+  opacity: 80%;
+  box-shadow: 5px 10px gray;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 190px;
+}
+
+
+/*?---------------------FOOTER SECTION---------------------*/
+
+footer {
+    background: var(--first);
+    color: var(--third);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
