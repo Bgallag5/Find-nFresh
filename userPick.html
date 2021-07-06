@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FindFresh </title>
+    <title>Recently Viewed</title>
     <link rel="shorcut icon" type="image" href="./assets/images/leaf.png" />
 
     <!--?-----------------------Google Fonts used Permanent Marker---------------->
@@ -25,21 +25,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--?-----------------------Import materialize.css----------------------------->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- ?---------------------------BULMA CSS------------------------------------>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!--?--------------------local CSS stylesheet---------------------------------->
 
-    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/userPick.css">
 </head>
 
 <body>
-    <!-- <header> -->
-
-    <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-    <!-- FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+    <header>
+        <h1>
+            <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+            FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
         </h1>
 
         <ul class="nav justify-content-end">
@@ -50,80 +50,100 @@
                 <a class="nav-link" href="./about.html">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My Meals</a>
+                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
             </li>
+            <!-- <li class="nav-item">
+
+                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                <a class="nav-link" href="./contact.html">Contact Us</a>
+
             </li>
         </ul>
 
-    
-    
+    </header>
 
-            <!--?---------------HERO SECTION STARTS HERE-------------------------->
-    <!-- <section class="hero">
 
-        <h2>A farm to table experience.</h2>
-    </section> -->
+
+
+    <!--?---------------HERO SECTION STARTS HERE-------------------------->
+    <section class="hero">
+
+        <h2>Recently Viewed</h2>
+        <div>
+            <a href="./index.html" class="btn-back" </div>
+
+    </section>
     <!--?-----------END HERO SECTION--------------------------------------->
 
-    <!---------------------------------RECIPE SEARCH---------------------------->
+    <!---------------------------------CARDS FOR PREVIOUSLY VIEWED---------------------------->
+    <!-- <div class="row mx-auto" style="width: 400px;">
+            <div class=" card" id="cardOne" style="width: 400px; height: 400px;">
+                <img class="card-img-top" id="imgOne" src="...">
+                <div class="card-body">
+                    <p class="card-text">
 
-
-
-
-
-
-
-
-
-    <body>
-        <div class="hero">
-            <h1 class="app-title">Your Past Recipes 🥗 <span id="repo-name"></span></h1>
-
-            <div>
-                <a href="./index.html" class="btn-back">
-                    Go Back
-                </a>
+                    </p>
+                </div>
             </div>
-            <div id="arrayPrint">
-                <img src="" id="recipeImage" />
+        </div>
+
+        <div class="mx-auto" style="width: 400px;">
+            <div class="card" id="cardTwo" style="width: 400px; height: 400px;">
+                <img class="card-img-top" id="imgTwo" src="...">
+                <div class="card-body">
+                    <p class="card-text"></p>
+                </div>
             </div>
+        </div>
 
-            <!-- 
-            <div class="container row recipe-container">
-                <div class="card col s12 m6 13">
-                    <div class="card-image waves-effect waves-block waves-light" id="card-1">
-                        <img class="activator recipe-img" src="">
-                    </div>
-                    <div class="card-content" id="response-container-2">
-                        <span class="card-title activator grey-text text-darken-4">
-
-
-                        </span>
-
-                    </div> -->
-            <!----------------------------THIS IS JUST A REALLY BAD DRAFT THAT'S GOING TO BE CHANGED THIS AFTERNOON, 7/3/21------------------------------>
-
-            <!-- <div id="recipesContainer" class="list-group">
-                <section class="container">
-                    <div class="fetch-ingredient container">
-                        <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
-                        <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search
-                            Recipes</button>
-
-                    </div> -->
+        <div class="row mx-auto" style="width: 400px;">
+            <div class="card" id="cardThree" style="width: 400px; height: 400px;">
+                <img class="card-img-top" id="imgThree" src="..." alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </div> -->
 
 
 
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card" id="cardOne">1</div>
+            </div>
+            <div class="col-4">
+                <div class="card" id="cardTwo">2</div>
+            </div>
+            <div class="col-4">
+                <div class="card" id="cardThree">3</div>
+            </div>
+        </div>
+    </div>
 
 
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 
-            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-            <script src="assets/js/script1.js"></script>
-    </body>
+    <footer>
+        <h6>FindFresh &copy 2021</h6>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="assets/js/script1.js"></script>
+</body>
 
 </html>

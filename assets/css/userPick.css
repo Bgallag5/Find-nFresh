@@ -90,35 +90,28 @@
    color: var(--second);
    font-family: 'Dancing Script', cursive;
    font-size: 75px;
+   margin-bottom: 400px;
   }
 
-  #arrayPrint text {
-     display: flex; 
-     justify-content: center;
-     flex-direction: column;
-     flex-wrap: wrap;
-     align-items: center;
-     font-family: 'Dancing Script', cursive;
-     
-  }
 
-  #arrayPrint img {
-      margin-left: 1000px;
-      margin-top: 50px;
-  }
 
-  #flexContainer {
-      display: flex;
-      justify-content: space-evenly;
-      height: 100%;
-      position: relative;
-      color: var(--sixth);
-      width: 960px;
-      
-  }
 
-  #colTwo  {
+.mx-auto {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.card {
+    border-color: var(--sixth);
+    color:var(--sixth);
+    text-decoration-line: none;
+}
+
+.card a {
     text-decoration: none;
-    color: var(--second);
-    height: 500px;
-  }
+    text-emphasis: none;
+    color: var(--sixth)
+}
+
+
