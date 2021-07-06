@@ -28,15 +28,17 @@ var userRating = document.getElementById("user-rating");
 var thankYou = document.getElementById("thank-you")
 
 // Confirm Submission Module // ADD LOCAL STORAGE HERE
-btn.onclick = function () {
+
+btn.onclick = function() {
     modal.style.display = "block";
 }
 
-span.onclick = function () {
+span.onclick = function() {
     modal.style.display = "none";
 }
 
-window.onclick = function (event) {
+window.onclick = function(event) {
+
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -54,6 +56,4 @@ window.onclick = function (event) {
 // 4 stars 
 
 // 5 stars 
-
-
 
