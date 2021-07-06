@@ -36,19 +36,21 @@ function getRecipe() {
     // RECIPE IMAGE, TITLE, LINK 1
 
     .then(function (response) {
-      console.log(response);
-      const lastThreeRecipes = response.results.slice(0, 3);
-      localStorage.setItem(
-        "lastThreeRecipes",
-        JSON.stringify(lastThreeRecipes)
-      );
-
+    
       var x = Math.floor(Math.random() * 4);
       var y = Math.floor(Math.random() * 3) + 4;
       var z = Math.floor(Math.random() * 3) + 7;
       console.log(x)
       console.log(y)
       console.log(z)
+
+      console.log(response);
+      const lastThreeRecipes = [response.results[x], response.results[y], response.results[z] ];
+      console.log(lastThreeRecipes);
+      localStorage.setItem(
+        "lastThreeRecipes",
+        JSON.stringify(lastThreeRecipes)
+      );
 
       console.log(lastThreeRecipes);
       var recipeTitle = response.results[x].title;
@@ -180,7 +182,7 @@ function getRecipeData(id, id2, id3) {
       console.log(recipeLink)
       var recipeTwo = document.getElementById("recipeTwoLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeTwo.setAttribute("href", recipeLink);
-      recipeOne.setAttribute("target", "_blank")
+      recipeTwo.setAttribute("target", "_blank")
       recipeTwo.innerHTML = "Link!";
     });
   fetch(
@@ -195,7 +197,7 @@ function getRecipeData(id, id2, id3) {
       var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
       var recipeThree = document.getElementById("recipeThreeLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeThree.setAttribute("href", recipeLink);
-      recipeOne.setAttribute("target", "_blank")
+      recipeThree.setAttribute("target", "_blank")
       recipeThree.innerHTML = "Link!";
     });
 }
@@ -216,7 +218,7 @@ window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 
 // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
 
-var id = response.results[0].id;
+var id = response.results[0].id;    //Can we delete this through the closing bracket on line 253? -- this was an attempt at getRecipeData() but isnt used
 console.log(id);
 
 fetch(
@@ -289,13 +291,7 @@ if (window.localStorage) {
 }
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
-//     fetch('https://api.spoonacular.com/recipes/complexSearch?query=' + searchRecipe + '&apiKey=b79ab8cbea19412a8dc76a8297bc9d42')
 
-// "http://maps.google.com/?q=38.776991%2C%20-77.263568%20(%22Burke+%22)"
-// "http://maps.google.com/?q=Burke++Farmers+Market"
-// "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3109.543957590443!2d-77.30029918465263!3d38.797087779586235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64e1b5983a451%3A0x311f6970ab8a1a77!2sBurke%20Farmers%20Market!5e0!3m2!1sen!2sus!4v1625148725193!5m2!1sen!2sus"
-
-// "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=Burke++Farmers+Market"
 
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
@@ -310,6 +306,8 @@ if (window.localStorage) {
 //Display random recipes on search With working links to recipes
 //My Meals page that can store recipes the user chooses
 //have Link! read 'View recipe and related recipes'--Shane Style
+//Shane/Ani get a new Spoonacular api key to use for presentation 
+//Ani has to re-write local storage Array logic. Instead of saving Array0-3, she needs to save xyz. 
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
