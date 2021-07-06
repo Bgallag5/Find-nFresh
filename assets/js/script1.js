@@ -43,7 +43,7 @@ var displayLastThreeRecipes = function () {
 
         var image1 = document.createElement("img");
         image1.setAttribute('src', " ");
-        image1.setAttribute('src', lastThreeRecipes[1].image1);
+        image1.setAttribute('src', lastThreeRecipes[1].image);
         cardTwoEl.appendChild(image1);         /////// second image is not displayed......
 
 
@@ -71,7 +71,7 @@ displayLastThreeRecipes();
 // localStorage.setItem("lastThreeRecipes", imgData);
 
 // function getBase64Image(img) {            ////// LOCAL STORAGE ONLY SUPPORTS STRINGS (& APPROX 5MB) SO MUST USE BASE64 DATA THEN CONVERT USING CANVAS
-//     var canvas = document.createElement("canvas"); /// NVM BC THANKFULLY SPOONACULAR HAS LOW QUALITY PHOTOS!!
+//     var canvas = document.createElement("canvas"); /// NVM BC THANKFULLY SPOONACULAR HAS LOW QUALITY
 //     canvas.width = img.width;
 //     canvas.height = img.height;
 
