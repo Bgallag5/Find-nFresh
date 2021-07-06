@@ -1,0 +1,124 @@
+:root {
+    --first: #414243;
+    --second: #8db030;
+    --third: #b7af9e;
+    --fourth: #664B4D;
+    --fifth: #81b622;
+    --sixth: #3d550c;
+    --seventh: rgb(233, 47, 0);
+    /* font color primary- white */
+    /* font color secondary --grey */
+  }
+  
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-size: cover;
+    background-position: center;
+    background-color: var(--sixth);
+  }
+  
+  /*?-----------------Header and navigation----------------*/
+  
+  header {
+    background: var(--first);
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    padding: 10px 30px; 
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: left;
+    font-size: 30px;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  header h1 {
+    padding-top: 10px;
+  }
+  
+  header img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  
+  ul li a {
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+  }
+  
+  ul li a:hover {
+    color: var(--second);
+    display: flex;
+  }
+  
+  .nav-link {
+    padding-top: 20px;
+  }
+  
+  /*?---------------------FOOTER SECTION---------------------*/
+  
+  footer {
+    background: var(--first);
+    color: var(--third);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px;
+  }
+  
+  /*?---------------------HERO SECTION -----------------------*/
+  .hero {
+    background-image: url("../images/background.jpeg");
+    background-size: cover;
+    color: white;
+    background-position: 40;
+    height: 350px ;
+    z-index:8888;
+  }
+  
+  .hero h2 {
+   padding: 150px 70px;
+   color: var(--second);
+   font-family: 'Dancing Script', cursive;
+   font-size: 75px;
+  }
+
+  #arrayPrint text {
+     display: flex; 
+     justify-content: center;
+     flex-direction: column;
+     flex-wrap: wrap;
+     align-items: center;
+     font-family: 'Dancing Script', cursive;
+     
+  }
+
+  #arrayPrint img {
+      margin-left: 1000px;
+      margin-top: 50px;
+  }
+
+  #flexContainer {
+      display: flex;
+      justify-content: space-evenly;
+      height: 100%;
+      position: relative;
+      color: var(--sixth);
+      width: 960px;
+      
+  }
+
+  #colTwo  {
+    text-decoration: none;
+    color: var(--second);
+    height: 500px;
+  }

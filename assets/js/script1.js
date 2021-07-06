@@ -23,8 +23,11 @@
 // and use all key value pairs, to display cards, with keys as title and vaues as src attribute to images
 
 ///////////////////////LAST THREE RECIPES FROM HOME PAGE ARE BEING STORED IN THE CONSOLE IN USERPICK PAGE, I JUST NEED TO PUSH THEM TO DISPLAY ON THE PAGE////////////////////
-
+var arrayImageEl = document.getElementById("card-3");
 var arrayPrintEl = document.getElementById("arrayPrint");
+var colOneEl = document.getElementById("colOne");
+var colTwoEl = document.getElementById("colTwo");
+var colThreeEl = document.getElementById("colThree");
 
 var displayLastThreeRecipes = function () {
     var recipesArray = localStorage.getItem("lastThreeRecipes");
@@ -32,18 +35,28 @@ var displayLastThreeRecipes = function () {
     console.log(lastThreeRecipes);
     console.log(lastThreeRecipes[0].id); /// use this format in for loop to grab other parts of array 
     for (let i = 0; i < lastThreeRecipes.length; i++) {
-        arrayPrintEl.innerHTML = lastThreeRecipes[0].title; /// displays title   ***********************
+        colTwoEl.innerHTML = lastThreeRecipes[0].title; /// displays title   ***********************
         // arrayPrintEl.appendChild.lastThreeRecipes[1].title;
         // document.getElementById("arrayPrint").innerHTML = JSON.stringify(recipesArray); // displays array as is
         var image = document.createElement("img");
         image.setAttribute('src', " ");
         image.setAttribute('src', lastThreeRecipes[0].image);
-        arrayPrintEl.appendChild(image);       ///// first image is displayed
+        colTwoEl.appendChild(image);       ///// first image is displayed ***************************
+        colOneEl.appendChild(lastThreeRecipes[0].title)
+
 
         var image1 = document.createElement("img");
         image1.setAttribute('src', " ");
         image1.setAttribute('src', lastThreeRecipes[1].image1);
-        arrayPrintEl.appendChild(image);         /////// second image is not displayed......
+        // colTwoEl.appendChild(image1);         /////// second image is not displayed......
+        // colTwoEl.innerHTML = lastThreeRecipes[1].title;
+
+        var image2 = document.createElement("img");
+        image2.setAttribute('src', " ");
+        image2.setAttribute('src', lastThreeRecipes[2].image);   ///// third image is displayed *********************************
+        // colThreeEl.appendChild(image2);
+        colThreeEl.innerHTML = lastThreeRecipes[2].title;   //// the title makes the image dissappear? ? 
+
 
 
         // var newDiv = document.createElement("div");
@@ -75,26 +88,26 @@ displayLastThreeRecipes();
 //     var recipeOne = JSON.parse(firstRecipe);
 //     console.log(recipeOne);
 // }
-recipeImageEl = document.getElementById('recipeImage');
-imgData = getBase64Image(recipeImage);
-localStorage.setItem("lastThreeRecipes", imgData);
+// recipeImageEl = document.getElementById('recipeImage');
+// imgData = getBase64Image(recipeImage);
+// localStorage.setItem("lastThreeRecipes", imgData);
 
-function getBase64Image(img) {            ////// LOCAL STORAGE ONLY SUPPORTS STRINGS (APPROX 5MB) SO MUST USE BASE64 DATA THEN CONVERT USING CANVAS
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
+// function getBase64Image(img) {            ////// LOCAL STORAGE ONLY SUPPORTS STRINGS (APPROX 5MB) SO MUST USE BASE64 DATA THEN CONVERT USING CANVAS
+//     var canvas = document.createElement("canvas");
+//     canvas.width = img.width;
+//     canvas.height = img.height;
 
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+//     var ctx = canvas.getContext("2d");
+//     ctx.drawImage(img, 0, 0);
 
-    var dataURL = canvas.toDataURL("image/png");
+//     var dataURL = canvas.toDataURL("image/png");
 
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
+//     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+// }
 
-var dataImage = localStorage.getItem('imgData');
-recipeImageEl = document.getElementById('recipeImage');
-recipeImage.src = "data:image/png;base64," + dataImage;
+// var dataImage = localStorage.getItem('imgData');
+// recipeImageEl = document.getElementById('recipeImage');
+// recipeImage.src = "data:image/png;base64," + dataImage;
 
 
 
@@ -124,76 +137,10 @@ recipeImage.src = "data:image/png;base64," + dataImage;
 // console.log(lastThreeRecipes);
 // new.appendChild(lastThreeRecipes);
 
-// function getNumbers(min, max) {
-//     min = Math.ceil(0);
-//     max = Math.floor(9);
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
 
-// console.log(getNumbers);
-
-// getNumbers();
-
-// Math.floor(Math.random() * 10) - 1;
-
-// var myMin = 0;
-// var myMax = 9;
-
-// function randomNumber(myMin, myMax) {
-//     return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
-// }
-
-// console.log(randomNumber(myMin, myMax));
-
-// var randomNumbers = [];  // create empty array 
-
-// var createRandom = function (arr) {
-//     if (arr.length >= 9) return;
-//     var newNumber = Math.floor(Math.random() * 9 + 1);
-//     if (arr.indexOf(newNumber) < 0) {
-//         arr.push(newNumber);
-//     }
-//     createRandom(arr);
-// };
-
-// createRandom(randomNumbers);
-
-// console.log(createRandom(randomNumbers));
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-var numbers = [];   // make empty array
-var min = 0;
-var max = 9;
-// how many numbers to extract
-var stop = 3;
 
 
-// loop through numbers array 
-for (let i = 0; i < stop; i++) {
-    var n = Math.floor(Math.random() * max) + min;
-    var check = numbers.includes(n);
 
-    if (check === false) {       //check that num isn't in array already
-        numbers.push(n);
-    } else {
-        while (check === true) {
-            n = Math.floor(Math.random() * max) + min;
-            check = numbers.includes(n);
-            if (check === false) {
-                numbers.push(n);
-            }
-        }
-    }
-}
-
-
-console.log(numbers);
-// sort();
-
-// //Sort array in ascending order
-// function sort() {
-//     numbers.sort(function (a, b) { return a - b });
-//     document.getElementById("array_number").innerHTML = numbers.join(" - ");
-// }
-// console.log(numbers);  
