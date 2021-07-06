@@ -173,7 +173,18 @@
   .review {
       text-align: center;
       background-color: #81b622;
+  }
 
+  .thank-you {
+      text-align: center;
+      background-color: #81b622;
+  }
+
+  .thank-you h3 {
+    margin-right: 5px;
+    color: #664B4D;
+    font-family: 'Permanent Marker';
+    padding: 5px;
   }
 
   .stars {
