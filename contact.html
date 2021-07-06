@@ -41,10 +41,12 @@
                 <a class="nav-link" href="./about.html">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My Meals</a>
+
+                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
         </ul>
     </header>
@@ -64,8 +66,8 @@
             <div>
                 <h4>Let us know what's cooking! </h4>
                 <p>
-                    Favorite Recipes? <br/> New favorite local supermarkets?
-                    <br/> Let us know and we'll be happy to talk to you!
+                    Favorite Recipes? <br /> New favorite local supermarkets?
+                    <br /> Let us know and we'll be happy to talk to you!
                 </p>
                 <address>
                     George Washington University <br />2121 I St NW <br /> Washington, DC <br />20052 <br />
@@ -91,20 +93,53 @@
                     <button onclick="store();" type="button" id="submit-button">Submit</button>
                 </form>
             </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0612570166813!2d-77.0507932495329!3d38.89971447947002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b10e3c7aa5%3A0xda7bf41bdc27a808!2sThe%20George%20Washington%20University!5e0!3m2!1sen!2sus!4v1625405539754!5m2!1sen!2sus" 
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0612570166813!2d-77.0507932495329!3d38.89971447947002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7b10e3c7aa5%3A0xda7bf41bdc27a808!2sThe%20George%20Washington%20University!5e0!3m2!1sen!2sus!4v1625405539754!5m2!1sen!2sus"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Your form has been successfully submitted!</h2>
+                </div>
+
+                <div class="modal-body" id="stored-info" value="" placeholder="stored-info-here">
+                </div>
+
+                <div class="modal-footer">
+                    <p>Thank you!</p>
+                </div>
             </div>
+        </div>
+
 
     </section>
 
     <div class="rating">
         <h2>Feeling Fresh? Give us 5 stars!</h2>
-    </div>
-    <div class="review">
-        <div class="stars rate" id="user-rating" data-percent="50"><a href="?1" title="awful">★</a><a href="?2" title="ok">★</a><a href="?3" title="good">★</a><a href="?4" title="great">★</a><a href="?5" title="awesome">★</a></div><br>
+
+        <div class="review">
+            <div class="stars rate" id="user-rating" data-percent="50"><a href="?1" title="awful">★</a><a href="?2"
+                    title="ok">★</a><a href="?3" title="good">★</a><a href="?4" title="great">★</a><a href="?5"
+                    title="awesome">★</a> 
+            </div><br>
         </div>
+
+        <div class="thank-you">
+            <h3>Thank you!</h3>
+        </div>
+
+
     </div>
+    </div>
+
 
     <footer class="footer">
         <h6>FindFresh &copy 2021</h6>
