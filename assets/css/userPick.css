@@ -97,6 +97,7 @@
     border-color: var(--sixth);
     color:var(--sixth);
     text-decoration-line: none;
+    text-decoration-style: none;
 }
 
 .card a {

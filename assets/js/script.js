@@ -11,6 +11,7 @@ var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
+var spoonKey3 = "b0c5916c7355494bba6f931d954fdad9"
 
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
@@ -26,7 +27,7 @@ function getRecipe() {
     fetch(
         "https://api.spoonacular.com/recipes/complexSearch?query=" +
         searchRecipe +
-        "&apiKey=" + spoonKey2
+        "&apiKey=" + spoonKey3
     )
         .then(function (response) {
             //console.log(response.json());
@@ -157,7 +158,7 @@ function getRecipeData(id, id2, id3) {
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
         id +
-        "&apiKey=" + spoonKey2
+        "&apiKey=" + spoonKey3
     )
         .then(function (response) {
             return response.json();
@@ -172,7 +173,7 @@ function getRecipeData(id, id2, id3) {
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
         id2 +
-        "&apiKey=" + spoonKey2
+        "&apiKey=" + spoonKey3
     )
         .then(function (response) {
             return response.json();
@@ -188,7 +189,7 @@ function getRecipeData(id, id2, id3) {
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
         id3 +
-        "&apiKey=" + spoonKey2
+        "&apiKey=" + spoonKey3
     )
         .then(function (response) {
             return response.json();
@@ -223,7 +224,7 @@ var id = response.results[0].id;    //Can we delete this through the closing bra
 console.log(id);
 
 fetch(
-    `https://api.spoonacular.com/recipes/${id}/summary&apiKey=53ed151123a740f094ac3e8409f6c1f3`
+    `https://api.spoonacular.com/recipes/${id}/summary&apiKey=b0c5916c7355494bba6f931d954fdad9`
 )
     .then(function (response) {
         console.log(response);
