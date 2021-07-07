@@ -63,18 +63,21 @@
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
-        <!-- Gaye: Can you make this text appear white? cause right now it doesnt look good. Just inline stying is fine.   -->
-        <h2 style="color: rgb(250, 248, 214);">A farm to table experience.</h2>
+        <h2>A farm to table experience.</h2>
     </section>
     <!--?-----------END HERO SECTION--------------------------------------->
 
     <!---------------------------------RECIPE SEARCH---------------------------->
-    <section class="container">
+    <section class="container ingredient-input">
 
-        <div class="fetch-ingredient container">
-            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient"/>
-            <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search
-                Recipes</button>
+        <div class="fetch-ingredient container text-center">
+            <h2 class="ingredient-text">Search Recipe Here</h2>
+    
+            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Please add your ingredient here"/>
+
+            <button type="button" class="btn-lg btn-success btn-block" id="search-button" onclick="getRecipe()">
+                Get Recipes
+            </button>
         </div>
     </section>
 
@@ -98,7 +101,7 @@
 
     <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
     <div class="container row recipe-container">
-        <div class="card col s12 m6 13">
+        <div class="card col s12 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-1">
                 <img class="activator recipe-img" src="./assets/images/recipe1.jpeg">
             </div>
@@ -117,30 +120,30 @@
                 <span class="card-title grey-text text-darken-4">Ingredients<i
                         class="material-icons right">close</i></span>
                 <p>
-                    1 lb. broccoli
+                    -1 lb. broccoli
                     <br>
-                    2 cans Patagonia Provisions Spanish White Anchovies (Roasted Garlic)
+                    -2 cans Patagonia Provisions Spanish White Anchovies (Roasted Garlic)
                     <br>
-                    Several big handfuls baby spinach
+                    -Several big handfuls baby spinach
                     <br>
-                    1½ tbsp. extra-virgin olive oil, divided
+                    -1½ tbsp. extra-virgin olive oil, divided
                     <br>
-                    2 tsp. lemon juice, plus more to taste
+                    -2 tsp. lemon juice, plus more to taste
                     <br>
-                    ½ tsp. kosher salt
+                    -½ tsp. kosher salt
                     <br>
-                    1 tsp. smoked Spanish paprika
+                    -1 tsp. smoked Spanish paprika
                     <br>
-                    ⅓ cup Marcona, Guara or regular roasted almonds, coarsely chopped
+                    -⅓ cup Marcona, Guara or regular roasted almonds, coarsely chopped
                 </p>
             </div>
         </div>
 
 
-        <div class="card col s4 m6 13 ">
+        <div class="card col s12 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-2">
 
-                <a href=""><img class="activator" src="./assets/images/recipe2.jpeg"></a>
+              <img class="activator recipe-img" src="./assets/images/recipe2.jpeg"></a> 
             </div>
             <div class="card-content" id="response-container-i">
                 <span class="card-title activator grey-text text-darken-4">
@@ -153,36 +156,34 @@
             </div>
 
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Ingredients<i
-                        class="material-icons right">close</i></span>
-                <p>
-                    3 tablespoons unsalted butter
-                    <br>
-                    6 tbsp. extra-virgin olive oil
-                    <br>
-                    3 large yellow or white onions, peeled and thinly sliced
-                    <br>
-                    3 dried bay leaves
-                    <br>
-                    6-8 fresh thyme sprigs
-                    <br>
-                    1 large red bell pepper, thinly sliced
-                    <br>
-                    1 tbsp. apple cider vinegar
-                    <br>
-                    1 sheet all-butter puff pastry, thawed but still cool
-                    <br>
-                    1 1/2 tbsp. thyme leaves, plus more leaves for sprinkling on at the end
-                    <br>
-                    1 to 1 1/2 cans Patagonia Provisions Spanish White Anchovies (Lemon Olive)
-                    <br>
-                    12 to 15 oil-cured black olives, pitted
-                </p>
-
+              <span class="card-title grey-text text-darken-4">Ingredients<i class="material-icons right">close</i></span>
+              <p>
+                -3 tablespoons unsalted butter
+                <br>
+                -6 tbsp. extra-virgin olive oil
+                <br>
+                -3 large yellow or white onions, peeled and thinly sliced
+                <br>
+                -3 dried bay leaves
+                <br>
+                -6-8 fresh thyme sprigs
+                <br>
+                -1 large red bell pepper, thinly sliced
+                <br>
+                -1 tbsp. apple cider vinegar
+                <br>
+                -1 sheet all-butter puff pastry, thawed but still cool 
+                <br>
+                -1 1/2 tbsp. thyme leaves, plus more leaves for sprinkling on at the end
+                <br>
+                -1 to 1 1/2 cans Patagonia Provisions Spanish White Anchovies (Lemon Olive)
+                <br>
+                -12 to 15 oil-cured black olives, pitted
+              </p>
             </div>
         </div>
-
-        <div class="card col s12 m6 13">
+    
+        <div class="card col s12 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-3">
                 <img class="activator recipe-img" src="./assets/images/recipe3.jpeg">
             </div>
@@ -196,35 +197,34 @@
 
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Ingredients<i
-                        class="material-icons right">close</i></span>
-                <p>
-                    About 2 tbsp. extra-virgin olive oil
-                    <br>
-                    ½ white or yellow onion, sliced
-                    <br>
-                    3 garlic cloves, chopped
-                    <br>
-                    1 tbsp. dried oregano
-                    <br>
-                    1 tsp. ground allspice
-                    <br>
-                    1 tbsp. each ground black pepper and kosher salt
-                    <br>
-                    2 tbsp. annatto seeds, ground in a spice grinder
-                    <br>
-                    ½ cup Patagonia Provisions Organic Aji Molido
-                    <br>
-                    1½ cups freshly squeezed orange juice (5-6 oranges)
-                    <br>
-                    1 tbsp. apple cider vinegar
-                    <br>
-                    ⅓ cup freshly squeezed lemon juice (2-3 lemons)
-                    <br>
-                    8 organic chicken thighs (3 ½ to 4 pounds) or any other cut of chicken
-                    <br>
-                    Chopped cilantro (optional)
-                </p>
+              <span class="card-title grey-text text-darken-4">Ingredients<i class="material-icons right">close</i></span>
+              <p>
+                -About 2 tbsp. extra-virgin olive oil
+                <br>
+                -½ white or yellow onion, sliced
+                <br>
+                -3 garlic cloves, chopped
+                <br>
+                -1 tbsp. dried oregano
+                <br>
+                -1 tsp. ground allspice
+                <br>
+                -1 tbsp. each ground black pepper and kosher salt
+                <br>
+                -2 tbsp. annatto seeds, ground in a spice grinder
+                <br>
+                -½ cup Patagonia Provisions Organic Aji Molido
+                <br>
+                -1½ cups freshly squeezed orange juice (5-6 oranges)
+                <br>
+                -1 tbsp. apple cider vinegar
+                <br>
+                -⅓ cup freshly squeezed lemon juice (2-3 lemons)
+                <br>
+                -8 organic chicken thighs (3 ½ to 4 pounds) or any other cut of chicken
+                <br>
+                -Chopped cilantro (optional)
+              </p>
 
             </div>
         </div>
@@ -232,30 +232,27 @@
 
     <!--!-------------FOR BEN's MAP and ZIP CODE GOES HERE-------------------->
 
-    <div class="container">
-        <div class="row">
-            <div class=" card col s12 m6">
-
-                <!--BEN THIS NEEDS AN ID SO IT CAN BE HIDDEN ON CLICK-->
-                <div class="container card" id="zipBox">
-                    <!--IS THIS NOT SUPPOSED OT HAVE A CLASS? CAN I USE A CLASS FOR THIS?-->
-                    <div id="" class="">
-                        <h2>Input your zipcode here</h2>
-                        <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value=""
-                            class="ziptextinput" />
-                        <div class="enterButton" id="zipButtonContainer">
-                            <button type="button" class="btn btn-success" id="zipButton"
-                                onclick="findMarkets()">Enter</button>
+    <div class="container zipcode">
+                 <!--BEN THIS NEEDS AN ID SO IT CAN BE HIDDEN ON CLICK-->
+                    <div class="container" id="zipBox">
+                        <!--IS THIS NOT SUPPOSED OT HAVE A CLASS? CAN I USE A CLASS FOR THIS?-->
+                        <div id="" class="">
+                            <h2 class="zip-text">Search Local Farmers Market Here</h2>
+                            <input style="color: black;" type="text" id="zipCode" placeholder="Zip Code" value="" class="ziptextinput"/>
+                            <div class="enterButton" id="zipButtonContainer">
+                                <button type="button" class="btn-lg btn-success btn-block" id="zipButton" onclick="findMarkets()">Search Farmers Market</button>
+                            </div>    
                         </div>
                     </div>
-                </div>
-
-                <div class="card grey lighten-4">
-                    <div id="mapContainer" class="container row">
-                        <iframe src="" id="mapBox1" class="col-5" width="400" height="300" style="border:0;"
-                            allowfullscreen="" loading="lazy"></iframe>
-                        <iframe src="" id="mapBox2" class="col-5" width="400" height="300" style="border:0;"
-                            allowfullscreen="" loading="lazy"></iframe>
+                   
+                    <div class="container card map-container">
+                        <div id="mapContainer" class="container row">
+                            <iframe src="" id="mapBox1" class="col-md"
+                            width="" height="" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            
+                            <iframe src="" id="mapBox2" class="col-md"
+                            width="" height="" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
 
 
@@ -266,33 +263,6 @@
 
     </div>
 
-
-
-
-
-
-    <!--!-------------------THESE ARE THE CODES TO MOVE AROUND ------------------>
-
-
-    <!-- <div id="market-2" class="col-6 single-market">
-            <h3 id="title-2">Market Title</h3>
-            <a href="" target="_blank" id="map-2">Google Maps Link</a>
-        </div>
-        <div id="market-3" class="col-6 single-market">
-            <h3 id="title-3">Market Title</h3>
-            <a href="" target="_blank" id="map-3">Google Maps Link</a>
-        </div>
-        <div id="market-4" class="col-6 single-market">
-            <h3 id="title-4">Market Title</h3>
-            <a href="" target="_blank" id="map-4">Google Maps Link</a>
-        </div>
-    </div> -->
-
-
-
-
-
-    <!----------------------------------------Ani's Dropdowns & Nav -------------------------------------------------------------------------->
 
     <footer>
         <h6>FindFresh &copy 2021</h6>

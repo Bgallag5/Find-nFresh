@@ -76,7 +76,7 @@ footer {
 .hero {
   background-image: url("../images/background.jpeg");
   background-size: cover;
-  color: white;
+  color: wheat;
   background-position: 40;
   height: 350px ;
   z-index:8888;
@@ -84,65 +84,86 @@ footer {
 
 .hero h2 {
  padding: 150px 70px;
- color: wheat;
+ color: white;
  font-family: 'Dancing Script', cursive;
  font-size: 75px;
 }
 
-/*?-----------------WHOOPS MODAL----------------------*/
+/*?------------------------INGREDIENTS INPUT CONTAINER--------------------------*/
 
-/* The Modal (background) */
-.whoopsModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.ingredient-input {
+  margin-top: 50px;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
 }
 
-/* Modal Content/Box */
-.whoopsModal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+.search-term {
+text-align: center;
 }
 
-/* The Close Button */
-.whoopsClose {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.text-center input {
+  font-size: 150%;
 }
 
-.whoopsClose:hover,
-.whoopsClose:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.ingredient-text, .zip-text {
+  color: #28a745;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 60px;
+}
+
+/*?--------------RECIPE CARD CONTAINER--------------------*/
+
+.container-box {
+  margin: 20px;
+}
+
+.recipe-img {
+  padding-top: 20px;
 }
 
 /*?----------------ZIP CODE CONTAINER----------------*/
+.zipcode {
+  align-items: center;
+}
 
 .container .card {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px; 
+  margin-bottom: 25px;
+  align-items: center;
 }
 
 .enterButton, .ziptextinput {
 text-align: center;
 }
 
+.map-container {
+  padding-top: 25px;
+  margin-top: 50px;
+}
+
 iframe {
   margin: auto;
+  padding: 20px;
+  width: 700px;
+  height: 300px;
 }
+
+
+/*?--------------------MEDIA QUERIES---------------*/
+
+/*****On screens that are 980 or less***/
+@media screen and (max-width: 980px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+}
+
 
 
 

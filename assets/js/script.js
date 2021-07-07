@@ -353,7 +353,7 @@ function findMarkets() {
   var zip = zipCode.value;
   var zipInput = document.getElementById("zipBox");
 
-  zipInput.style.display = "none";
+  // zipInput.style.display = "none"; -->commenting this out prevents the zip input from going away after click
   //fetch local farmers markets from zipcode search
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
