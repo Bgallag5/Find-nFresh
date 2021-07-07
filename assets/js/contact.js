@@ -14,13 +14,16 @@ function store() {
 
     var userMessage = document.getElementById("user-message");
     localStorage.setItem("user-message", userMessage.value);
+
+    displayInfo()
 }
 
 // GET ITEM 
 
-var storedName = localStorage.getItem("user-name");
-var storedEmail = localStorage.getItem("user-email");
-var storedMessage = localStorage.getItem("user-message");
+localStorage.getItem("user-name");
+localStorage.getItem("user-email");
+localStorage.getItem("user-message");
+
 // var storedRating = localStorage.getItem("user-rating");
 
 var userRating = document.getElementById("user-rating");
@@ -30,14 +33,6 @@ var thankYou = document.getElementById("thank-you")
 
 btn.onclick = function() {
     modal.style.display = "block";
-    localStorage.setItem("user-name", storedName);
-$("#myModal").modal("show");
-
-localStorage.setItem("user-email", storedEmail);
-$("#myModal").modal("show");
-
-localStorage.setItem("user-message", storedMessage);
-$("#myModal").modal("show");
 }
 
 span.onclick = function() {
@@ -51,6 +46,19 @@ window.onclick = function(event) {
     }
 }
 
+function displayInfo() {
+    localStorage.setItem("user-name", storedName);
+    $("#myModal").modal("show");
+    console.log(storedName)
+    
+    localStorage.setItem("user-email", storedEmail);
+    $("#myModal").modal("show");
+    console.log(storedEmail)
+    
+    localStorage.setItem("user-message", storedMessage);
+    $("#myModal").modal("show");
+    console.log(storedMessage)
+}
 
 
 
