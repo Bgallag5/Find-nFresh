@@ -19,6 +19,7 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
 // FETCH THE RECIPE AND NUTRITION APIS
 
+
 function getRecipe() {
 
   var searchRecipe = document.querySelector("#searchRecipe").value;
