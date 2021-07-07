@@ -177,7 +177,6 @@ function getRecipe() {
       });
   }
 
-  
 }
 
 function getRecipeData(id, id2, id3) {
