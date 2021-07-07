@@ -23,7 +23,6 @@ $Spelling.SpellCheckAsYouType('all')
 function search () {
 
   if ($Spelling.BinSpellCheckFields('all')) {
-
     getRecipe()
     return true;
 
@@ -37,17 +36,17 @@ function search () {
 
 
 // =============MODAL Function ===================
-    btn.onclick = function() {
-      whoopsModal.style.display = "block";
-    }
+    // btn.onclick = function() {
+    //   whoopsModal.style.display = "block";
+    // }
     
-    span.onclick = function() {
-      whoopsModal.style.display = "none"
-    }
+    // span.onclick = function() {
+    //   whoopsModal.style.display = "none"
+    // }
     
-    window.onclick = function(event) {
-      if (event.target == whoopsModal) {
-        whoopsModal.style.display = "none";
+    // window.onclick = function(event) {
+    //   if (event.target == whoopsModal) {
+    //     whoopsModal.style.display = "none";
 
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
