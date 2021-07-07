@@ -317,7 +317,7 @@ function findMarkets() {
     var zip = zipCode.value;
     var zipInput = document.getElementById("zipBox");
 
-    zipInput.style.display = "none";
+    // zipInput.style.display = "none"; -->commenting this out prevents the zip input from going away after click
     //fetch local farmers markets from zipcode search
     fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
@@ -337,59 +337,74 @@ function findMarkets() {
             )
                 .then(function (response) {
                     return response.json();
-                }) //capture google link and edit it to make it a better google maps search term (the link is originally given...
-                //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
+                }) //grab id's of the two closest markets
                 .then(function (response) {
-                    console.log(response);
-                    var link = response.marketdetails.GoogleLink;
-                    link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                    if (!link.includes("Farmers")) {
-                        link = link.concat("+Farmers+Market");
-                    }
-                    console.log(link);
+                    var market1 = response.results[0].id;
+                    var market2 = response.results[1].id;
+                    console.log(market1);
+                    //new fetches with the market id's
                     fetch(
                         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-                        market2
+                        market1
                     )
-                        .then(function (response2) {
-                            return response2.json();
-                        })
-                        .then(function (response2) {
-                            console.log(response2);
-                            var link2 = response2.marketdetails.GoogleLink;
-                            link2 = link2.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                            if (!link2.includes("Farmers")) {
-                                link2 = link2.concat("+Farmers+Market");
+                        .then(function (response) {
+                            return response.json();
+                        }) //capture google link and edit it to make it a better google maps search term (the link is originally given...
+                        //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
+                        .then(function (response) {
+                            console.log(response);
+                            var link = response.marketdetails.GoogleLink;
+                            link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
+                            if (!link.includes("Farmers")) {
+                                link = link.concat("+Farmers+Market");
                             }
-                            showMaps(link, link2);
+                            console.log(link);
+                            fetch(
+                                "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
+                                market2
+                            )
+                                .then(function (response2) {
+                                    return response2.json();
+                                })
+                                .then(function (response2) {
+                                    console.log(response2);
+                                    var link2 = response2.marketdetails.GoogleLink;
+                                    link2 = link2.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
+                                    if (!link2.includes("Farmers")) {
+                                        link2 = link2.concat("+Farmers+Market");
+                                    }
+                                    showMaps(link, link2);
+                                });
                         });
                 });
-        });
+        })
+
+    function showMaps(link, link2) {
+        console.log(link);
+        //split the USDA maps link and grab the second half(the search term), and insert it into a google maps embed link
+        var market = link.split("q=");
+        console.log(market[1]);
+        var marketName = market[1];
+        var embedLink =
+            "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
+            marketName;
+        //push it to the page
+        var map1 = document.getElementById("mapBox1");
+        map1.setAttribute("src", embedLink);
+
+        var market2 = link2.split("q=");
+        var marketName2 = market2[1];
+        var embedLink2 =
+            "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
+            marketName2;
+
+        var map2 = document.getElementById("mapBox2");
+        map2.setAttribute("src", embedLink2);
+
+    }
 }
 
-function showMaps(link, link2) {
-    console.log(link);
-    //split the USDA maps link and grab the second half(the search term), and insert it into a google maps embed link
-    var market = link.split("q=");
-    console.log(market[1]);
-    var marketName = market[1];
-    var embedLink =
-        "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
-        marketName;
-    //push it to the page
-    var map1 = document.getElementById("mapBox1");
-    map1.setAttribute("src", embedLink);
 
-    var market2 = link2.split("q=");
-    var marketName2 = market2[1];
-    var embedLink2 =
-        "https://www.google.com/maps/embed/v1/place?key=AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk&q=" +
-        marketName2;
-
-    var map2 = document.getElementById("mapBox2");
-    map2.setAttribute("src", embedLink2);
-
-};
 
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
