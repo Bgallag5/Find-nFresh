@@ -105,7 +105,7 @@ text-align: center;
   font-size: 150%;
 }
 
-.ingredient-text{
+.ingredient-text, .zip-text {
   color: #28a745;
   padding-top: 25px;
   text-align: center;
@@ -118,15 +118,22 @@ text-align: center;
   margin: 20px;
 }
 
-  
-
+.recipe-img {
+  padding-top: 20px;
+}
 
 /*?----------------ZIP CODE CONTAINER----------------*/
+.zipcode {
+  align-items: center;
+}
 
 .container .card {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px; 
+  margin-bottom: 25px;
+  align-items: center;
 }
+
 
 .enterButton, .ziptextinput {
 text-align: center;
@@ -134,6 +141,9 @@ text-align: center;
 
 iframe {
   margin: auto;
+  padding: 20px;
+  width: 700px;
+  height: 300px;
 }
 
 
