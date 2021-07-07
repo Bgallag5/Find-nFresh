@@ -73,10 +73,11 @@
 
         <div class="fetch-ingredient container">
             <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" onsubmit="return search();"/>
-            <button type="button" class="btn btn-success" id="search-button" onclick="search()">Search
+            <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search
                 Recipes</button>
         </div>
     </section>
+
 
     <!-----------------------Search button on Enter key-------------------------->
 
@@ -86,14 +87,14 @@
     </section>
 
     <!-------------------------"Whoops! Check your spelling"---------------------------->
-
+<!-- 
     <button id ="myBtn">Open Modal</button>
     <div class="whoopsModal" id="whoopsBox">
         <div class="whoopsModal-content">
                 <span class="whoopsClose">&times;</span>
                 <h2>Whoops! Check your spelling...</h2>
         </div>
-    </div>
+    </div> -->
 
     <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
     <div class="container row recipe-container">
@@ -302,7 +303,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/JavaScriptSpellCheck/"></script>
 </body>
 
 </html>

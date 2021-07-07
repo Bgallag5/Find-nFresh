@@ -14,28 +14,13 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
 // --------------------On Search----------------------------
 
+
+// =============MODAL Function ===================
+
 var whoopsModal = document.getElementById("whoopsBox")
 var btn = document.getElementById("myBtn");
 var span= document.getElementsByClassName("whoopsClose")[0];
 
-$Spelling.SpellCheckAsYouType('all')
-
-function search () {
-
-  if ($Spelling.BinSpellCheckFields('all')) {
-    getRecipe()
-    return true;
-
-} else {
-  alert("Spell Check Errors")
-  $Spelling.SubmitFormById = 'searchRecipe';
-  $Spelling.SpellCheckInWindow('all')
-  return false;
-
-    }
-}
-
-// =============MODAL Function ===================
     // btn.onclick = function() {
     //   whoopsModal.style.display = "block";
     // }
