@@ -12,6 +12,26 @@ var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
+// --------------------WHOOPS MODAL----------------------------
+
+var whoopsModal = document.getElementById("whoopsBox")
+var btn = document.getElementById("myBtn");
+var span= document.getElementsByClassName("whoopsClose")[0];
+btn.onclick = function() {
+  whoopsModal.style.display = "block";
+}
+
+span.onclick = function() {
+  whoopsModal.style.display = "none"
+}
+
+window.onclick = function(event) {
+  if (event.target == whoopsModal) {
+    whoopsModal.style.display = "none";
+  }
+}
+
+
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.

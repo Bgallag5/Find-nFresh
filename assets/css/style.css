@@ -91,63 +91,42 @@ footer {
 
 /*?-----------------WHOOPS MODAL----------------------*/
 
-.whoops-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
+/* The Modal (background) */
+.whoopsModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color:rgb(0, 0, 0);
-  background-color: rgba(0,0,0,0.4);
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.whoops-modal-content h2{
-  color: var(--first);
-}
-
-.whoops-modal-content {
+/* Modal Content/Box */
+.whoopsModal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
-.whoops-close {
+/* The Close Button */
+.whoopsClose {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.whoops-close:hover, .whoops-close:focus {
+.whoopsClose:hover,
+.whoopsClose:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.whoops-modal-body {
-  padding: 2px 16px;
-}
-
-.whoops-modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-}
-
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
 }
 
 /*?----------------ZIP CODE CONTAINER----------------*/
