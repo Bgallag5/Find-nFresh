@@ -14,7 +14,6 @@ function store() {
 
     var userMessage = document.getElementById("user-message");
     localStorage.setItem("user-message", userMessage.value);
-
 }
 
 // GET ITEM 
@@ -56,4 +55,3 @@ window.onclick = function(event) {
 // 4 stars 
 
 // 5 stars 
-
