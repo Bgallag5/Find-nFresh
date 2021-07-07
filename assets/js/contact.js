@@ -31,20 +31,7 @@ var thankYou = document.getElementById("thank-you")
 
 // Confirm Submission Module // ADD LOCAL STORAGE HERE
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 function displayInfo() {
     localStorage.setItem("user-name", storedName);

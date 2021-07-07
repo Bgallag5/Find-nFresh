@@ -185,6 +185,21 @@ function getRecipe() {
       //send three recipe id's into getRecipeData()
       getRecipeData(id, id2, id3);
     });
+
+    if (window.localStorage) {
+
+      var saveIndgredient = document.getElementById("searchRecipe"); //html input id
+      saveIndgredient.value = localStorage.getItem("searchRecipe");
+    
+      saveIndgredient.addEventListener(
+        "input",
+        function () {
+          localStorage.setItem("searchRecipe", saveIndgredient.value);
+        },
+        false
+      );
+    
+    }
 }
 
 
@@ -313,20 +328,7 @@ if (window.localStorage) {
 // window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
 // window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 ///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
-if (window.localStorage) {
 
-  var saveIndgredient = document.getElementById("searchRecipe"); //html input id
-  saveIndgredient.value = localStorage.getItem("searchRecipe");
-
-  saveIndgredient.addEventListener(
-    "input",
-    function () {
-      localStorage.setItem("searchRecipe", saveIndgredient.value);
-    },
-    false
-  );
-
-}
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
 
