@@ -44,132 +44,140 @@ function getRecipe() {
 
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
-  fetch(
-    "https://api.spoonacular.com/recipes/complexSearch?query=" +
-      searchRecipe +
-      "&apiKey=" + spoonKey2
-  )
-    .then(function (response) {
-      //console.log(response.json());
-      return response.json();
-    })
+  if (searchRecipe = "broccoli") {
+    alert("WRONG")
+  }
 
-    // RECIPE IMAGE, TITLE, LINK 1
+  else {
+    fetch(
+      "https://api.spoonacular.com/recipes/complexSearch?query=" +
+        searchRecipe +
+        "&apiKey=" + spoonKey2
+    )
+      .then(function (response) {
+        //console.log(response.json());
+        return response.json();
+      })
+  
+      // RECIPE IMAGE, TITLE, LINK 1
+  
+      .then(function (response) {
+      
+        var x = Math.floor(Math.random() * 4);
+        var y = Math.floor(Math.random() * 3) + 4;
+        var z = Math.floor(Math.random() * 3) + 7;
+        console.log(x)
+        console.log(y)
+        console.log(z)
+  
+        console.log(response);
+        const lastThreeRecipes = [response.results[x], response.results[y], response.results[z] ];
+        console.log(lastThreeRecipes);
+        localStorage.setItem(
+          "lastThreeRecipes",
+          JSON.stringify(lastThreeRecipes)
+        );
+  
+        console.log(lastThreeRecipes);
+        var recipeTitle = response.results[x].title;
+        console.log(recipeTitle);
+  
+        var responseContainerEl = document.querySelector("#response-container-2");
+        responseContainerEl.innerHTML = recipeTitle;
+  
+        var recipeOne = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
+        recipeOne.setAttribute("href", "");
+        recipeOne.setAttribute("id", "recipeOneLink")
+  
+        responseContainerEl.appendChild(recipeOne);
+  
+        var recipeImage = response.results[x].image;
+        console.log(recipeImage);
+  
+        var responseContainerEl = document.querySelector("#card-1");
+        responseContainerEl.innerHTML = "";
+  
+        var image = document.createElement("img");
+        image.setAttribute("src", " ");
+        image.setAttribute("src", response.results[x].image);
+  
+        responseContainerEl.appendChild(image);
+        window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle)); ////// ANI LOCAL STORAGE
+        window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle)); ///// ANI LOCAL STORAGE
+  
+        // RECIPE IMAGE, TITLE, LINK 2/////////////////////////////////////////////////////////
+  
+        var recipeTitleI = response.results[y].title;
+        console.log(recipeTitleI);
+  
+        var responseContainerEl = document.querySelector("#response-container-i");
+        responseContainerEl.innerHTML = recipeTitleI;
+  
+        var recipeTwo = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
+        recipeTwo.setAttribute("href", "");
+        recipeTwo.setAttribute("id", "recipeTwoLink")
+  
+        responseContainerEl.appendChild(recipeTwo);
+  
+        var recipeImageI = response.results[y].image;
+        console.log(recipeImageI);
+  
+        var responseContainerEl = document.querySelector("#card-2");
+        responseContainerEl.innerHTML = "";
+  
+        var imageI = document.createElement("img");
+        imageI.setAttribute("src", " ");
+        imageI.setAttribute("src", response.results[y].image);
+  
+        responseContainerEl.appendChild(imageI);
+        window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI)); ///// ANI LOCAL STORAGE
+        window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI)); //// ANI LOCAL STORAGE
+  
+        // RECIPE IMAGE, TITLE, LINK 3//////////////////////////////////////////////////////
+  
+        var recipeTitleII = response.results[z].title;
+        console.log(recipeTitleII);
+      
+  
+        var responseContainerEl = document.querySelector(
+          "#response-container-ii"
+        );
+        responseContainerEl.innerHTML = recipeTitleII;
+  
+        var recipeThree = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
+        recipeThree.setAttribute("href", "");
+        recipeThree.setAttribute("id", "recipeThreeLink")
+  
+        responseContainerEl.appendChild(recipeThree);
+  
+        var recipeImageII = response.results[z].image;
+        console.log(recipeImageII);
+  
+        var responseContainerEl = document.querySelector("#card-3");
+        responseContainerEl.innerHTML = "";
+  
+        var imageII = document.createElement("img");
+        imageII.setAttribute("src", " ");
+        imageII.setAttribute("src", response.results[z].image);
+  
+        responseContainerEl.appendChild(imageII);
+        window.localStorage.setItem(
+          "recipeTitleII",
+          JSON.stringify(recipeTitleII)
+        );
+        window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
+  
+        // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
+  
+        var id = response.results[x].id;
+        var id2 = response.results[y].id;
+        var id3 = response.results[z].id;
+        //send three recipe id's into getRecipeData()
+        getRecipeData(id, id2, id3);
+      });
+  }
 
-    .then(function (response) {
-    
-      var x = Math.floor(Math.random() * 4);
-      var y = Math.floor(Math.random() * 3) + 4;
-      var z = Math.floor(Math.random() * 3) + 7;
-      console.log(x)
-      console.log(y)
-      console.log(z)
-
-      console.log(response);
-      const lastThreeRecipes = [response.results[x], response.results[y], response.results[z] ];
-      console.log(lastThreeRecipes);
-      localStorage.setItem(
-        "lastThreeRecipes",
-        JSON.stringify(lastThreeRecipes)
-      );
-
-      console.log(lastThreeRecipes);
-      var recipeTitle = response.results[x].title;
-      console.log(recipeTitle);
-
-      var responseContainerEl = document.querySelector("#response-container-2");
-      responseContainerEl.innerHTML = recipeTitle;
-
-      var recipeOne = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
-      recipeOne.setAttribute("href", "");
-      recipeOne.setAttribute("id", "recipeOneLink")
-
-      responseContainerEl.appendChild(recipeOne);
-
-      var recipeImage = response.results[x].image;
-      console.log(recipeImage);
-
-      var responseContainerEl = document.querySelector("#card-1");
-      responseContainerEl.innerHTML = "";
-
-      var image = document.createElement("img");
-      image.setAttribute("src", " ");
-      image.setAttribute("src", response.results[x].image);
-
-      responseContainerEl.appendChild(image);
-      window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle)); ////// ANI LOCAL STORAGE
-      window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle)); ///// ANI LOCAL STORAGE
-
-      // RECIPE IMAGE, TITLE, LINK 2/////////////////////////////////////////////////////////
-
-      var recipeTitleI = response.results[y].title;
-      console.log(recipeTitleI);
-
-      var responseContainerEl = document.querySelector("#response-container-i");
-      responseContainerEl.innerHTML = recipeTitleI;
-
-      var recipeTwo = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
-      recipeTwo.setAttribute("href", "");
-      recipeTwo.setAttribute("id", "recipeTwoLink")
-
-      responseContainerEl.appendChild(recipeTwo);
-
-      var recipeImageI = response.results[y].image;
-      console.log(recipeImageI);
-
-      var responseContainerEl = document.querySelector("#card-2");
-      responseContainerEl.innerHTML = "";
-
-      var imageI = document.createElement("img");
-      imageI.setAttribute("src", " ");
-      imageI.setAttribute("src", response.results[y].image);
-
-      responseContainerEl.appendChild(imageI);
-      window.localStorage.setItem("recipeTitleI", JSON.stringify(recipeTitleI)); ///// ANI LOCAL STORAGE
-      window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleI)); //// ANI LOCAL STORAGE
-
-      // RECIPE IMAGE, TITLE, LINK 3//////////////////////////////////////////////////////
-
-      var recipeTitleII = response.results[z].title;
-      console.log(recipeTitleII);
-    
-
-      var responseContainerEl = document.querySelector(
-        "#response-container-ii"
-      );
-      responseContainerEl.innerHTML = recipeTitleII;
-
-      var recipeThree = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
-      recipeThree.setAttribute("href", "");
-      recipeThree.setAttribute("id", "recipeThreeLink")
-
-      responseContainerEl.appendChild(recipeThree);
-
-      var recipeImageII = response.results[z].image;
-      console.log(recipeImageII);
-
-      var responseContainerEl = document.querySelector("#card-3");
-      responseContainerEl.innerHTML = "";
-
-      var imageII = document.createElement("img");
-      imageII.setAttribute("src", " ");
-      imageII.setAttribute("src", response.results[z].image);
-
-      responseContainerEl.appendChild(imageII);
-      window.localStorage.setItem(
-        "recipeTitleII",
-        JSON.stringify(recipeTitleII)
-      );
-      window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
-
-      // RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
-
-      var id = response.results[x].id;
-      var id2 = response.results[y].id;
-      var id3 = response.results[z].id;
-      //send three recipe id's into getRecipeData()
-      getRecipeData(id, id2, id3);
-    });
+  
 }
 
 function getRecipeData(id, id2, id3) {
