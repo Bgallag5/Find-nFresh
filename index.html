@@ -68,18 +68,21 @@
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
-<!-- Gaye: Can you make this text appear white? cause right now it doesnt look good. Just inline stying is fine.   -->
-        <h2 style="color: rgb(250, 248, 214);">A farm to table experience.</h2>
+        <h2>A farm to table experience.</h2>
     </section>
     <!--?-----------END HERO SECTION--------------------------------------->
 
     <!---------------------------------RECIPE SEARCH---------------------------->
-    <section class="container">
+    <section class="container ingredient-input">
 
-        <div class="fetch-ingredient container">
-            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
-            <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search
-                Recipes</button>
+        <div class="fetch-ingredient container text-center">
+            <h2 class="ingredient-text">Search Recipe Here</h2>
+    
+            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Please add your ingredient here"/>
+
+            <button type="button" class="btn-lg btn-success btn-block" id="search-button" onclick="getRecipe()">
+                Get Recipes
+            </button>
         </div>
     </section>
 
@@ -92,7 +95,7 @@
 
     <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
     <div class="container row recipe-container">
-        <div class="card col s12 m6 13">
+        <div class="card col s12 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-1">
                 <img class="activator recipe-img" src="./assets/images/recipe1.jpeg">
             </div>
@@ -131,10 +134,10 @@
         </div>
 
 
-        <div class="card col s4 m6 13 ">
+        <div class="card col s4 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-2">
 
-              git <img class="activator" src="./assets/images/recipe2.jpeg"></a> 
+              <img class="activator" src="./assets/images/recipe2.jpeg"></a> 
             </div>
             <div class="card-content" id="response-container-i">
               <span class="card-title activator grey-text text-darken-4">
@@ -173,7 +176,7 @@
             </div>
         </div>
     
-        <div class="card col s12 m6 13">
+        <div class="card col s12 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-3">
               <img class="activator recipe-img" src="./assets/images/recipe3.jpeg">
             </div>
