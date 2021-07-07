@@ -33,6 +33,7 @@ function search () {
   return false;
 
     }
+}
 
 // =============MODAL Function ===================
     // btn.onclick = function() {
