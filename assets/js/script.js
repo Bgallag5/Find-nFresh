@@ -34,7 +34,6 @@ function search () {
 
     }
 
-
 // =============MODAL Function ===================
     // btn.onclick = function() {
     //   whoopsModal.style.display = "block";
