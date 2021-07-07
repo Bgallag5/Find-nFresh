@@ -44,11 +44,6 @@ function getRecipe() {
 
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
-  if (searchRecipe.value = "wrong") {
-    alert("WRONG")
-  }
-
-  else {
     fetch(
       "https://api.spoonacular.com/recipes/complexSearch?query=" +
         searchRecipe +
