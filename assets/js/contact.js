@@ -54,6 +54,3 @@ window.onclick = function (event) {
 // 4 stars 
 
 // 5 stars 
-
-
-
