@@ -12,25 +12,42 @@ var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
-// --------------------WHOOPS MODAL----------------------------
+// --------------------On Search----------------------------
 
 var whoopsModal = document.getElementById("whoopsBox")
 var btn = document.getElementById("myBtn");
 var span= document.getElementsByClassName("whoopsClose")[0];
-btn.onclick = function() {
-  whoopsModal.style.display = "block";
-}
 
-span.onclick = function() {
-  whoopsModal.style.display = "none"
-}
+$Spelling.SpellCheckAsYouType('all')
 
-window.onclick = function(event) {
-  if (event.target == whoopsModal) {
-    whoopsModal.style.display = "none";
-  }
-}
+function search () {
 
+  if ($Spelling.BinSpellCheckFields('all')) {
+
+    getRecipe()
+    return true;
+
+} else {
+  alert("Spell Check Errors")
+  $Spelling.SubmitFormById = 'searchRecipe';
+  $Spelling.SpellCheckInWindow('all')
+  return false;
+
+    }
+
+
+// =============MODAL Function ===================
+    btn.onclick = function() {
+      whoopsModal.style.display = "block";
+    }
+    
+    span.onclick = function() {
+      whoopsModal.style.display = "none"
+    }
+    
+    window.onclick = function(event) {
+      if (event.target == whoopsModal) {
+        whoopsModal.style.display = "none";
 
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
@@ -38,7 +55,6 @@ window.onclick = function(event) {
 // API KEY: b79ab8cbea19412a8dc76a8297bc9d42
 
 // FETCH THE RECIPE AND NUTRITION APIS
-
 
 function getRecipe() {
 
@@ -221,6 +237,7 @@ function getRecipeData(id, id2, id3) {
       recipeThree.innerHTML = "Link!";
     });
 }
+
 // var responseContainerEl = document.querySelector('#response-container-ii');
 // responseContainerEl.innerHTML = recipeTitleII;
 

@@ -72,8 +72,8 @@
     <section class="container">
 
         <div class="fetch-ingredient container">
-            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" />
-            <button type="button" class="btn btn-success" id="search-button" onclick="getRecipe()">Search
+            <input type="text" class="search-term" id="searchRecipe" value="" placeholder="Ingredient" onsubmit="return search();"/>
+            <button type="button" class="btn btn-success" id="search-button" onclick="search()">Search
                 Recipes</button>
         </div>
     </section>
