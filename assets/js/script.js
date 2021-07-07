@@ -12,7 +12,6 @@ var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
-// ********************** RYAN'S CODE **********************
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
@@ -80,8 +79,8 @@ function getRecipe() {
             window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle)); ////// ANI LOCAL STORAGE
             window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle)); ///// ANI LOCAL STORAGE
 
-            // RECIPE IMAGE, TITLE, LINK 2/////////////////////////////////////////////////////////
-
+            var recipeTitleI = response.results[y].title;
+            console.log(recipeTitleI);
 
             var recipeTitleI = response.results[y].title;
             console.log(recipeTitleI);
@@ -205,6 +204,7 @@ function getRecipeData(id, id2, id3) {
 // var responseContainerEl = document.querySelector('#response-container-ii');
 // responseContainerEl.innerHTML = recipeTitleII;
 
+
 // var recipeII = document.createElement("recipe");
 // recipeII.setAttribute('src', response.results[2]);
 
@@ -244,9 +244,6 @@ fetch(
 
         // var recipeImageII = response.results[2].image;
         // console.log(recipeImageII);
-
-        // var responseContainerEl = document.querySelector('#card-3');
-        // responseContainerEl.innerHTML = recipeImageII;
 
         // var imageII = document.createElement("img");
         // imageII.setAttribute('src', " ");
@@ -398,7 +395,4 @@ function showMaps(link, link2) {
 // BEN END
 //
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
-
-
-
 
