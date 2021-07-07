@@ -44,7 +44,7 @@ function getRecipe() {
 
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
-  if (searchRecipe = "broccoli") {
+  if (searchRecipe.value = "broccoli") {
     alert("WRONG")
   }
 
