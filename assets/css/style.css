@@ -134,9 +134,13 @@ text-align: center;
   align-items: center;
 }
 
-
 .enterButton, .ziptextinput {
 text-align: center;
+}
+
+.map-container {
+  padding-top: 25px;
+  margin-top: 50px;
 }
 
 iframe {
