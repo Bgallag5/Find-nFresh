@@ -30,6 +30,14 @@ var thankYou = document.getElementById("thank-you")
 
 btn.onclick = function() {
     modal.style.display = "block";
+    localStorage.setItem("user-name", storedName);
+$("#myModal").modal("show");
+
+localStorage.setItem("user-email", storedEmail);
+$("#myModal").modal("show");
+
+localStorage.setItem("user-message", storedMessage);
+$("#myModal").modal("show");
 }
 
 span.onclick = function() {
@@ -42,6 +50,9 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+
 
 
 // THANK YOU  // ADD LOCAL STORAGE OF RATING 
