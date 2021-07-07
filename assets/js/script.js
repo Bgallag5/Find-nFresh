@@ -21,6 +21,7 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 // FETCH THE RECIPE AND NUTRITION APIS
 
 function getRecipe() {
+
     var searchRecipe = document.querySelector("#searchRecipe").value;
 
     fetch(
@@ -266,6 +267,7 @@ if (window.localStorage) {
         },
         false
     );
+
 }
 ///////////////////////////////////ANI STORING FIRST RECIPE RETURNED //////////////////////////////////////////////////////////
 // window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
@@ -278,6 +280,7 @@ if (window.localStorage) {
 // window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 ///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
 if (window.localStorage) {
+
     var saveIndgredient = document.getElementById("searchRecipe"); //html input id
     saveIndgredient.value = localStorage.getItem("searchRecipe");
 
@@ -288,6 +291,7 @@ if (window.localStorage) {
         },
         false
     );
+
 }
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
@@ -311,6 +315,7 @@ if (window.localStorage) {
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
+
     var zip = zipCode.value;
     var zipInput = document.getElementById("zipBox");
 
@@ -385,6 +390,7 @@ function showMaps(link, link2) {
 
     var map2 = document.getElementById("mapBox2");
     map2.setAttribute("src", embedLink2);
+
 };
 
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
@@ -392,3 +398,7 @@ function showMaps(link, link2) {
 // BEN END
 //
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
+
+
+
+
