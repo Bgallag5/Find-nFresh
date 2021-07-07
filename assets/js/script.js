@@ -12,7 +12,6 @@ var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
-// ********************** RYAN'S CODE **********************
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
@@ -21,6 +20,7 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 // FETCH THE RECIPE AND NUTRITION APIS
 
 function getRecipe() {
+
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch(
@@ -80,7 +80,6 @@ function getRecipe() {
       window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitle)); ///// ANI LOCAL STORAGE
 
       // RECIPE IMAGE, TITLE, LINK 2/////////////////////////////////////////////////////////
-
 
       var recipeTitleI = response.results[y].title;
       console.log(recipeTitleI);
@@ -204,6 +203,7 @@ function getRecipeData(id, id2, id3) {
 // var responseContainerEl = document.querySelector('#response-container-ii');
 // responseContainerEl.innerHTML = recipeTitleII;
 
+
 // var recipeII = document.createElement("recipe");
 // recipeII.setAttribute('src', response.results[2]);
 
@@ -244,9 +244,6 @@ fetch(
     // var recipeImageII = response.results[2].image;
     // console.log(recipeImageII);
 
-    // var responseContainerEl = document.querySelector('#card-3');
-    // responseContainerEl.innerHTML = recipeImageII;
-
     // var imageII = document.createElement("img");
     // imageII.setAttribute('src', " ");
     // imageII.setAttribute('src', response.results[2].image);
@@ -266,6 +263,7 @@ if (window.localStorage) {
     },
     false
   );
+
 }
 ///////////////////////////////////ANI STORING FIRST RECIPE RETURNED //////////////////////////////////////////////////////////
 // window.localStorage.setItem("recipeTitle", JSON.stringify(recipeTitle));
@@ -278,6 +276,7 @@ if (window.localStorage) {
 // window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 ///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
 if (window.localStorage) {
+
   var saveIndgredient = document.getElementById("searchRecipe"); //html input id
   saveIndgredient.value = localStorage.getItem("searchRecipe");
 
@@ -288,6 +287,7 @@ if (window.localStorage) {
     },
     false
   );
+
 }
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
@@ -311,6 +311,7 @@ if (window.localStorage) {
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
+
   var zip = zipCode.value;
   var zipInput = document.getElementById("zipBox");
 
@@ -385,6 +386,7 @@ function showMaps(link, link2) {
 
   var map2 = document.getElementById("mapBox2");
   map2.setAttribute("src", embedLink2);
+
 };
 
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
@@ -392,3 +394,4 @@ function showMaps(link, link2) {
 // BEN END
 //
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
+
