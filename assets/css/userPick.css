@@ -5,6 +5,7 @@
     --fourth: #664B4D;
     --fifth: #81b622;
     --sixth: #3d550c;
+    --seventh:rgb(102, 255, 255);
     /* font color primary- white */
     /* font color secondary --grey */
   }
@@ -17,7 +18,7 @@
   body {
     background-size: cover;
     background-position: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
   }
   
   /*?-----------------Header and navigation----------------*/
@@ -54,7 +55,7 @@
   }
   
   ul li a:hover {
-    color: var(--second);
+    color: var(--seventh);
   }
   
   .nav-link {
@@ -88,7 +89,7 @@
    color: white;
    font-family: 'Dancing Script', cursive;
    font-size: 75px;
-   /* margin-left: 800px; */
+   /* margin-left: 900px; */
    text-align: center;
    margin-top: 30px;
   }
