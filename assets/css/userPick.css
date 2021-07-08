@@ -9,6 +9,7 @@
     --eigth: rgb(141, 141, 141);
     --nineth: rgb(179, 29, 79);
     --tenth: rgb(255, 198, 75);
+    --eleventh: rgb(36, 36, 36);
     /* font color primary- white */
     /* font color secondary --grey */
   }
@@ -21,13 +22,13 @@
   body {
     background-size: cover;
     background-position: center;
-    background-color: var(--first);
+    background-color: var(--eleventh);
   }
   
   /*?-----------------Header and navigation----------------*/
   
   header {
-    background: var(--eigth);
+    background: var(--first);
     color: white;
     font-family: 'Permanent Marker', cursive;
     padding: 10px 30px; 
@@ -68,7 +69,7 @@
   /*?---------------------FOOTER SECTION---------------------*/
   
   footer {
-    background: var(--eigth);
+    background: var(--first);
     color: white;
     height: 60px;
     display: flex;
@@ -99,26 +100,7 @@
   
   /*?------------------------INGREDIENTS INPUT CONTAINER--------------------------*/
   
-  .ingredient-input {
-    margin-top: 50px;
-    padding-bottom: 30px;
-    margin-bottom: 10px;
-  }
-  
-  .search-term {
-  text-align: center;
-  }
-  
-  .text-center input {
-    font-size: 150%;
-  }
-  
-  .ingredient-text, .zip-text {
-    color: #28a745;
-    padding-top: 25px;
-    text-align: center;
-    font-size: 60px;
-  }
+
   
   /*?--------------RECIPE CARD CONTAINER--------------------*/
   
@@ -142,21 +124,6 @@
     align-items: center;
   }
   
-  .enterButton, .ziptextinput {
-  text-align: center;
-  }
-  
-  .map-container {
-    padding-top: 25px;
-    margin-top: 50px;
-  }
-  
-  iframe {
-    margin: auto;
-    padding: 20px;
-    width: 700px;
-    height: 300px;
-  }
   
   
   /*?--------------------MEDIA QUERIES---------------*/
