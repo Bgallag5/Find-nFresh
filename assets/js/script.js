@@ -66,6 +66,8 @@ function getRecipe() {
   )
     .then(function (response) {
       //console.log(response.json());
+      // if response.array = 0 then return oops modal / alert 
+      // else 
       return response.json();
     })
 
