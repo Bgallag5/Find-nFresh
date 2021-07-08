@@ -153,6 +153,28 @@ function getRecipe() {
         });
 }
 
+
+///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
+if (window.localStorage) {
+
+    var saveIndgredient = document.getElementById("searchRecipe"); //html input id
+    saveIndgredient.value = localStorage.getItem("searchRecipe");
+
+    saveIndgredient.addEventListener(
+        "input",
+        function () {
+            localStorage.setItem("searchRecipe", saveIndgredient.value);
+        },
+        false
+    );
+
+}
+////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
+
+
+
+
+
 function getRecipeData(id, id2, id3) {
     //fetch three recipes, turn to JSON, then pull the data we need (link to recipe)
     fetch(

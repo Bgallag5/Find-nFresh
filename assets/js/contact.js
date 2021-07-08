@@ -5,45 +5,78 @@ var stars = document.getElementById("");
 
 
 // STORES VALUES ON BUTTON CLICK
-function store() {
+
+if (window.localStorage) {
     var userName = document.getElementById("user-name");
-    localStorage.setItem("user-name", userName.value);
+    userName.value = localStorage.getItem("user-name");      /// get input value
 
-    var userEmail = document.getElementById("user-email");
-    localStorage.setItem("user-email", userEmail.value);
+    userName.addEventListener("input", function store() {    /// listen for submit button 
+        localStorage.setItem("user-name", userName.value);   /// set the info retrieved from storage
+    }, false)
 
-    var userMessage = document.getElementById("user-message");
-    localStorage.setItem("user-message", userMessage.value);
+    if (window.localStorage) {
+        var userEmail = document.getElementById("user-email");
+        userEmail.value = localStorage.getItem("user-email");
 
+        userEmail.addEventListener("input", function store() {
+            localStorage.setItem("user-email", userEmail.value);
+
+        }, false)
+
+        if (window.localStorage) {
+            var userMessage = document.getElementById("user-message");
+            userMessage.value = localStorage.getItem("user-message");
+
+            userMessage.addEventListener("input", function store() {
+                localStorage.setItem("user-message", userMessage.value);
+            }, false)
+        }
+    };
+
+
+    // localStorage.setItem("user-email", value);
+    // document.getElementById("user-email").innerHTML = localStorage.getItem("user-email");
+
+
+
+
+
+
+
+    // var userMessage = document.getElementById("user-message");
+    // userMessage.value = localStorage.getItem("user-message");
+    // localStorage.setItem("user-message", userMessage.value);
+
+
+
+    // GET ITEM 
+
+    // var storedName = localStorage.getItem("user-name");
+    // var storedEmail = localStorage.getItem("user-email");
+    // var storedMessage = localStorage.getItem("user-message");
+    // var storedRating = localStorage.getItem("user-rating");
+
+    // var userRating = document.getElementById("user-rating");
+    // var thankYou = document.getElementById("thank-you")
+
+    // Confirm Submission Module // ADD LOCAL STORAGE HERE
+
+    // btn.onclick = function () {
+    //     modal.style.display = "block";
+    // }
+
+    // span.onclick = function () {
+    //     modal.style.display = "none";
+    // }
+
+    // window.onclick = function (event) {
+
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //     }
+
+    // }
 }
-
-// GET ITEM 
-
-var storedName = localStorage.getItem("user-name");
-var storedEmail = localStorage.getItem("user-email");
-var storedMessage = localStorage.getItem("user-message");
-// var storedRating = localStorage.getItem("user-rating");
-
-var userRating = document.getElementById("user-rating");
-var thankYou = document.getElementById("thank-you")
-
-// Confirm Submission Module // ADD LOCAL STORAGE HERE
-
-btn.onclick = function () {
-    modal.style.display = "block";
-}
-
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-window.onclick = function (event) {
-
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 
 // THANK YOU  // ADD LOCAL STORAGE OF RATING 
 
