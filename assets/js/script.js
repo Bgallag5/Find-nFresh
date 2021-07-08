@@ -191,6 +191,9 @@ function getRecipeData(id, id2, id3) {
             recipeOne.setAttribute("href", recipeLink);
             recipeOne.setAttribute("target", "_blank")
             recipeOne.innerHTML = "Link!";
+            console.log(recipeLink);
+            window.localStorage.setItem("recipeLink", JSON.stringify(recipeLink)); ///// ANI grabbing link for recentlyViewedPage
+            window.localStorage.getItem("recipeLink", JSON.stringify(recipeLink)); //// ANI grabbing link for recentlyViewedPage
         });
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
@@ -207,6 +210,8 @@ function getRecipeData(id, id2, id3) {
             recipeTwo.setAttribute("href", recipeLink);
             recipeTwo.setAttribute("target", "_blank")
             recipeTwo.innerHTML = "Link!";
+            window.localStorage.setItem("recipeTwoLink", JSON.stringify(recipeLink)); ///// ANI grabbing link for recentlyViewedPage
+            window.localStorage.getItem("recipeTwoLink", JSON.stringify(recipeLink)); //// ANI grabbing link for recentlyViewedPage
         });
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
@@ -222,6 +227,9 @@ function getRecipeData(id, id2, id3) {
             recipeThree.setAttribute("href", recipeLink);
             recipeThree.setAttribute("target", "_blank")
             recipeThree.innerHTML = "Link!";
+            window.localStorage.setItem("recipeThreeLink", JSON.stringify(recipeLink)); ///// ANI grabbing link for recentlyViewedPage
+            window.localStorage.getItem("recipeThreeLink", JSON.stringify(recipeLink)); //// ANI grabbing link for recentlyViewedPage
+
         });
 }
 // var responseContainerEl = document.querySelector('#response-container-ii');
@@ -357,49 +365,38 @@ function findMarkets() {
                 "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
                 market1
             )
+
                 .then(function (response) {
                     return response.json();
-                }) //grab id's of the two closest markets
+                }) //capture google link and edit it to make it a better google maps search term (the link is originally given...
+                //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
                 .then(function (response) {
-                    var market1 = response.results[0].id;
-                    var market2 = response.results[1].id;
-                    console.log(market1);
-                    //new fetches with the market id's
+                    console.log(response);
+                    var link = response.marketdetails.GoogleLink;
+                    link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
+                    if (!link.includes("Farmers")) {
+                        link = link.concat("+Farmers+Market");
+                    }
+                    console.log(link);
                     fetch(
                         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-                        market1
+                        market2
                     )
-                        .then(function (response) {
-                            return response.json();
-                        }) //capture google link and edit it to make it a better google maps search term (the link is originally given...
-                        //..as a long/lat location; so I have to clear the string of numbers and make sure the location has the words 'Farmers Market' in them)
-                        .then(function (response) {
-                            console.log(response);
-                            var link = response.marketdetails.GoogleLink;
-                            link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                            if (!link.includes("Farmers")) {
-                                link = link.concat("+Farmers+Market");
+                        .then(function (response2) {
+                            return response2.json();
+                        })
+                        .then(function (response2) {
+                            console.log(response2);
+                            var link2 = response2.marketdetails.GoogleLink;
+                            link2 = link2.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
+                            if (!link2.includes("Farmers")) {
+                                link2 = link2.concat("+Farmers+Market");
                             }
-                            console.log(link);
-                            fetch(
-                                "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-                                market2
-                            )
-                                .then(function (response2) {
-                                    return response2.json();
-                                })
-                                .then(function (response2) {
-                                    console.log(response2);
-                                    var link2 = response2.marketdetails.GoogleLink;
-                                    link2 = link2.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
-                                    if (!link2.includes("Farmers")) {
-                                        link2 = link2.concat("+Farmers+Market");
-                                    }
-                                    showMaps(link, link2);
-                                });
+                            showMaps(link, link2);
                         });
                 });
-        })
+        });
+
 
     function showMaps(link, link2) {
         console.log(link);
