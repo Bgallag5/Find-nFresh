@@ -34,15 +34,15 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
 
         <h1>
-            <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-            FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
-        </h1>
+            <!-?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+            <!-- FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" /> -->
+        <!-- </h1> -->
 
-        <ul class="nav fixed-top navbar-expand-md justify-content-end">
-
+        <!-- <ul class="nav fixed-top navbar-expand-md justify-content-end"> --> 
+<!-- 
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
             </li>
@@ -59,16 +59,50 @@
             </li>
         </ul>
 
+    </header> -->
+
+    <!------------------------HAMBURGER MENU AT 768PX ---------------------->
+<header>
+
+    <nav class="navbar navbar-expand-md justify-content-end">
+        <!-- Brand -->
+        <div class="leaf-image">
+            <img src="./assets/images/leaf.png" />
+            <a href="index.html">FindFresh</a>
+        </div>
+ 
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
     </header>
+
+
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
-<<<<<<< HEAD
-        <!-- Gaye: Can you make this text appear white? cause right now it doesnt look good. Just inline stying is fine.   -->
-        <h2 style="color: rgb(250, 248, 214);">A farm to table experience.</h2>
-=======
         <h2>A farm to table experience.</h2>
->>>>>>> develop
     </section>
     <!--?-----------END HERO SECTION--------------------------------------->
 
@@ -83,6 +117,9 @@
             <button type="button" class="btn-lg btn-success btn-block" id="search-button" onclick="getRecipe()">
                 Get Recipes
             </button>
+            <div>
+                <p>Test</p>
+            </div>
         </div>
     </section>
 
@@ -93,16 +130,6 @@
     </div>
 
     </section>
-
-    <!-------------------------"Whoops! Check your spelling"---------------------------->
-<!-- 
-    <button id ="myBtn">Open Modal</button>
-    <div class="whoopsModal" id="whoopsBox">
-        <div class="whoopsModal-content">
-                <span class="whoopsClose">&times;</span>
-                <h2>Whoops! Check your spelling...</h2>
-        </div>
-    </div> -->
 
     <!--?----------------CARD CONTENT RECIPE SECTION----------------------->
     <div class="container row recipe-container">
