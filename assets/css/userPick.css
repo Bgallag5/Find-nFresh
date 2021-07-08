@@ -17,7 +17,7 @@
   body {
     background-size: cover;
     background-position: center;
-    background-color:#f0f0f0
+    background-color: white;
   }
   
   /*?-----------------Header and navigation----------------*/
@@ -75,7 +75,7 @@
   
   /*?---------------------HERO SECTION -----------------------*/
   .hero {
-    background-image: url("../images/spices-pepper-food-spoons-wallpaper-preview.jpg");
+    background-image: url("../images/bluespice.jpg");
     background-size: cover;
     color: wheat;
     background-position: 40;
@@ -88,6 +88,9 @@
    color: white;
    font-family: 'Dancing Script', cursive;
    font-size: 75px;
+   /* margin-left: 800px; */
+   text-align: center;
+   margin-top: 30px;
   }
   
   /*?------------------------INGREDIENTS INPUT CONTAINER--------------------------*/
