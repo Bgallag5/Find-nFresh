@@ -169,7 +169,7 @@ if (window.localStorage) {
     );
 
 }
-////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
+////////////////////////////////////////// END ANI LOCAL STORAGE FOR INGREDIENT /////////////////////////////////////////////////////
 
 
 
@@ -186,14 +186,16 @@ function getRecipeData(id, id2, id3) {
             return response.json();
         })
         .then(function (response) {
-            var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
+            const recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
+            localStorage.setItem("recipeOneLink", recipeLink);   /// ************* storing URL FOR RECENTLYVIEWED
             var recipeOne = document.getElementById("recipeOneLink") //grab the 'a' we created, set it's href, and give it text that links
             recipeOne.setAttribute("href", recipeLink);
             recipeOne.setAttribute("target", "_blank")
             recipeOne.innerHTML = "Link!";
             console.log(recipeLink);
-            window.localStorage.setItem("recipeLink", JSON.stringify(recipeLink)); ///// ANI grabbing link for recentlyViewedPage
-            window.localStorage.getItem("recipeLink", JSON.stringify(recipeLink)); //// ANI grabbing link for recentlyViewedPage
+
+            ///// ANI grabbing link for recentlyViewedPage
+            // window.localStorage.getItem("recipeOneLink", recipeLink); //// ANI grabbing link for recentlyViewedPage
         });
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
@@ -205,13 +207,13 @@ function getRecipeData(id, id2, id3) {
         })
         .then(function (response) {
             var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
+            localStorage.setItem("recipeTwoLink", recipeLink);   ////// ************** STORING URL FOR RECENTLYVIEWED
             console.log(recipeLink)
             var recipeTwo = document.getElementById("recipeTwoLink") //grab the 'a' we created, set it's href, and give it text that links
             recipeTwo.setAttribute("href", recipeLink);
             recipeTwo.setAttribute("target", "_blank")
             recipeTwo.innerHTML = "Link!";
-            window.localStorage.setItem("recipeTwoLink", JSON.stringify(recipeLink)); ///// ANI grabbing link for recentlyViewedPage
-            window.localStorage.getItem("recipeTwoLink", JSON.stringify(recipeLink)); //// ANI grabbing link for recentlyViewedPage
+
         });
     fetch(
         "https://api.spoonacular.com/recipes/informationBulk?ids=" +
@@ -224,11 +226,12 @@ function getRecipeData(id, id2, id3) {
         .then(function (response) {
             var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
             var recipeThree = document.getElementById("recipeThreeLink") //grab the 'a' we created, set it's href, and give it text that links
+            localStorage.setItem("recipeThreeLink", recipeLink);   //// ************ STORING URL FOR RECENTLYVIEWED
             recipeThree.setAttribute("href", recipeLink);
             recipeThree.setAttribute("target", "_blank")
             recipeThree.innerHTML = "Link!";
-            window.localStorage.setItem("recipeThreeLink", JSON.stringify(recipeLink)); ///// ANI grabbing link for recentlyViewedPage
-            window.localStorage.getItem("recipeThreeLink", JSON.stringify(recipeLink)); //// ANI grabbing link for recentlyViewedPage
+
+            // window.localStorage.getItem("recipeThreeLink", recipeLink); //// ANI grabbing link for recentlyViewedPage
 
         });
 }

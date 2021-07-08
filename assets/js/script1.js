@@ -21,6 +21,8 @@ var cardThreeEl = document.getElementById("cardThree");
 
 var displayLastThreeRecipes = function () {
     var recipesArray = localStorage.getItem("lastThreeRecipes");
+
+
     var lastThreeRecipes = JSON.parse(recipesArray);
     console.log(lastThreeRecipes);
     console.log(lastThreeRecipes[0].id); /// use this format in for loop to grab parts of array 
@@ -57,8 +59,12 @@ var displayLastThreeRecipes = function () {
 }
 displayLastThreeRecipes();
 
+var getLinks = function () {
+    var recipeLink = localStorage.getItem("recipeOneLink");
+
+    console.log(recipeLink);
 
 
-
+}
 
 
