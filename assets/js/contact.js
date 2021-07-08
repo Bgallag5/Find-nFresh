@@ -14,6 +14,22 @@ if (window.localStorage) {
         localStorage.setItem("user-name", userName.value);   /// set the info retrieved from storage
     }, false)
 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+
+    }
+
     if (window.localStorage) {
         var userEmail = document.getElementById("user-email");
         userEmail.value = localStorage.getItem("user-email");
@@ -23,6 +39,22 @@ if (window.localStorage) {
 
         }, false)
 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+
+        }
+
         if (window.localStorage) {
             var userMessage = document.getElementById("user-message");
             userMessage.value = localStorage.getItem("user-message");
@@ -30,6 +62,22 @@ if (window.localStorage) {
             userMessage.addEventListener("input", function store() {
                 localStorage.setItem("user-message", userMessage.value);
             }, false)
+
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+
+            }
         }
     };
 
