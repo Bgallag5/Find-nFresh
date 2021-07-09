@@ -15,40 +15,6 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 // --------------------On Search----------------------------
 
 
-// =============MODAL Function ===================
-
-// var whoopsModal = document.getElementById("whoopsBox")
-// var btn = document.getElementById("myBtn");
-// var span = document.getElementsByClassName("whoopsClose")[0];
-
-// function search() {
-
-//   if (searchRecipe.value = "wrong") {
-
-//     btn.onclick = function () {
-//       whoopsModal.style.display = "block";
-//     }
-
-//     span.onclick = function () {
-//       whoopsModal.style.display = "none"
-//     }
-
-//     window.onclick = function (event) {
-//       if (event.target == whoopsModal) {
-//         whoopsModal.style.display = "none";
-//       }
-//     }
-
-
-//   } else () {
-//     getRecipe()
-//   }
-
-
-// }
-
-
-
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
 // API KEY: b79ab8cbea19412a8dc76a8297bc9d42
@@ -66,9 +32,20 @@ function getRecipe() {
   )
     .then(function (response) {
       //console.log(response.json());
-      // if response.array = 0 then return oops modal / alert 
+      // if response.results = 0 then return oops modal / alert 
       // else 
+
+      if (response.results === "undefined") {
+        console.log("array is empty")
+        // var errorMessage = document.getElementById = "error";
+        // var errorBox = document.getElementById = "errorBox";
+        // errorBox.innterHTML = errorMessage;
+        // errorBox.appendChild = errorMessage;
+      }
+
+      else {
       return response.json();
+      }
     })
 
     // RECIPE IMAGE, TITLE, LINK 1
@@ -85,10 +62,17 @@ function getRecipe() {
       console.log(response);
       const lastThreeRecipes = [response.results[x], response.results[y], response.results[z]];
       console.log(lastThreeRecipes);
+
+      if (x || y || z === "undefined") {
+        alert("error")
+      }
+
+      else {
       localStorage.setItem(
         "lastThreeRecipes",
         JSON.stringify(lastThreeRecipes)
       );
+      }
 
       console.log(lastThreeRecipes);
       var recipeTitle = response.results[x].title;
@@ -96,6 +80,7 @@ function getRecipe() {
 
       var responseContainerEl = document.querySelector("#response-container-2");
       responseContainerEl.innerHTML = recipeTitle;
+
 
       var recipeOne = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
       recipeOne.setAttribute("href", "");
