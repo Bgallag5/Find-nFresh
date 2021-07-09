@@ -31,19 +31,8 @@ function getRecipe() {
     "&apiKey=" + spoonKey2
   )
     .then(function (response) {
-      //console.log(response.json());
-      // if response.results = 0 then return oops modal / alert 
-      // else 
-
-      if (response.results === "undefined") {
-        console.log("array is empty")
-
-      }
-
-      else {
       return response.json();
-      }
-    })
+      })
 
     // RECIPE IMAGE, TITLE, LINK 1
 
@@ -61,17 +50,18 @@ function getRecipe() {
       console.log(lastThreeRecipes);
 
       if (x || y || z === "undefined") {
-        // alert("error")
         var errorMessage = document.getElementById("error");
         errorMessage.textContent = "No results. Please check your spelling.";
       }
 
       else {
+        errorMessage.textContent = "Finding Fresh";
+      }
+
       localStorage.setItem(
         "lastThreeRecipes",
         JSON.stringify(lastThreeRecipes)
       );
-      }
 
       console.log(lastThreeRecipes);
       var recipeTitle = response.results[x].title;
