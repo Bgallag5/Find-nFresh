@@ -63,7 +63,7 @@ function getRecipe() {
       if (x || y || z === "undefined") {
         // alert("error")
         var errorMessage = document.getElementById("error");
-        errorMessage.textContent = "No results. Please check your spelling";
+        errorMessage.textContent = "No results. Please check your spelling.";
       }
 
       else {
