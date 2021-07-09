@@ -45,20 +45,59 @@ header img {
   margin-bottom: 10px;
 }
 
+.leaf-image {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+  /* position: fixed; */
+}
 
-ul li a {
+
+
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  padding-top: 5px;
+  position: fixed;
+  margin-left: 45px;
+
+}
+
+.navbar-toggler {
+  background-color: var(--second);
+  padding-top: 1px;
+}
+
+
+.navbar-toggler:hover {
+  background-color:var(--third);
+
+}
+
+.navbar-toggler:focus {
+  background-color: var(--second);
+}
+
+
+
+.nav-item a{
   color: white;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 20px;
+  z-index: 9999;
+
 }
 
-ul li a:hover {
-  color: var(--second);
+.nav-link:hover {
+  background-color: var(--second);
 }
 
 .nav-link {
-  padding-top: 20px;
+  padding-top: 10px;
+  z-index: 9999;
 }
+
+
 
 /*?---------------------FOOTER SECTION---------------------*/
 
@@ -157,12 +196,21 @@ iframe {
 @media screen and (max-width: 980px) {
 
   .hero h2 {
-    font-size: 50px;
-    margin-top: 10px;
-    margin-left: 5px;
+    opacity: 0;
   }
 
 }
+
+@media screen and (min-width: 980px) {
+
+  .navbar-brand {
+    padding-top: 0px;
+  }
+
+}
+
+
+
 
 
 
