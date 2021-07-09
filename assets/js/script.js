@@ -37,10 +37,7 @@ function getRecipe() {
 
       if (response.results === "undefined") {
         console.log("array is empty")
-        // var errorMessage = document.getElementById = "error";
-        // var errorBox = document.getElementById = "errorBox";
-        // errorBox.innterHTML = errorMessage;
-        // errorBox.appendChild = errorMessage;
+
       }
 
       else {
@@ -64,7 +61,9 @@ function getRecipe() {
       console.log(lastThreeRecipes);
 
       if (x || y || z === "undefined") {
-        alert("error")
+        // alert("error")
+        var errorMessage = document.getElementById("error");
+        errorMessage.textContent = "No results. Please check your spelling";
       }
 
       else {
