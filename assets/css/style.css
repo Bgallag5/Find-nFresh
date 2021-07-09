@@ -52,6 +52,10 @@ header img {
   /* position: fixed; */
 }
 
+.navbar {
+  position: fixed;
+  z-index: 9999;
+}
 
 
 .navbar-brand {
@@ -75,10 +79,8 @@ header img {
 }
 
 .navbar-toggler:focus {
-  background-color: var(--second);
+  background-color: var(--third);
 }
-
-
 
 .nav-item a{
   color: white;
