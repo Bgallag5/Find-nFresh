@@ -167,12 +167,54 @@ iframe {
 
 /*****HAMBURGER MENU***/
 
+.navbar-toggler {
+  background-color: var(--second)
+}
+
+
+
+/* header {
+  background: var(--first);
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  padding: 10px 30px; 
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: left;
+  font-size: 30px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+
+header h1 {
+  padding-top: 10px;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+
+ul li a {
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+}
+
+ul li a:hover {
+  color: var(--second);
+}
+
+.nav-link {
+  padding-top: 20px;
 
 
 
 
-
-
+ */
 
 
 
