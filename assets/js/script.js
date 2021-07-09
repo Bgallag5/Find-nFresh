@@ -64,18 +64,11 @@ function getRecipe() {
     searchRecipe +
     "&apiKey=" + spoonKey2
   )
-  
     .then(function (response) {
-      console.log(response.json());
-
-      if response.results === 0) {
-        
-
-      }
-
-      else (response.results) {
+      //console.log(response.json());
+      // if response.array = 0 then return oops modal / alert 
+      // else 
       return response.json();
-      }
     })
 
     // RECIPE IMAGE, TITLE, LINK 1
