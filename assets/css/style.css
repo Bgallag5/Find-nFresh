@@ -162,6 +162,42 @@ iframe {
     margin-left: 5px;
   }
 
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+/*****On screens that are 768 or less***/
+@media screen and (max-width: 768px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+/*****On screens that are 575 or less***/
+@media screen and (max-width: 575px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
 }
 
 
