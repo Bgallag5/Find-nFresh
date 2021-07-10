@@ -34,34 +34,73 @@ body {
     font-size: 30px;
     width: 100%;
     position: fixed;
-    z-index: 1;
-    
+    z-index: 9999;
   }
   
   header h1 {
     padding-top: 10px;
   }
-
+  
   header img {
     width: 40px;
     height: 40px;
     margin-bottom: 10px;
   }
   
+  .leaf-image {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+    /* position: fixed; */
+  }
   
-  ul li a {
+  .navbar {
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  
+  .navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    padding-top: 5px;
+    position: fixed;
+    margin-left: 45px;
+  
+  }
+  
+  .navbar-toggler {
+    background-color: var(--second);
+    padding-top: 1px;
+  }
+  
+  
+  .navbar-toggler:hover {
+    background-color:var(--third);
+  
+  }
+  
+  .navbar-toggler:focus {
+    background-color: var(--third);
+  }
+  
+  .nav-item a{
     color: white;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 20px;
+    z-index: 9999;
+  
   }
   
-  ul li a:hover {
-    color: var(--seventh);
+  .nav-link:hover {
+    background-color: var(--second);
   }
   
   .nav-link {
-    padding-top: 20px;
+    padding-top: 10px;
+    z-index: 9999;
   }
+  
 
  /*?---------------------HERO SECTION -----------------------*/
 

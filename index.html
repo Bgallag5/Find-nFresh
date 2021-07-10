@@ -26,50 +26,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="sylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- ?---------------------------BULMA CSS------------------------------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <!--?--------------------local CSS stylesheet---------------------------------->
 
     <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 
-<body>
-    <header>
+ <body>
 
-        <h1>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-            FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+   <img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
         </h1>
+  <a class="navbar-brand" href="./index.html">FindFresh</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="./index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./about.html">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" href="./contact.html">Contact Us</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
 
-        <ul class="nav fixed-top navbar-expand-md justify-content-end">
-
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./about.html">About Us</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="./userPick.html">My Meals</a>
-            </li>
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact Us</a>
-
-            </li>
-        </ul>
-
-    </header>
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
         <h2>A farm to table experience.</h2>
     </section>
+
     <!--?-----------END HERO SECTION--------------------------------------->
 
     <!---------------------------------RECIPE SEARCH---------------------------->
@@ -83,11 +82,14 @@
             <button type="button" class="btn-lg btn-success btn-block" id="search-button" onclick="getRecipe()">
                 Get Recipes
             </button>
+            <div>
+                <p id="error"></p>
+            </div>
         </div>
     </section>
 
-    <!-----------------------Search button on Enter key-------------------------->
 
+    <!-----------------------Search button on Enter key-------------------------->
 
     </div>
 
@@ -140,11 +142,12 @@
               <img class="activator recipe-img" src="./assets/images/recipe2.jpeg"></a> 
             </div>
             <div class="card-content" id="response-container-i">
-              <span class="card-title activator grey-text text-darken-4">
-                  <a href="https://www.patagoniaprovisions.com/blogs/recipes/lemon-olive-anchovy-tart" target="_blank">
-                    Lemon Olive Anchovy Tart
-                  <i class="material-icons right">more_vert</i>
-                  </a>
+                <span class="card-title activator grey-text text-darken-4">
+                    <a href="https://www.patagoniaprovisions.com/blogs/recipes/lemon-olive-anchovy-tart"
+                        target="_blank">
+                        Lemon Olive Anchovy Tart
+                        <i class="material-icons right">more_vert</i>
+                    </a>
                 </span>
             </div>
 
@@ -178,7 +181,7 @@
     
         <div class="card col s12 m6 13 container-box">
             <div class="card-image waves-effect waves-block waves-light" id="card-3">
-              <img class="activator recipe-img" src="./assets/images/recipe3.jpeg">
+                <img class="activator recipe-img" src="./assets/images/recipe3.jpeg">
             </div>
             <div class="card-content" id="response-container-ii">
                 <span class="card-title activator grey-text text-darken-4">
@@ -247,11 +250,16 @@
                             width="" height="" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
+
+        </div>
 
 
     <footer>
@@ -262,6 +270,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
