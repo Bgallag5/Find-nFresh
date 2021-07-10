@@ -20,24 +20,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="sylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- ?---------------------------BULMA CSS------------------------------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/about.css">
+    
 </head>
 
 <body>
-    <header>
-        <h1 style="z-index: 9999;">
-            <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-            <a href="./index.html" style="color: white;">FindFresh <img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" /></a>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+        <img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+
         </h1>
-        <div class="nav-wrapper">
-            <ul class="nav justify-content-end">
+        <a class="navbar-brand" href="./index.html">FindFresh</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="./index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="./about.html">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./userPick.html">Recently Viewed</a>
@@ -47,94 +54,95 @@
                 </li>
             </ul>
         </div>
-    </header>
+    </nav>
+
 
     <section class="hero">
         <h2>Meet the Creators</h2>
 
-    
-            <div class="container">
-                <div class="row justify-content-md-center about-us">
-                    <div class=" col-4 col-md-3 team">
-                        <img src="./assets/images/Ben.JPG" alt="Ben Gallagher" class="circle">
-                        <div class="name">
-                            <br>
-                            <h3>Ben Gallagher</h3>
-                                <ul>
-                                    <li>-Functionality</li>
-                                    <li>-JavaScript</li>
-                                    <li>-Git</li>
-                                    <li>-API</li>
-                                </ul>
-                            
-                        </div>
-                    </div>
-                      
-        
-                    <div class="col-4 col-md-3 team">
-                        <img src="./assets/images/Ryan.png" alt="Ryan Jolley" class="circle">
-                        <div class="name">
-                            <br>
-                            <h3>Ryan Jolley</h3>
-                            <ul>
-                                <li>-Functionality</li>
-                                <li>-JavaScript</li>
-                                <li>-Git</li>
-                                <li>-API</li>
-                            </ul>
-                        </div>
+
+        <div class="container">
+            <div class="row justify-content-md-center about-us">
+                <div class=" col-4 col-md-3 team">
+                    <img src="./assets/images/Ben.JPG" alt="Ben Gallagher" class="circle">
+                    <div class="name">
+                        <br>
+                        <h3>Ben Gallagher</h3>
+                        <ul>
+                            <li>-Functionality</li>
+                            <li>-JavaScript</li>
+                            <li>-Git</li>
+                            <li>-API</li>
+                        </ul>
 
                     </div>
+                </div>
+
+
+                <div class="col-4 col-md-3 team">
+                    <img src="./assets/images/Ryan.png" alt="Ryan Jolley" class="circle">
+                    <div class="name">
+                        <br>
+                        <h3>Ryan Jolley</h3>
+                        <ul>
+                            <li>-Functionality</li>
+                            <li>-JavaScript</li>
+                            <li>-Git</li>
+                            <li>-API</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
+        </div>
 
 
-                <div class="row justify-content-md-center about-us">
-                    <div class=" col col-md-3 team">
-                        <img src="./assets/images/Shane.jpeg" alt="Shane Crisostomo" class="circle">
-                        <div class="name">
-                            <br>
-                            <h3>Shane Crisostomo</h3>
-                            <ul>
-                                <li>-HTML</li>
-                                <li>-CSS</li>
-                                <li>-PowerPoint</li>
-                                <li>-JavaScript</li>
-                            </ul>
-                        </div>
-
-                    </div>
+        <div class="row justify-content-md-center about-us">
+            <div class=" col col-md-3 team">
+                <img src="./assets/images/Shane.jpeg" alt="Shane Crisostomo" class="circle">
+                <div class="name">
+                    <br>
+                    <h3>Shane Crisostomo</h3>
+                    <ul>
+                        <li>-HTML</li>
+                        <li>-CSS</li>
+                        <li>-PowerPoint</li>
+                        <li>-JavaScript</li>
+                    </ul>
                 </div>
 
-
-                    <div class=" col col-md-3 team">
-                        <img src="./assets/images/Ani.jpeg" alt="Ani Carr" class="circle">
-                        <div class="name">
-                            <br>
-                            <h3>Ani Carr</h3>
-                            <ul>
-                                <li>-Functionality</li>
-                                <li>-JavaScript</li>
-                                <li>-Video</li>
-                                <li>-HTML</li>
-                            </ul>
-                        </div>
-                    </div>
-               
-                    <div class=" col col-md-3 team">
-                        <img src="./assets/images/Gaye.jpeg" alt="Gaye Proctor" class="circle">
-                        <div class="name">
-                            <br>
-                            <h3>Gaye Proctor</h3>
-                            <ul>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
             </div>
+        </div>
+
+
+        <div class=" col col-md-3 team">
+            <img src="./assets/images/Ani.jpeg" alt="Ani Carr" class="circle">
+            <div class="name">
+                <br>
+                <h3>Ani Carr</h3>
+                <ul>
+                    <li>-Functionality</li>
+                    <li>-JavaScript</li>
+                    <li>-CSS</li>
+                    <li>-HTML</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class=" col col-md-3 team">
+            <img src="./assets/images/Gaye.jpeg" alt="Gaye Proctor" class="circle">
+            <div class="name">
+                <br>
+                <h3>Gaye Proctor</h3>
+                <ul>
+                    <li>-HTML</li>
+                    <li></li>
+                </ul>
+            </div>
+
+        </div>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -143,6 +151,9 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

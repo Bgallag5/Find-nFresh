@@ -60,11 +60,11 @@
   }
 
   .hero {
-    background-image: url("/assets/images/farm2table.jpeg");
+    background-image: url("../images/2farm2table.jpeg");
     background-size: cover;
     color: white;
-    background-position: 40;
-    height: 350px ;
+    background-position: 80;
+    height: 450px;
     z-index:8888;
   }
   

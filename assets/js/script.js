@@ -13,6 +13,8 @@ var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 var spoonKey3 = "cf30b0d4a91f446480096e46c8f5ed82"
 
+// --------------------On Search----------------------------
+
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
@@ -29,22 +31,27 @@ searchRecipe.addEventListener("keyup", function(event){   //add event listener f
 })
 
 function getRecipe() {
+  var errorMessage = document.getElementById("error");
+  errorMessage.textContent = ""
+  errorMessage.style.color = '#3d550c';
 
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch(
     "https://api.spoonacular.com/recipes/complexSearch?query=" +
+
       searchRecipe +
       "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
-      //console.log(response.json());
       return response.json();
-    })
+      })
 
     // RECIPE IMAGE, TITLE, LINK 1
 
     .then(function (response) {
+      console.log(response);
     
       var x = Math.floor(Math.random() * 4);
       var y = Math.floor(Math.random() * 3) + 4;
@@ -54,8 +61,21 @@ function getRecipe() {
       console.log(z)
 
       console.log(response);
-      const lastThreeRecipes = [response.results[x], response.results[y], response.results[z] ];
+      const lastThreeRecipes = [response.results[x], response.results[y], response.results[z]];
       console.log(lastThreeRecipes);
+      
+      // IF spelling is right, say "Finding Fresh"
+      // IF spelling is wrong, say "No Results"
+
+      if (response.results.length !== 0) {
+        errorMessage.textContent = "Finding Fresh";
+      }
+
+      else {
+        errorMessage.textContent = "No results. Please check your spelling.";
+
+      }
+
       localStorage.setItem(
         "lastThreeRecipes",
         JSON.stringify(lastThreeRecipes)
@@ -108,7 +128,7 @@ function getRecipe() {
 
       var recipeTitleII = response.results[z].title;
       console.log(recipeTitleII);
-    
+
 
       var responseContainerEl = document.querySelector(
         "#response-container-ii"
@@ -140,20 +160,39 @@ function getRecipe() {
       //send three recipe id's into getRecipeData()
       getRecipeData(id, id2, id3);
     });
+
+    if (window.localStorage) {
+
+      var saveIndgredient = document.getElementById("searchRecipe"); //html input id
+      saveIndgredient.value = localStorage.getItem("searchRecipe");
+    
+      saveIndgredient.addEventListener(
+        "input",
+        function () {
+          localStorage.setItem("searchRecipe", saveIndgredient.value);
+        },
+        false
+      );
+    
+    }
 }
+
 
 function getRecipeData(id, id2, id3) {
   //fetch three recipes, turn to JSON, then pull the data we need (link to recipe)
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
+
       id +
       "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
       var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
+      localStorage.setItem("recipeOneLink", recipeLink); // storing URL for recentlyViewed
       var recipeTitle = response[0].title;  //grab recipe title
       var responseContainerEl = document.querySelector("#response-container-2");
       responseContainerEl.innerHTML = "";  //clear the text in container 
@@ -161,6 +200,7 @@ function getRecipeData(id, id2, id3) {
       var recipeOne = document.createElement("a")    //create an 'a', element set it's href, and give it text that links
       recipeOne.setAttribute("href", recipeLink);
       recipeOne.setAttribute("target", "_blank")
+
       recipeOne.innerHTML= recipeTitle;
       responseContainerEl.appendChild(recipeOne);
       //2 lines: set and get
@@ -169,13 +209,15 @@ function getRecipeData(id, id2, id3) {
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
       id2 +
       "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
       console.log(response);
-      var recipeLink = response[0].spoonacularSourceUrl;  
+      var recipeLink = response[0].spoonacularSourceUrl; 
+      localStorage.setItem("recipeTwoLink", recipeLink);
       var recipeTitle = response[0].title;  
       console.log(recipeTitle);
       var responseContainerEl = document.querySelector("#response-container-i");
@@ -184,19 +226,25 @@ function getRecipeData(id, id2, id3) {
       var recipeTwo = document.createElement("a")   
       recipeTwo.setAttribute("href", recipeLink);
       recipeTwo.setAttribute("target", "_blank")
+
       recipeTwo.innerHTML= recipeTitle;
       responseContainerEl.appendChild(recipeTwo);
+
     });
+
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
+
       id3 +
       "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
-      var recipeLink = response[0].spoonacularSourceUrl;  
+      var recipeLink = response[0].spoonacularSourceUrl;
+      localStorage.setItem("recipeThreeLink", recipeLink);
       var recipeTitle = response[0].title;  
       var responseContainerEl = document.querySelector("#response-container-ii");
       responseContainerEl.innerHTML = "";
@@ -204,10 +252,12 @@ function getRecipeData(id, id2, id3) {
       var recipeThree = document.createElement("a")   
       recipeThree.setAttribute("href", recipeLink);
       recipeThree.setAttribute("target", "_blank")
+
       recipeThree.innerHTML= recipeTitle;
       responseContainerEl.appendChild(recipeThree);
     });
 }
+
 
 //////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
 if (window.localStorage) {
@@ -233,20 +283,7 @@ if (window.localStorage) {
 // window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
 // window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 ///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
-if (window.localStorage) {
 
-  var saveIndgredient = document.getElementById("searchRecipe"); //html input id
-  saveIndgredient.value = localStorage.getItem("searchRecipe");
-
-  saveIndgredient.addEventListener(
-    "input",
-    function () {
-      localStorage.setItem("searchRecipe", saveIndgredient.value);
-    },
-    false
-  );
-
-}
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
 
@@ -262,11 +299,13 @@ function findMarkets() {
   var zip = zipCode.value;
   var zipInput = document.getElementById("zipBox");
 
+
   // zipInput.style.display = "none";
+
   //fetch local farmers markets from zipcode search
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-      zip
+    zip
   )
     .then(function (response) {
       return response.json();
@@ -278,7 +317,7 @@ function findMarkets() {
       //new fetches with the market id's
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-          market1
+        market1
       )
         .then(function (response) {
           return response.json();
@@ -294,7 +333,7 @@ function findMarkets() {
           console.log(link);
           fetch(
             "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-              market2
+            market2
           )
             .then(function (response2) {
               return response2.json();
