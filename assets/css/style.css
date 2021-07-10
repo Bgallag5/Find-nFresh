@@ -195,7 +195,7 @@ iframe {
 /*?--------------------MEDIA QUERIES---------------*/
 
 /*****On screens that are 980 or less***/
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 768px) {
 
   .hero h2 {
     opacity: 0;
