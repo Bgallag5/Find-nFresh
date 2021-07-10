@@ -22,7 +22,8 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 // FETCH THE RECIPE AND NUTRITION APIS
 
 function getRecipe() {
-
+  var errorMessage = document.getElementById("error");
+  errorMessage.textContent = ""
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch(
@@ -37,7 +38,8 @@ function getRecipe() {
     // RECIPE IMAGE, TITLE, LINK 1
 
     .then(function (response) {
-
+      console.log(response);
+    
       var x = Math.floor(Math.random() * 4);
       var y = Math.floor(Math.random() * 3) + 4;
       var z = Math.floor(Math.random() * 3) + 7;
@@ -49,13 +51,14 @@ function getRecipe() {
       const lastThreeRecipes = [response.results[x], response.results[y], response.results[z]];
       console.log(lastThreeRecipes);
 
-      if (x || y || z === "undefined") {
-        var errorMessage = document.getElementById("error");
-        errorMessage.textContent = "No results. Please check your spelling.";
+
+      if (response.results.length !== 0) {
+        errorMessage.textContent = "Finding Fresh";
       }
 
       else {
-        errorMessage.textContent = "Finding Fresh";
+        errorMessage.textContent = "No results. Please check your spelling.";
+
       }
 
       localStorage.setItem(
