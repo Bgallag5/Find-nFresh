@@ -83,7 +83,6 @@ header img {
 }
 
 .nav-item a{
-  color: white;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 20px;
   z-index: 9999;
@@ -119,7 +118,7 @@ footer {
   background-size: cover;
   color: wheat;
   background-position: 40;
-  height: 350px ;
+  height: 400px ;
   z-index:8888;
 }
 
