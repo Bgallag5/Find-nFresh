@@ -32,7 +32,6 @@ var thankYou = document.getElementById("thank-you")
 // Confirm Submission Module // ADD LOCAL STORAGE HERE
 
 
-
 function displayInfo() {
     localStorage.setItem("user-name", storedName);
     $("#myModal").modal("show");
