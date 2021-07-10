@@ -11,6 +11,7 @@ var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
+var spoonKey3 = "cf30b0d4a91f446480096e46c8f5ed82"
 
 // --------------------On Search----------------------------
 
@@ -21,6 +22,14 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
 // FETCH THE RECIPE AND NUTRITION APIS
 
+var searchRecipe = document.querySelector("#searchRecipe");  
+searchRecipe.addEventListener("keyup", function(event){   //add event listener for "keyup if keycode=13", keycode 13= enter key
+  if (event.keyCode === 13){
+    event.preventDefault();
+    document.getElementById("search-button").click();  //if enter key is released, the button is set to onclick and the function runs
+  }
+})
+
 function getRecipe() {
   var errorMessage = document.getElementById("error");
   errorMessage.textContent = ""
@@ -30,8 +39,10 @@ function getRecipe() {
 
   fetch(
     "https://api.spoonacular.com/recipes/complexSearch?query=" +
-    searchRecipe +
-    "&apiKey=" + spoonKey2
+
+      searchRecipe +
+      "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
@@ -77,13 +88,6 @@ function getRecipe() {
       var responseContainerEl = document.querySelector("#response-container-2");
       responseContainerEl.innerHTML = recipeTitle;
 
-
-      var recipeOne = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
-      recipeOne.setAttribute("href", "");
-      recipeOne.setAttribute("id", "recipeOneLink")
-
-      responseContainerEl.appendChild(recipeOne);
-
       var recipeImage = response.results[x].image;
       console.log(recipeImage);
 
@@ -105,12 +109,6 @@ function getRecipe() {
 
       var responseContainerEl = document.querySelector("#response-container-i");
       responseContainerEl.innerHTML = recipeTitleI;
-
-      var recipeTwo = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
-      recipeTwo.setAttribute("href", "");
-      recipeTwo.setAttribute("id", "recipeTwoLink")
-
-      responseContainerEl.appendChild(recipeTwo);
 
       var recipeImageI = response.results[y].image;
       console.log(recipeImageI);
@@ -136,12 +134,6 @@ function getRecipe() {
         "#response-container-ii"
       );
       responseContainerEl.innerHTML = recipeTitleII;
-
-      var recipeThree = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
-      recipeThree.setAttribute("href", "");
-      recipeThree.setAttribute("id", "recipeThreeLink")
-
-      responseContainerEl.appendChild(recipeThree);
 
       var recipeImageII = response.results[z].image;
       console.log(recipeImageII);
@@ -190,106 +182,82 @@ function getRecipeData(id, id2, id3) {
   //fetch three recipes, turn to JSON, then pull the data we need (link to recipe)
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
-    id +
-    "&apiKey=" + spoonKey2
+
+      id +
+      "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
       var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
-      var recipeOne = document.getElementById("recipeOneLink") //grab the 'a' we created, set it's href, and give it text that links
+      localStorage.setItem("recipeOneLink", recipeLink); // storing URL for recentlyViewed
+      var recipeTitle = response[0].title;  //grab recipe title
+      var responseContainerEl = document.querySelector("#response-container-2");
+      responseContainerEl.innerHTML = "";  //clear the text in container 
+
+      var recipeOne = document.createElement("a")    //create an 'a', element set it's href, and give it text that links
       recipeOne.setAttribute("href", recipeLink);
       recipeOne.setAttribute("target", "_blank")
-      recipeOne.innerHTML = " Link! ";
-      recipeOne.style.color = '#3d550c';
+
+      recipeOne.innerHTML= recipeTitle;
+      responseContainerEl.appendChild(recipeOne);
+      //2 lines: set and get
     });
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
-    id2 +
-    "&apiKey=" + spoonKey2
+      id2 +
+      "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
-      var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
-      console.log(recipeLink)
-      var recipeTwo = document.getElementById("recipeTwoLink") //grab the 'a' we created, set it's href, and give it text that links
+      console.log(response);
+      var recipeLink = response[0].spoonacularSourceUrl; 
+      localStorage.setItem("recipeTwoLink", recipeLink);
+      var recipeTitle = response[0].title;  
+      console.log(recipeTitle);
+      var responseContainerEl = document.querySelector("#response-container-i");
+      responseContainerEl.innerHTML = "";
+
+      var recipeTwo = document.createElement("a")   
       recipeTwo.setAttribute("href", recipeLink);
       recipeTwo.setAttribute("target", "_blank")
-      recipeTwo.innerHTML = " Link! ";
-      recipeTwo.style.color = '#3d550c';
+
+      recipeTwo.innerHTML= recipeTitle;
+      responseContainerEl.appendChild(recipeTwo);
+
     });
 
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
-    id3 +
-    "&apiKey=" + spoonKey2
+
+      id3 +
+      "&apiKey=" + spoonKey3
+
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (response) {
-      var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
-      var recipeThree = document.getElementById("recipeThreeLink") //grab the 'a' we created, set it's href, and give it text that links
+      var recipeLink = response[0].spoonacularSourceUrl;
+      localStorage.setItem("recipeThreeLink", recipeLink);
+      var recipeTitle = response[0].title;  
+      var responseContainerEl = document.querySelector("#response-container-ii");
+      responseContainerEl.innerHTML = "";
+
+      var recipeThree = document.createElement("a")   
       recipeThree.setAttribute("href", recipeLink);
       recipeThree.setAttribute("target", "_blank")
-      recipeThree.innerHTML = " Link! ";
-      recipeThree.style.color = '#3d550c';
+
+      recipeThree.innerHTML= recipeTitle;
+      responseContainerEl.appendChild(recipeThree);
     });
 }
 
-// var responseContainerEl = document.querySelector('#response-container-ii');
-// responseContainerEl.innerHTML = recipeTitleII;
-
-
-// var recipeII = document.createElement("recipe");
-// recipeII.setAttribute('src', response.results[2]);
-
-
-var imageII = document.createElement("img");
-imageII.setAttribute("src", " ");
-imageII.setAttribute("src", response.results[2].image);
-
-responseContainerEl.appendChild(imageII);
-window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
-window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
-
-// RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
-
-var id = response.results[0].id;    //Can we delete this through the closing bracket on line 253? -- this was an attempt at getRecipeData() but isnt used
-console.log(id);
-
-fetch(
-  `https://api.spoonacular.com/recipes/${id}/summary&apiKey=53ed151123a740f094ac3e8409f6c1f3`
-)
-  .then(function (response) {
-    console.log(response);
-    return response.json();
-  })
-
-  .then(function (response) {
-    var recipeLink = response.url;
-    console.log(recipeLink);
-
-    // var responseContainerEl = document.querySelector('#response-container-ii');
-    // responseContainerEl.innerHTML = recipeTitleII;
-
-    // var recipeII = document.createElement("recipe");
-    // recipeII.setAttribute('src', response.results[2]);
-
-    // responseContainerEl.appendChild(recipeII);
-
-    // var recipeImageII = response.results[2].image;
-    // console.log(recipeImageII);
-
-    // var imageII = document.createElement("img");
-    // imageII.setAttribute('src', " ");
-    // imageII.setAttribute('src', response.results[2].image);
-
-    // responseContainerEl.appendChild(imageII);
-  });
 
 //////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
 if (window.localStorage) {
@@ -323,18 +291,7 @@ if (window.localStorage) {
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
 // BEN START
-//Notes:
-// use the API id of each recipe to eventually link to the spoonful recipe page
-//combine USDA API with Google maps
-// use response.results[math.random] to "cheat" showing different results each time (in the recipe pulls)...
-//...and to avoid duplicates we can say random 0-3, 4-6, 7-9.
-
-//MUST DO BEFORE WEDNESDAY CLASS:
-//Display random recipes on search With working links to recipes
-//My Meals page that can store recipes the user chooses
-//have Link! read 'View recipe and related recipes'--Shane Style
-//Shane/Ani get a new Spoonacular api key to use for presentation 
-//Ani has to re-write local storage Array logic. Instead of saving Array0-3, she needs to save xyz. 
+//
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
@@ -342,7 +299,9 @@ function findMarkets() {
   var zip = zipCode.value;
   var zipInput = document.getElementById("zipBox");
 
-  // zipInput.style.display = "none"; -->commenting this out prevents the zip input from going away after click
+
+  // zipInput.style.display = "none";
+
   //fetch local farmers markets from zipcode search
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
