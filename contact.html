@@ -31,6 +31,7 @@
 <body>
 
 
+
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
        <img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
@@ -57,6 +58,7 @@
         </ul>
       </div>  
     </nav>    
+
 
     <!--?-----------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
@@ -133,10 +135,13 @@
     <div class="rating">
         <h2>Feeling Fresh? Give us 5 stars!</h2>
 
-        <div class="review">
-            <div class="stars rate" id="user-rating" data-percent="50"><a href="?1" type="button" title="awful" onclick="awful()">★</a><a href="?2"
-                type="button" title="ok" onclick="ok()">★</a><a href="?3" type="button" title="good" onclick="good()">★</a><a href="?4" type="button" title="great" onclick="great()">★</a><a href="?5"
-                type="button" title="awesome" onclick="awesome()">★</a> 
+
+        <div class="form-group">
+            <div class="stars rate" id="user-rating" data-percentage="50"><a href="?1" type="number" id="rating1"
+                    title="awful">★</a><a href="?2" type="number" id="rating2" title="ok">★</a><a href="?3"
+                    type="number" id="rating3" title="good">★</a><a href="?4" type="number" id="rating4"
+                    title="great">★</a><a href="?5" type="number" id="rating5" title="awesome">★</a>
+
             </div><br>
         </div>
 
