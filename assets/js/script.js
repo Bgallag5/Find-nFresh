@@ -50,7 +50,9 @@ function getRecipe() {
       console.log(response);
       const lastThreeRecipes = [response.results[x], response.results[y], response.results[z]];
       console.log(lastThreeRecipes);
-
+      
+      // IF spelling is right, say "Finding Fresh"
+      // IF spelling is wrong, say "No Results"
 
       if (response.results.length !== 0) {
         errorMessage.textContent = "Finding Fresh";
