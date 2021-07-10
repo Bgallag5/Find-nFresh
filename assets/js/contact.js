@@ -18,6 +18,7 @@ if (window.localStorage) {
         modal.style.display = "block";
     }
 
+
     span.onclick = function () {
         modal.style.display = "none";
     }
@@ -28,11 +29,13 @@ if (window.localStorage) {
             modal.style.display = "none";
         }
 
+
     }
 
     if (window.localStorage) {
         var userEmail = document.getElementById("user-email");
         userEmail.value = localStorage.getItem("user-email");
+
 
         userEmail.addEventListener("input", function store() {
             localStorage.setItem("user-email", userEmail.value);
@@ -47,7 +50,9 @@ if (window.localStorage) {
             modal.style.display = "none";
         }
 
+
         window.onclick = function (event) {
+
 
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -67,9 +72,11 @@ if (window.localStorage) {
                 modal.style.display = "block";
             }
 
+
             span.onclick = function () {
                 modal.style.display = "none";
             }
+
 
             window.onclick = function (event) {
 
@@ -122,3 +129,4 @@ document.getElementById("rating4").addEventListener("click", function (event) {
 document.getElementById("rating5").addEventListener("click", function (event) {
     event.preventDefault
 })
+
