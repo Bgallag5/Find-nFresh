@@ -154,16 +154,16 @@ function getRecipeData(id, id2, id3) {
     })
     .then(function (response) {
       var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
-      var recipeTitle = response[0].title;  //grab recipe URL
+      var recipeTitle = response[0].title;  //grab recipe title
       var responseContainerEl = document.querySelector("#response-container-2");
-      responseContainerEl.innerHTML = "";
+      responseContainerEl.innerHTML = "";  //clear the text in container 
 
       var recipeOne = document.createElement("a")    //create an 'a', element set it's href, and give it text that links
       recipeOne.setAttribute("href", recipeLink);
       recipeOne.setAttribute("target", "_blank")
       recipeOne.innerHTML= recipeTitle;
       responseContainerEl.appendChild(recipeOne);
-      
+      //2 lines: set and get
     });
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
@@ -174,8 +174,10 @@ function getRecipeData(id, id2, id3) {
       return response.json();
     })
     .then(function (response) {
+      console.log(response);
       var recipeLink = response[0].spoonacularSourceUrl;  
       var recipeTitle = response[0].title;  
+      console.log(recipeTitle);
       var responseContainerEl = document.querySelector("#response-container-i");
       responseContainerEl.innerHTML = "";
 
@@ -206,56 +208,6 @@ function getRecipeData(id, id2, id3) {
       responseContainerEl.appendChild(recipeThree);
     });
 }
-// var responseContainerEl = document.querySelector('#response-container-ii');
-// responseContainerEl.innerHTML = recipeTitleII;
-
-
-// var recipeII = document.createElement("recipe");
-// recipeII.setAttribute('src', response.results[2]);
-
-
-// var imageII = document.createElement("img");
-// imageII.setAttribute("src", " ");
-// imageII.setAttribute("src", response.results[2].image);
-
-// responseContainerEl.appendChild(imageII);
-// window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
-// window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
-
-// RECIPE 1 : // API CALL IS WORKIGN BUT RETURNING A 404
-
-// var id = response.results[0].id;    //Can we delete this through the closing bracket on line 253? -- this was an attempt at getRecipeData() but isnt used
-// console.log(id);
-
-// fetch(
-//   `https://api.spoonacular.com/recipes/${id}/summary&apiKey=53ed151123a740f094ac3e8409f6c1f3`
-// )
-//   .then(function (response) {
-//     console.log(response);
-//     return response.json();
-//   })
-
-//   .then(function (response) {
-//     var recipeLink = response.url;
-//     console.log(recipeLink);
-
-//     // var responseContainerEl = document.querySelector('#response-container-ii');
-//     // responseContainerEl.innerHTML = recipeTitleII;
-
-//     // var recipeII = document.createElement("recipe");
-//     // recipeII.setAttribute('src', response.results[2]);
-
-//     // responseContainerEl.appendChild(recipeII);
-
-//     // var recipeImageII = response.results[2].image;
-//     // console.log(recipeImageII);
-
-//     // var imageII = document.createElement("img");
-//     // imageII.setAttribute('src', " ");
-//     // imageII.setAttribute('src', response.results[2].image);
-
-//     // responseContainerEl.appendChild(imageII);
-//   });
 
 //////////////////////////////////////ANI STORING ZIP CODE ////////////////////////////////////////////////////////
 if (window.localStorage) {
@@ -302,18 +254,7 @@ if (window.localStorage) {
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 //
 // BEN START
-//Notes:
-// use the API id of each recipe to eventually link to the spoonful recipe page
-//combine USDA API with Google maps
-// use response.results[math.random] to "cheat" showing different results each time (in the recipe pulls)...
-//...and to avoid duplicates we can say random 0-3, 4-6, 7-9.
-
-//MUST DO BEFORE WEDNESDAY CLASS:
-//Display random recipes on search With working links to recipes
-//My Meals page that can store recipes the user chooses
-//have Link! read 'View recipe and related recipes'--Shane Style
-//Shane/Ani get a new Spoonacular api key to use for presentation 
-//Ani has to re-write local storage Array logic. Instead of saving Array0-3, she needs to save xyz. 
+//
 //---------------------Bens Code--------------------------------Bens Code-----------------------------------------------------------//
 
 function findMarkets() {
