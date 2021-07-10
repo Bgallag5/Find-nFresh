@@ -201,7 +201,8 @@ function getRecipeData(id, id2, id3) {
       var recipeOne = document.getElementById("recipeOneLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeOne.setAttribute("href", recipeLink);
       recipeOne.setAttribute("target", "_blank")
-      recipeOne.innerHTML = "Link!";
+      recipeOne.innerHTML = " Link! ";
+      recipeOne.style.color = '#3d550c';
     });
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
@@ -217,8 +218,10 @@ function getRecipeData(id, id2, id3) {
       var recipeTwo = document.getElementById("recipeTwoLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeTwo.setAttribute("href", recipeLink);
       recipeTwo.setAttribute("target", "_blank")
-      recipeTwo.innerHTML = "Link!";
+      recipeTwo.innerHTML = " Link! ";
+      recipeTwo.style.color = '#3d550c';
     });
+
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
     id3 +
@@ -232,7 +235,8 @@ function getRecipeData(id, id2, id3) {
       var recipeThree = document.getElementById("recipeThreeLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeThree.setAttribute("href", recipeLink);
       recipeThree.setAttribute("target", "_blank")
-      recipeThree.innerHTML = "Link!";
+      recipeThree.innerHTML = " Link! ";
+      recipeThree.style.color = '#3d550c';
     });
 }
 
