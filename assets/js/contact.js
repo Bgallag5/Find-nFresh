@@ -87,12 +87,38 @@ if (window.localStorage) {
 
 // THANK YOU  // ADD LOCAL STORAGE OF RATING 
 
-// 1 star
+// // 1 star
+// var rating = document.getElementById("user-rating");
+// return awful();
+document.getElementById("rating1").addEventListener("click", function (event) {
+    event.preventDefault
+})
 
-// 2 stars
 
-// 3 stars 
+// // 2 stars
+// var rating2 = document.getElementById("user-rating")
+// return ok();
+document.getElementById("rating2").addEventListener("click", function (event) {
+    event.preventDefault
+})
 
-// 4 stars 
+// // 3 stars 
+// var rating3 = document.getElementById("user-rating")
+// return good();
+document.getElementById("rating3").addEventListener("click", function (event) {
+    event.preventDefault
+})
 
-// 5 stars 
+// // 4 stars 
+// var rating4 = document.getElementById("user-rating")
+// return great();
+document.getElementById("rating4").addEventListener("click", function (event) {
+    event.preventDefault
+})
+
+// // 5 stars 
+// var rating5 = document.getElementById("user-rating")
+// return awesome();
+document.getElementById("rating5").addEventListener("click", function (event) {
+    event.preventDefault
+})
