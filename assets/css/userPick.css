@@ -112,6 +112,10 @@
 
   }
 
+  .row {
+    margin-right: 10px;
+  }
+
   .container-box {
     margin: 20px;
   }
@@ -139,15 +143,99 @@
   /*****On screens that are 980 or less***/
   @media screen and (max-width: 980px) {
   
+    
+
+    .nav-item {
+       
+        color: white;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 10px;
+      
+
+    }
+
+
+    #recViewed {
+      margin-right: 0;
+      margin-left: 37px;
+    }
+
+    #home {
+      margin-right: 30px;
+    }
+
+    .hero img {
+      height: 200px;
+      
+    }
+
     .hero h2 {
       font-size: 50px;
       margin-top: 10px;
       margin-left: 5px;
     }
+
+    .container {
+      margin-right: 60px;
+    }
   
   }
 
-  #recViewed {
-    margin-right: 0;
-    margin-left: 200px;
+  /* small devices - landscape phones, 576px and up */
+ 
+  /* @media (min-width: 576px) { 
+      ul li a {
+        margin-right: 100px;
+        font-size: 20px;
+      }
+
+
+
+   } */
+
+   @media (max-width: 767px) {
+      #header {
+        height: 100px;
+      }
+    
+      #headerId h1 {
+        font-size: 15px;
+      }
+
+      .nav-link {
+        font-size: 10px;
+      }
+    
+    
+      #home {
+        margin-right: 100px;
+      }
+
+      #about {
+        margin-right: 100px;
+      }
+
+      #recViewed {
+        margin-right: 100px;
+      }
+
+      #contact {
+        margin-right: 100px;
+      }
+
+      .hero h2 {
+        font-size: 35px;
+        margin-top: 90px;
+        margin-right: 50px;
+      }
+
+      .col-4 {
+        font-size: 10px;
+      }
+
+      .card {
+        width: 50px;
+      }
+
+      
   }
