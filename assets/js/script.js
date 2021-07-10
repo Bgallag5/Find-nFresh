@@ -12,6 +12,8 @@ var mapContainer = document.getElementById("mapContainer");
 var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3"
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 
+// --------------------On Search----------------------------
+
 
 //FETCH THE RECIPE API RECIPES BASED ON DROPDOWN INGREDIENTS
 // FORMAT:  &apiKey=YOUR-API-KEY.
@@ -20,22 +22,25 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 // FETCH THE RECIPE AND NUTRITION APIS
 
 function getRecipe() {
+  var errorMessage = document.getElementById("error");
+  errorMessage.textContent = ""
+  errorMessage.style.color = '#3d550c';
 
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch(
     "https://api.spoonacular.com/recipes/complexSearch?query=" +
-      searchRecipe +
-      "&apiKey=" + spoonKey2
+    searchRecipe +
+    "&apiKey=" + spoonKey2
   )
     .then(function (response) {
-      //console.log(response.json());
       return response.json();
-    })
+      })
 
     // RECIPE IMAGE, TITLE, LINK 1
 
     .then(function (response) {
+      console.log(response);
     
       var x = Math.floor(Math.random() * 4);
       var y = Math.floor(Math.random() * 3) + 4;
@@ -45,8 +50,21 @@ function getRecipe() {
       console.log(z)
 
       console.log(response);
-      const lastThreeRecipes = [response.results[x], response.results[y], response.results[z] ];
+      const lastThreeRecipes = [response.results[x], response.results[y], response.results[z]];
       console.log(lastThreeRecipes);
+      
+      // IF spelling is right, say "Finding Fresh"
+      // IF spelling is wrong, say "No Results"
+
+      if (response.results.length !== 0) {
+        errorMessage.textContent = "Finding Fresh";
+      }
+
+      else {
+        errorMessage.textContent = "No results. Please check your spelling.";
+
+      }
+
       localStorage.setItem(
         "lastThreeRecipes",
         JSON.stringify(lastThreeRecipes)
@@ -58,6 +76,7 @@ function getRecipe() {
 
       var responseContainerEl = document.querySelector("#response-container-2");
       responseContainerEl.innerHTML = recipeTitle;
+
 
       var recipeOne = document.createElement("a");    ///replace 'recipe' with 'a', give it a href and an id
       recipeOne.setAttribute("href", "");
@@ -111,7 +130,7 @@ function getRecipe() {
 
       var recipeTitleII = response.results[z].title;
       console.log(recipeTitleII);
-    
+
 
       var responseContainerEl = document.querySelector(
         "#response-container-ii"
@@ -149,14 +168,30 @@ function getRecipe() {
       //send three recipe id's into getRecipeData()
       getRecipeData(id, id2, id3);
     });
+
+    if (window.localStorage) {
+
+      var saveIndgredient = document.getElementById("searchRecipe"); //html input id
+      saveIndgredient.value = localStorage.getItem("searchRecipe");
+    
+      saveIndgredient.addEventListener(
+        "input",
+        function () {
+          localStorage.setItem("searchRecipe", saveIndgredient.value);
+        },
+        false
+      );
+    
+    }
 }
+
 
 function getRecipeData(id, id2, id3) {
   //fetch three recipes, turn to JSON, then pull the data we need (link to recipe)
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
-      id +
-      "&apiKey=" + spoonKey2
+    id +
+    "&apiKey=" + spoonKey2
   )
     .then(function (response) {
       return response.json();
@@ -166,12 +201,13 @@ function getRecipeData(id, id2, id3) {
       var recipeOne = document.getElementById("recipeOneLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeOne.setAttribute("href", recipeLink);
       recipeOne.setAttribute("target", "_blank")
-      recipeOne.innerHTML = "Link!";
+      recipeOne.innerHTML = " Link! ";
+      recipeOne.style.color = '#3d550c';
     });
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
-      id2 +
-      "&apiKey=" + spoonKey2
+    id2 +
+    "&apiKey=" + spoonKey2
   )
     .then(function (response) {
       return response.json();
@@ -182,12 +218,14 @@ function getRecipeData(id, id2, id3) {
       var recipeTwo = document.getElementById("recipeTwoLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeTwo.setAttribute("href", recipeLink);
       recipeTwo.setAttribute("target", "_blank")
-      recipeTwo.innerHTML = "Link!";
+      recipeTwo.innerHTML = " Link! ";
+      recipeTwo.style.color = '#3d550c';
     });
+
   fetch(
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
-      id3 +
-      "&apiKey=" + spoonKey2
+    id3 +
+    "&apiKey=" + spoonKey2
   )
     .then(function (response) {
       return response.json();
@@ -197,9 +235,11 @@ function getRecipeData(id, id2, id3) {
       var recipeThree = document.getElementById("recipeThreeLink") //grab the 'a' we created, set it's href, and give it text that links
       recipeThree.setAttribute("href", recipeLink);
       recipeThree.setAttribute("target", "_blank")
-      recipeThree.innerHTML = "Link!";
+      recipeThree.innerHTML = " Link! ";
+      recipeThree.style.color = '#3d550c';
     });
 }
+
 // var responseContainerEl = document.querySelector('#response-container-ii');
 // responseContainerEl.innerHTML = recipeTitleII;
 
@@ -275,20 +315,7 @@ if (window.localStorage) {
 // window.localStorage.setItem("recipeTitleII", JSON.stringify(recipeTitleII));
 // window.localStorage.getItem("recipeTitle", JSON.stringify(recipeTitleII));
 ///////////////////////////// ANI STORING INGREDIENT (might need to be moved) //////////////////////////////////////////////////////////////////////////
-if (window.localStorage) {
 
-  var saveIndgredient = document.getElementById("searchRecipe"); //html input id
-  saveIndgredient.value = localStorage.getItem("searchRecipe");
-
-  saveIndgredient.addEventListener(
-    "input",
-    function () {
-      localStorage.setItem("searchRecipe", saveIndgredient.value);
-    },
-    false
-  );
-
-}
 ////////////////////////////////////////// END ANI LOCAL STORAGE FOR THIS FILE /////////////////////////////////////////////////////
 
 
@@ -319,7 +346,7 @@ function findMarkets() {
   //fetch local farmers markets from zipcode search
   fetch(
     "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" +
-      zip
+    zip
   )
     .then(function (response) {
       return response.json();
@@ -331,7 +358,7 @@ function findMarkets() {
       //new fetches with the market id's
       fetch(
         "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-          market1
+        market1
       )
         .then(function (response) {
           return response.json();
@@ -347,7 +374,7 @@ function findMarkets() {
           console.log(link);
           fetch(
             "https://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" +
-              market2
+            market2
           )
             .then(function (response2) {
               return response2.json();

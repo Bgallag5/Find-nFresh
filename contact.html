@@ -20,39 +20,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="sylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- ?---------------------------BULMA CSS------------------------------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/contact.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 
 <body>
-    <header>
-        <h1>
-            <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-            FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
-        </h1>
 
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-
-                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+       <img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+            </h1>
+      <a class="navbar-brand" href="./index.html">FindFresh</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+          </li>    
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html">Contact Us</a>
+          </li>    
         </ul>
-    </header>
+      </div>  
+    </nav>    
 
     <!--?-----------------HERO SECTION STARTS HERE-------------------------->
     <section class="hero">
+        <!-- <img src="assets/images/2farm2table.jpeg"> -->
     </section>
     <!--?--------------------END HERO SECTION--------------------------------------->
 
@@ -88,7 +94,7 @@
                     <input type="text" class="search-term" id="user-name" value="" placeholder="Your Name" />
                     <input type="text" class="search-term" id="user-email" value="" placeholder="Your Email" />
                     <!-- <label for="contact-message">Message</label> -->
-                    <input type="text" id="user-message" placeholder="Message" />
+                    <input type="text" class="search-term" id="user-message" placeholder="Message" />
                     <!-- <textarea id="contact-message" placeholder="Message"></textarea> -->
                     <button onclick="store();" type="button" id="submit-button">Submit</button>
                 </form>
@@ -109,7 +115,6 @@
                     <span class="close">&times;</span>
                     <h2>Your form has been successfully submitted!</h2>
                 </div>
-
                 <div class="modal-body" id="stored-info" value="" placeholder="stored-info-here">
                 </div>
 
@@ -126,13 +131,13 @@
         <h2>Feeling Fresh? Give us 5 stars!</h2>
 
         <div class="review">
-            <div class="stars rate" id="user-rating" data-percent="50"><a href="?1" title="awful">★</a><a href="?2"
-                    title="ok">★</a><a href="?3" title="good">★</a><a href="?4" title="great">★</a><a href="?5"
-                    title="awesome">★</a> 
+            <div class="stars rate" id="user-rating" data-percent="50"><a href="?1" type="button" title="awful" onclick="awful()">★</a><a href="?2"
+                type="button" title="ok" onclick="ok()">★</a><a href="?3" type="button" title="good" onclick="good()">★</a><a href="?4" type="button" title="great" onclick="great()">★</a><a href="?5"
+                type="button" title="awesome" onclick="awesome()">★</a> 
             </div><br>
         </div>
 
-        <div class="thank-you">
+        <div class="thank-you" id=thankYou>
             <h3>Thank you!</h3>
         </div>
 
@@ -149,6 +154,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- <script src="assets/js/script.js"></script> -->
     <script src="assets/js/contact.js"></script>
 </body>
