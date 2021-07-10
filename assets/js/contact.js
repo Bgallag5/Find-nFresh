@@ -51,13 +51,36 @@ function displayInfo() {
 
 
 // THANK YOU  // ADD LOCAL STORAGE OF RATING 
+// add event listener to each star and prevent default 
+var rating = document.getElementById("thankYou");
+rating.textContent = "";
 
 // 1 star
 
+function awful () {
+    rating.textContent = "AWFUL!";
+}
+
 // 2 stars
+
+function ok () {
+    rating.textContent = "OK!";
+}
 
 // 3 stars 
 
+function good() {
+    rating.textContent = "GOOD!"
+}
+
 // 4 stars 
 
+function great() {
+    rating.textContent = "GREAT!"
+}
+
 // 5 stars 
+
+function awesome() {
+    rating.textContent = "AWESOME!"
+}
