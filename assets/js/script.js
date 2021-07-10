@@ -24,6 +24,8 @@ var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42"
 function getRecipe() {
   var errorMessage = document.getElementById("error");
   errorMessage.textContent = ""
+  errorMessage.style.color = '#3d550c';
+
   var searchRecipe = document.querySelector("#searchRecipe").value;
 
   fetch(
