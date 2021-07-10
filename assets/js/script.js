@@ -186,7 +186,7 @@ function getRecipeData(id, id2, id3) {
             return response.json();
         })
         .then(function (response) {
-            const recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
+            var recipeLink = response[0].spoonacularSourceUrl;  //grab recipe URL
             localStorage.setItem("recipeOneLink", recipeLink);   /// ************* storing URL FOR RECENTLYVIEWED
             var recipeOne = document.getElementById("recipeOneLink") //grab the 'a' we created, set it's href, and give it text that links
             recipeOne.setAttribute("href", recipeLink);
@@ -231,16 +231,44 @@ function getRecipeData(id, id2, id3) {
             recipeThree.setAttribute("target", "_blank")
             recipeThree.innerHTML = "Link!";
 
-            // window.localStorage.getItem("recipeThreeLink", recipeLink); //// ANI grabbing link for recentlyViewedPage
+
 
         });
 }
-// var responseContainerEl = document.querySelector('#response-container-ii');
-// responseContainerEl.innerHTML = recipeTitleII;
 
 
-// var recipeII = document.createElement("recipe");
-// recipeII.setAttribute('src', response.results[2]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 var imageII = document.createElement("img");

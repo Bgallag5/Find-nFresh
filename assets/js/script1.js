@@ -12,9 +12,9 @@
 
 ///////////////////////First and Last Images are displayed to page/////////////////////////
 
-var cardOneEl = document.getElementById("cardOne");
-var cardTwoEl = document.getElementById("cardTwo");
-var cardThreeEl = document.getElementById("cardThree");
+var cardOneEl = document.getElementById("card1");
+var cardTwoEl = document.getElementById("card2");
+var cardThreeEl = document.getElementById("card3");
 // var imgOneEl = document.getElementById("imgOne");
 // var imageTwoEl = document.getElementById("imgTwo");
 // var imageThreeEl = document.getElementById("imgThree");
@@ -27,17 +27,43 @@ var displayLastThreeRecipes = function () {
     console.log(lastThreeRecipes);
     console.log(lastThreeRecipes[0].id); /// use this format in for loop to grab parts of array 
     for (let i = 0; i < lastThreeRecipes.length; i++) {
-        cardOneEl.innerHTML = lastThreeRecipes[0].title; /// displays title 1  ***********************
-        cardTwoEl.innerHTML = lastThreeRecipes[1].title; /// displays title 2 ************************
-        cardThreeEl.innerHTML = lastThreeRecipes[2].title; /// displays title 3 **********************
-        // arrayPrintEl.appendChild.lastThreeRecipes[1].title;
-        // document.getElementById("arrayPrint").innerHTML = JSON.stringify(recipesArray); // displays array as is
+
+        // for every value of I 
+
+        // // Create a card 
+        // var cardEl = document.getElementById(`card${i + 1}`);
+        // // to that card add an a tag
+        // var link = document.createElement("a");
+        // link.setAttribute("href", localStorage.getItem(`recipeOneLink`));
+        // // which has text value of title
+        // link.setAttribute("target", "_blank");
+        // // and href value of link
+        // link.text = lastThreeRecipes[i].title;
+
+        // cardEl.appendChild(link);
+
+        // and image which has src as the image link
+        // var image = document.createElement("img");
+        // image.setAttribute('src', " ");
+        // image.setAttribute('src', lastThreeRecipes[i].image);
+        // cardEl.appendChild(image);
+
+
+
+        cardOneEl.innerHTML = `<a href="${localStorage.getItem("recipeOneLink")}" alt="${lastThreeRecipes[0].title}" target="_blank"> ${lastThreeRecipes[0].title} </a>`;   /// returns link with text of title and image for index[0] of lastThreeRecipes Array  ***********************
+        cardTwoEl.innerHTML = `<a href="${localStorage.getItem("recipeTwoLink")}" alt="${lastThreeRecipes[1].title}" target="_blank"> ${lastThreeRecipes[1].title} </a>`;    /// returns link with text of title and image for index[1] of lastThreeRecipes Array  ***********************
+        cardThreeEl.innerHTML = `<a href="${localStorage.getItem("recipeThreeLink")}" alt="${lastThreeRecipes[2].title}" target="_blank"> ${lastThreeRecipes[2].title} </a>`; /// returns link with text of title and image for index[2] of lastThreeRecipes Array  ***********************
+        // cardTwoEl.innerHTML = lastThreeRecipes[1].title; /// displays title 2 ************************
+        // cardThreeEl.innerHTML = lastThreeRecipes[2].title; /// displays title 3 **********************
+
+
+        // // arrayPrintEl.appendChild.lastThreeRecipes[1].title;
+        // // document.getElementById("arrayPrint").innerHTML = JSON.stringify(recipesArray); // displays array as is
         var image = document.createElement("img");
         image.setAttribute('src', " ");
         image.setAttribute('src', lastThreeRecipes[0].image);
         cardOneEl.appendChild(image);       ///// first image is displayed ***************************
         // cardOneEl.appendChild(lastThreeRecipes[0].title)
-
 
         var image1 = document.createElement("img");
         image1.setAttribute('src', " ");
@@ -49,22 +75,13 @@ var displayLastThreeRecipes = function () {
         image2.setAttribute('src', " ");
         image2.setAttribute('src', lastThreeRecipes[2].image);
         cardThreeEl.appendChild(image2);                         ///// third image is displayed *********************************
-        // cardThreeEl.innerHTML = lastThreeRecipes[2].title;   
 
 
 
-        console.log(lastThreeRecipes);
+
+
 
     }
 }
 displayLastThreeRecipes();
-
-var getLinks = function () {
-    var recipeLink = localStorage.getItem("recipeOneLink");
-
-    console.log(recipeLink);
-
-
-}
-
 

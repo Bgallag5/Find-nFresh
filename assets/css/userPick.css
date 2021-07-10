@@ -104,6 +104,14 @@
   
   /*?--------------RECIPE CARD CONTAINER--------------------*/
   
+  .card a {
+    color:var(--first);
+    text-decoration: none;
+    font-weight: bold;
+    
+
+  }
+
   .container-box {
     margin: 20px;
   }
@@ -137,4 +145,9 @@
       margin-left: 5px;
     }
   
+  }
+
+  #recViewed {
+    margin-right: 0;
+    margin-left: 200px;
   }
