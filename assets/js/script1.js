@@ -28,26 +28,6 @@ var displayLastThreeRecipes = function () {
     console.log(lastThreeRecipes[0].id); /// use this format in for loop to grab parts of array 
     for (let i = 0; i < lastThreeRecipes.length; i++) {
 
-        // for every value of I 
-
-        // // Create a card 
-        // var cardEl = document.getElementById(`card${i + 1}`);
-        // // to that card add an a tag
-        // var link = document.createElement("a");
-        // link.setAttribute("href", localStorage.getItem(`recipeOneLink`));
-        // // which has text value of title
-        // link.setAttribute("target", "_blank");
-        // // and href value of link
-        // link.text = lastThreeRecipes[i].title;
-
-        // cardEl.appendChild(link);
-
-        // and image which has src as the image link
-        // var image = document.createElement("img");
-        // image.setAttribute('src', " ");
-        // image.setAttribute('src', lastThreeRecipes[i].image);
-        // cardEl.appendChild(image);
-
 
 
         cardOneEl.innerHTML = `<a href="${localStorage.getItem("recipeOneLink")}" alt="${lastThreeRecipes[0].title}" target="_blank"> ${lastThreeRecipes[0].title} </a>`;   /// returns link with text of title and image for index[0] of lastThreeRecipes Array  ***********************

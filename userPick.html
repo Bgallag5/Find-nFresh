@@ -25,29 +25,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--?-----------------------Import materialize.css----------------------------->
-
-
-
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!--?-------------------------Import Bootstrap--------------------------------->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="sylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- ?---------------------------BULMA CSS------------------------------------>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!--?--------------------local CSS stylesheet---------------------------------->
-
-    <link rel="stylesheet" href="./assets/css/userPick.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- ?---------------------------BULMA CSS------------------------------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!--?--------------------local CSS stylesheet---------------------------------->
     <link rel="stylesheet" href="./assets/css/userPick.css">
 
 
@@ -56,25 +38,28 @@
 </head>
 
 
+<!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+<!-- FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+</h1> -->
 
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./about.html">About Us</a>
-        </li>
-        <li class="nav-item id=" recViewed">
-            <a class="nav-link" href="/userPick.html">Recently Viewed</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-        </li>
-    </ul>
-</header>
+<!-- <ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="./about.html">About Us</a>
+    </li>
+    <li class="nav-item id=" recViewed">
+        <a class="nav-link" href="/userPick.html">Recently Viewed</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+    </li>
+</ul>
+</header> -->
 
 <body>
-    <header>
+    <header id="headerId">
         <h1>
             <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
             FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
@@ -83,28 +68,28 @@
         <ul class="nav justify-content-end">
 
             <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
+                <a class="nav-link" id="home" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./about.html">About Us</a>
+                <a class="nav-link" id="about" href="./about.html">About Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="recViewed">
                 <a class="nav-link" href="./userPick.html">Recently Viewed</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact Us</a>
+                <a class="nav-link" id="contact" href="./contact.html">Contact Us</a>
+
             </li>
         </ul>
-    </div>
-</nav>
 
+        </nav>
+    </header>
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
 
 
 
-    <section class="hero">
+    <section class="hero" id="heroId">
         <h2>Recently Viewed</h2>
     </section>
 
@@ -126,6 +111,9 @@
 
 
 
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
