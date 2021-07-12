@@ -33,7 +33,7 @@ function getRecipe() {
     "https://api.spoonacular.com/recipes/complexSearch?query=" +
       searchRecipe +
       "&apiKey=" +
-      spoonKey1
+      spoonKey2
   )
     .then(function (response) {
       return response.json();
@@ -182,7 +182,7 @@ function getRecipeData(id, id2, id3) {
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
       id +
       "&apiKey=" +
-      spoonKey1
+      spoonKey2
   )
     .then(function (response) {
       return response.json();
@@ -206,7 +206,7 @@ function getRecipeData(id, id2, id3) {
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
       id2 +
       "&apiKey=" +
-      spoonKey1
+      spoonKey2
   )
     .then(function (response) {
       return response.json();
@@ -230,7 +230,7 @@ function getRecipeData(id, id2, id3) {
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
       id3 +
       "&apiKey=" +
-      spoonKey1
+      spoonKey2
   )
     .then(function (response) {
       return response.json();
