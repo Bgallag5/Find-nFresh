@@ -5,7 +5,11 @@
     --fourth: #664B4D;
     --fifth: #81b622;
     --sixth: #3d550c;
-    --seventh: rgb(233, 47, 0);
+    --seventh:rgb(102, 255, 255);
+    --eigth: rgb(141, 141, 141);
+    --nineth: rgb(179, 29, 79);
+    --tenth: rgb(255, 198, 75);
+    --eleventh: rgb(36, 36, 36);
     /* font color primary- white */
     /* font color secondary --grey */
   }
@@ -18,7 +22,7 @@
   body {
     background-size: cover;
     background-position: center;
-    background-color: var(--sixth);
+    background-color: var(--eleventh);
   }
   
   /*?-----------------Header and navigation----------------*/
@@ -55,57 +59,13 @@
   }
   
   ul li a:hover {
-    color: var(--second);
-    display: flex;
+    color: var(--tenth)
   }
   
   .nav-link {
     padding-top: 20px;
   }
   
-
-  
-  /*?---------------------HERO SECTION -----------------------*/
-  .hero {
-    background-image: url("../images/background.jpeg");
-    background-size: cover;
-    color: white;
-    background-position: 40;
-    height: 350px ;
-    z-index:8888;
-  }
-  
-  .hero h2 {
-   padding: 150px 70px;
-   color: white;
-   font-family: 'Dancing Script', cursive;
-   font-size: 75px;
-   margin-bottom: 400px;
-  }
-
-  
-
-
-
-.mx-auto {
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-
-.card {
-    border-color: var(--sixth);
-    color:var(--sixth);
-    text-decoration-line: none;
-}
-
-.card a {
-    text-decoration: none;
-    text-emphasis: none;
-    color: var(--sixth)
-}
-
-
   /*?---------------------FOOTER SECTION---------------------*/
   
   footer {
@@ -116,5 +76,78 @@
     justify-content: space-between;
     align-items: left;
     padding: 20px;
-    text-decoration-style: none;
+  }
+  
+  /*?---------------------HERO SECTION -----------------------*/
+  .hero {
+    background-image: url("../images/moreSpices.jpg");
+    background-size: cover;
+    color: wheat;
+    background-position: 40;
+    height: 350px ;
+    z-index:8888;
+  }
+  
+  .hero h2 {
+   padding: 150px 70px;
+   color: white;
+   /* font-family: 'Dancing Script', cursive; */
+   font-size: 75px;
+   /* margin-left: 900px; */
+   text-align: center;
+   margin-top: 20px;
+  }
+  
+  /*?------------------------INGREDIENTS INPUT CONTAINER--------------------------*/
+  
+
+  
+  /*?--------------RECIPE CARD CONTAINER--------------------*/
+  
+  .card a {
+    color:var(--first);
+    text-decoration: none;
+    font-weight: bold;
+    
+
+  }
+
+  .container-box {
+    margin: 20px;
+  }
+  
+  .recipe-img {
+    padding-top: 20px;
+  }
+  
+  /*?----------------ZIP CODE CONTAINER----------------*/
+  .zipcode {
+    align-items: center;
+  }
+  
+  .container .card {
+    padding-top: 0px;
+    padding-bottom: 20px; 
+    margin-bottom: 25px;
+    align-items: center;
+  }
+  
+  
+  
+  /*?--------------------MEDIA QUERIES---------------*/
+  
+  /*****On screens that are 980 or less***/
+  @media screen and (max-width: 980px) {
+  
+    .hero h2 {
+      font-size: 50px;
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+  
+  }
+
+  #recViewed {
+    margin-right: 0;
+    margin-left: 200px;
   }
