@@ -45,20 +45,61 @@ header img {
   margin-bottom: 10px;
 }
 
-
-ul li a {
-  color: white;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 20px;
+.leaf-image {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+  /* position: fixed; */
 }
 
-ul li a:hover {
-  color: var(--second);
+.navbar {
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  padding-top: 5px;
+  position: fixed;
+  margin-left: 45px;
+
+}
+
+.navbar-toggler {
+  background-color: var(--second);
+  padding-top: 1px;
+}
+
+
+.navbar-toggler:hover {
+  background-color:var(--third);
+
+}
+
+.navbar-toggler:focus {
+  background-color: var(--third);
+}
+
+.nav-item a{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+  z-index: 9999;
+
+}
+
+.nav-link:hover {
+  background-color: var(--second);
 }
 
 .nav-link {
-  padding-top: 20px;
+  padding-top: 10px;
+  z-index: 9999;
 }
+
+
 
 /*?---------------------FOOTER SECTION---------------------*/
 
@@ -76,35 +117,156 @@ footer {
 .hero {
   background-image: url("../images/background.jpeg");
   background-size: cover;
-  color: white;
+  color: wheat;
   background-position: 40;
-  height: 350px ;
+  height: 400px ;
   z-index:8888;
 }
 
 .hero h2 {
  padding: 150px 70px;
- color: wheat;
+ color: white;
  font-family: 'Dancing Script', cursive;
  font-size: 75px;
 }
 
+/*?------------------------INGREDIENTS INPUT CONTAINER--------------------------*/
 
+.ingredient-input {
+  margin-top: 50px;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+
+.search-term {
+text-align: center;
+}
+
+.text-center input {
+  font-size: 150%;
+}
+
+.ingredient-text, .zip-text {
+  color: #28a745;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 60px;
+}
+
+/*?--------------RECIPE CARD CONTAINER--------------------*/
+
+.container-box {
+  margin: 20px;
+}
+
+
+.recipe-img {
+  padding-top: 20px;
+}
 
 /*?----------------ZIP CODE CONTAINER----------------*/
+.zipcode {
+  align-items: center;
+}
 
 .container .card {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px; 
+  margin-bottom: 25px;
+  align-items: center;
 }
 
 .enterButton, .ziptextinput {
 text-align: center;
 }
 
+.map-container {
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+
 iframe {
   margin: auto;
+  padding: 20px;
+
+  width: 500px;
+  height: 500px;
 }
+
+
+/*?--------------------MEDIA QUERIES---------------*/
+
+/*****On screens that are 980 or less***/
+@media screen and (max-width: 768px) {
+
+  .hero h2 {
+    opacity: 0;
+  }
+
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+/*****On screens that are 768 or less***/
+@media screen and (max-width: 768px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+/*****On screens that are 575 or less***/
+@media screen and (max-width: 575px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+}
+
+@media screen and (min-width: 980px) {
+
+  .navbar-brand {
+    padding-top: 0px;
+  }
+
+
+}
+
+
+/*?--------------------MEDIA QUERIES---------------*/
+
+/*****On screens that are 980 or less***/
+@media screen and (max-width: 980px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+}
+
 
 
 

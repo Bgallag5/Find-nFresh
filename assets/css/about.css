@@ -33,33 +33,74 @@ body {
     align-items: left;
     font-size: 30px;
     width: 100%;
-    
+    position: fixed;
+    z-index: 9999;
   }
   
   header h1 {
     padding-top: 10px;
   }
-
+  
   header img {
     width: 40px;
     height: 40px;
     margin-bottom: 10px;
   }
   
+  .leaf-image {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
   
-  ul li a {
+  .navbar {
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  
+  
+  .navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    padding-top: 5px;
+    position: fixed;
+    margin-left: 45px;
+  }
+  
+  .navbar-toggler {
+    background-color: var(--second);
+    padding-top: 1px;
+  }
+  
+  
+  .navbar-toggler:hover {
+    background-color:var(--third);
+  
+  }
+  
+  .navbar-toggler:focus {
+    background-color: var(--third);
+  }
+  
+  .nav-item a{
     color: white;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 20px;
+    z-index: 9999;
+  
   }
   
-  ul li a:hover {
-    color: var(--seventh);
+  .nav-link:hover {
+    background-color: var(--second);
   }
   
   .nav-link {
-    padding-top: 20px;
+    padding-top: 10px;
+    z-index: 9999;
+    
   }
+  
 
  /*?---------------------HERO SECTION -----------------------*/
 
@@ -68,15 +109,14 @@ body {
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
-  position: fixed;
 }
 
 .hero h2 {
   color: rgb(233, 47, 0);
   font-family: 'Dancing Script', cursive;
   font-size: 100px;
-  margin-left: 950px;
-  margin-top: 50px;
+  margin-left: 1000px;
+  margin-top: 100px;
 }
 
 .circle {
@@ -154,7 +194,77 @@ footer {
     justify-content: space-between;
     align-items: left;
     padding: 20px;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
+
+/*****On screens that are 980 or less***/
+@media screen and (max-width: 768px) {
+  .hero {
+    background-image: url("../images/AboutUs.jpeg"); 
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .hero h2 {
+    color: rgb(233, 47, 0);
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+  
+
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+/*****On screens that are 768 or less***/
+@media screen and (max-width: 768px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+/*****On screens that are 575 or less***/
+@media screen and (max-width: 575px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+}
+
+@media screen and (min-width: 980px) {
+
+  .navbar-brand {
+    padding-top: 0px;
+  }
+
+}
+
+
+
+
+
+
+

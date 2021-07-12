@@ -5,52 +5,128 @@ var stars = document.getElementById("");
 
 
 // STORES VALUES ON BUTTON CLICK
-function store() {
+
+if (window.localStorage) {
     var userName = document.getElementById("user-name");
-    localStorage.setItem("user-name", userName.value);
+    userName.value = localStorage.getItem("user-name");      /// get input value
 
-    var userEmail = document.getElementById("user-email");
-    localStorage.setItem("user-email", userEmail.value);
+    userName.addEventListener("input", function store() {    /// listen for submit button 
+        localStorage.setItem("user-name", userName.value);   /// set the info retrieved from storage
+    }, false)
 
-    var userMessage = document.getElementById("user-message");
-    localStorage.setItem("user-message", userMessage.value);
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
 
-}
 
-// GET ITEM 
-
-var storedName = localStorage.getItem("user-name");
-var storedEmail = localStorage.getItem("user-email");
-var storedMessage = localStorage.getItem("user-message");
-// var storedRating = localStorage.getItem("user-rating");
-
-var userRating = document.getElementById("user-rating");
-var thankYou = document.getElementById("thank-you")
-
-// Confirm Submission Module // ADD LOCAL STORAGE HERE
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
+    span.onclick = function () {
         modal.style.display = "none";
     }
-}
 
+    window.onclick = function (event) {
+
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+
+
+    }
+
+    if (window.localStorage) {
+        var userEmail = document.getElementById("user-email");
+        userEmail.value = localStorage.getItem("user-email");
+
+
+        userEmail.addEventListener("input", function store() {
+            localStorage.setItem("user-email", userEmail.value);
+
+        }, false)
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+
+        window.onclick = function (event) {
+
+
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+
+        }
+
+        if (window.localStorage) {
+            var userMessage = document.getElementById("user-message");
+            userMessage.value = localStorage.getItem("user-message");
+
+            userMessage.addEventListener("input", function store() {
+                localStorage.setItem("user-message", userMessage.value);
+            }, false)
+
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+
+            window.onclick = function (event) {
+
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+
+            }
+        }
+    };
+
+
+
+}
 
 // THANK YOU  // ADD LOCAL STORAGE OF RATING 
 
-// 1 star
+// // 1 star
+// var rating = document.getElementById("user-rating");
+// return awful();
+document.getElementById("rating1").addEventListener("click", function (event) {
+    event.preventDefault
+})
 
-// 2 stars
 
-// 3 stars 
+// // 2 stars
+// var rating2 = document.getElementById("user-rating")
+// return ok();
+document.getElementById("rating2").addEventListener("click", function (event) {
+    event.preventDefault
+})
 
-// 4 stars 
+// // 3 stars 
+// var rating3 = document.getElementById("user-rating")
+// return good();
+document.getElementById("rating3").addEventListener("click", function (event) {
+    event.preventDefault
+})
 
-// 5 stars 
+// // 4 stars 
+// var rating4 = document.getElementById("user-rating")
+// return great();
+document.getElementById("rating4").addEventListener("click", function (event) {
+    event.preventDefault
+})
+
+// // 5 stars 
+// var rating5 = document.getElementById("user-rating")
+// return awesome();
+document.getElementById("rating5").addEventListener("click", function (event) {
+    event.preventDefault
+})
+

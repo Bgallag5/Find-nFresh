@@ -59,12 +59,20 @@
     padding-top: 20px;
   }
 
+  .navbar {
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
   .hero {
-    background-image: url("/assets/images/farm2table.jpeg");
+
+    background-image: url("../images/2farm2table.jpeg");
     background-size: cover;
     color: white;
-    background-position: 40;
-    height: 350px ;
+    background-position: 80;
+    height: 450px;
+
     z-index:8888;
   }
   
@@ -245,7 +253,7 @@
       font-size: 25px;
   }
 
-  .review {
+  .form-group {
       text-align: center;
       background-color: #81b622;
   }
