@@ -54,11 +54,29 @@ ul li a {
 
 ul li a:hover {
   color: var(--second);
+  
+}
+
+.nav-link:hover {
+  background-color: var(--second);
+  
+  
 }
 
 .nav-link {
-  padding-top: 20px;
+  padding-top: 10px;
+  z-index: 9999;
+  
+  
 }
+
+
+
+
+
+
+
+
 
 /*?---------------------FOOTER SECTION---------------------*/
 

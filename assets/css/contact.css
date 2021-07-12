@@ -50,14 +50,26 @@
     font-family: 'Nunito Sans', sans-serif;
     font-size: 20px;
   }
+
+  .nav-link:hover {
+    background-color: var(--second);
+    height: 70px;
+    
+    
+  }
+  
+  .nav-link {
+    padding-top: 10px;
+    z-index: 9999;
+    
+    
+  }
   
   ul li a:hover {
     color: var(--second);
   }
   
-  .nav-link {
-    padding-top: 20px;
-  }
+
 
   .hero {
     background-image: url("../images/farm2table.jpeg");

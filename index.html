@@ -35,33 +35,31 @@
 
 <body>
     <header>
-
-        <h1>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-            FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
-        </h1>
-
-        <ul class="nav fixed-top navbar-expand-md justify-content-end">
-
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./about.html">About Us</a>
-            </li>
-
-
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact Us</a>
-
-            </li>
-        </ul>
-
+            <img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+            </h1>
+            <a class="navbar-brand" href="./index.html">FindFresh</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
@@ -82,8 +80,15 @@
             <button type="button" class="btn-lg btn-success btn-block" id="search-button" onclick="getRecipe()">
                 Get Recipes
             </button>
+            <div>
+                <p id="error"></p>
+            </div>
         </div>
     </section>
+
+
+
+
 
     <!-----------------------Search button on Enter key-------------------------->
 

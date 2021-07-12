@@ -1,217 +1,367 @@
 :root {
-    --first: #414243;
-    --second: #8db030;
-    --third: #b7af9e;
-    --fourth: #664B4D;
-    --fifth: #81b622;
-    --sixth: #3d550c;
-    --seventh: rgb(233, 47, 0);
-    /* font color primary- white */
-    /* font color secondary --grey */
-  }
-  
-  * {
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-body {
-  margin: 0;
-  padding: 0;
+  --first: #414243;
+  --second: #8db030;
+  --third: #b7af9e;
+  --fourth: #664B4D;
+  --fifth: #81b622;
+  --sixth: #3d550c;
+  --seventh: rgb(233, 47, 0);
+  /* font color primary- white */
+  /* font color secondary --grey */
 }
 
-  
-  /*?-----------------Header and navigation----------------*/
-  
-  header {
-    background: var(--first);
-    color: white;
-    font-family: 'Permanent Marker', cursive;
-    padding: 10px 30px; 
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: left;
-    font-size: 30px;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    
-  }
-  
-  header h1 {
-    padding-top: 10px;
-  }
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  header img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-  }
-  
-  
-  ul li a {
-    color: white;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-  }
-  
-  ul li a:hover {
-    color: var(--seventh);
-  }
-  
-  .nav-link {
-    padding-top: 20px;
-  }
+body {
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+position: relative;
+}
 
- /*?---------------------HERO SECTION -----------------------*/
+
+/*?-----------------Header and navigation----------------*/
+
+header {
+  background: var(--first);
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  padding: 10px 30px; 
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: left;
+  font-size: 30px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+
+header h1 {
+  padding-top: 10px;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.leaf-image {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 9999;
+}
+
+
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  padding-top: 5px;
+  position: fixed;
+}
+
+.navbar-toggler {
+  background-color: var(--second);
+  padding-top: 1px;
+}
+
+
+.navbar-toggler:hover {
+  background-color:var(--third);
+
+}
+
+.navbar-toggler:focus {
+  background-color: var(--third);
+}
+
+.nav-item a{
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+  z-index: 9999;
+
+}
+
+.nav-link:hover {
+  background-color: var(--second);
+}
+
+.nav-link {
+  padding-top: 10px;
+  z-index: 9999;
+}
+
+
+/*?---------------------HERO SECTION -----------------------*/
 
 .hero {
-  background-image: url("../images/AboutUs.jpeg"); 
-  background-size: cover;
-  min-width: 100%;
-  min-height: 100%;
+background-image: url("../images/AboutUs.jpeg"); 
+background-size: cover;
+min-width: 100%;
+min-height: 100%;
 }
 
 .hero h2 {
-  color: rgb(233, 47, 0);
-  font-family: 'Dancing Script', cursive;
-  font-size: 100px;
-  margin-left: 1000px;
-  margin-top: 100px;
+color: rgb(233, 47, 0);
+font-family: 'Dancing Script', cursive;
+font-size: 100px;
+margin-left: 1000px;
+margin-top: 100px;
 }
 
 .circle {
-  max-width: 250px;
-  max-height: 250px;
-  border-radius: 50%;
+max-width: 250px;
+max-height: 250px;
+border-radius: 50%;
 }
 
 .team {
-  color: white;
-  text-align: center;
-  font-size: 25px;
-  width: 50%;
+color: white;
+text-align: center;
+font-size: 25px;
+width: 50%;
+/* margin-left: 300px; */
+display: flex;
+align-items: center;
 }
 
 .circle {
-  padding: 20px;
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+padding: 20px;
+display: block;
+width: 100%;
+height: auto;
+object-fit: cover;
 }
 
 
 .name {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color:rgb(233, 47, 0);
-  border-radius: 20%;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+height: 100%;
+width: 100%;
+opacity: 0;
+transition: .5s ease;
+background-color:rgb(233, 47, 0);
+border-radius: 20%;
 }
 
 .name h3{
-  color:black;
-  font-weight: bold;
+color:black;
+font-weight: bold;
 }
 
 .team:hover .name {
-  opacity: 80%;
-  box-shadow: 5px 10px gray;
+opacity: 80%;
+box-shadow: 5px 10px gray;
 }
 
 .text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+text-align: center;
 }
 
 .container {
-  margin-top: 50px;
-  margin-bottom: 100px;
-  margin-right: 190px;
+margin-top: 50px;
+margin-bottom: 100px;
+margin-right: 190px;
 }
 
 
 /*?---------------------FOOTER SECTION---------------------*/
 
 footer {
-    background: var(--first);
-    color: var(--third);
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    padding: 20px;
-    /* position: fixed; */
-    bottom: 0;
-    width: 100%;
+  background: var(--first);
+  color: var(--third);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
 }
-
-
-/*****On screens that are 992 or less***/
-@media screen and (max-width: 992px) {
-
-  .hero h2 {
-    font-size: 70px;
-    margin-left: 450px;
-    margin-top: 100px;
-  }
-
-}
-
 
 /*****On screens that are 980 or less***/
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
+.hero {
+  background-image: url("../images/AboutUs.jpeg"); 
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  
+}
 
-  .hero h2 {
+.hero img {
+  height: 100%;
+}
 
-    font-size: 100px;
-    margin-left: 200px;
-    margin-top: 100px;
+.hero h2 {
+  color: rgb(233, 47, 0);
+  font-family: 'Dancing Script', cursive;
+  font-size: 100px;
+  
+  margin-top: 100px;
+}
+
+.circle {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  }
+  
+  .team {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  width: 50%;
+  }
+  
+  .circle {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   }
 
 
 
+
+/* iframe {
+  margin: auto;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+} */
+
+
+
 }
-
-
 
 /*****On screens that are 768 or less***/
 @media screen and (max-width: 768px) {
 
-  .hero h2 {
+.hero h2 {
+  font-size: 50px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
-    font-size: 100px;
-    margin-left: 200px;
-    margin-top: 100px;
+/* iframe {
+  margin: auto;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+} */
+
+.navbar-toggler {
+  align-self: center;
+}
+body {
+  height: 100%;
+  object-position: bottom;
+}
+
+.container {
+  margin-bottom: 10px;
+  margin-right: 190px;
+  }
+
+  .navbar-collapse {
+    margin-right: 50px;
   }
 
 }
-
 
 
 /*****On screens that are 575 or less***/
 @media screen and (max-width: 575px) {
 
-  .hero h2 {
+.hero h2 {
+  font-size: 55px;
+  margin-top: 0px;
+  margin-right: 168px;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  text-align: center;
+  color: white;
+  
 
-    font-size: 100px;
-    margin-left: 200px;
-    margin-top: 100px;
-  }
+
+}
+
+.col {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+
+}
+
+#ben img {
+  size: 100px;
+  margin-right: 50px;
+  height: 200px;
+}
+
+#gaye img {
+  max-height: 20px;
+}
+
+#gaye col {
+  max-height: 10px;
+  border-radius: 100%;
+}
+
+.team {
+  position: relative;
+}
+
+.navbar-toggler {
+  margin-left: 284px;
+}
+
+.navbar {
+  height: 100px;
+  
+}
+
+@media screen and (min-width: 980px) {
+
+.navbar-brand {
+  padding-top: 0px;
+  margin-right: 50px;
+  
+}
+
+
+
+
 
 }
 
