@@ -28,7 +28,7 @@ body {
 /*?-----------------Header and navigation----------------*/
 
 header {
-  background: var(--first);
+  background:var(--first);
   color: white;
   font-family: 'Permanent Marker', cursive;
   padding: 10px 30px; 
@@ -39,6 +39,7 @@ header {
   width: 100%;
   position: fixed;
   z-index: 9999;
+  overflow: hidden;
 }
 
 header h1 {
@@ -52,19 +53,46 @@ header img {
 }
 
 
-ul li a {
-  color: white;
+.nav-item a{
   font-family: 'Nunito Sans', sans-serif;
   font-size: 20px;
+  z-index: 9999;
 }
 
-ul li a:hover {
-  color: var(--tenth)
+/* .nav-link {
+  padding-top: 20px;
+} */
+
+.nav-link:hover {
+  background-color: var(--second);
+  /* height: 60px; */
 }
 
 .nav-link {
-  padding-top: 20px;
+  padding-top: 10px;
+  z-index: 9999;
 }
+
+.navbar {
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.leaf-image {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  padding: 0 0 5px 0;
+  position: fixed;
+  margin-left: 45px;
+}
+
 
 /*?---------------------FOOTER SECTION---------------------*/
 

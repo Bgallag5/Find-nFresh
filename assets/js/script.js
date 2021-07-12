@@ -3,7 +3,7 @@
 var zipCode = document.getElementById("zipCode");
 var googleKey = "AIzaSyD6qU4Fdx74Tp9Z0lcCt26TIjLK8iC1uBk";
 var mapContainer = document.getElementById("mapContainer");
-var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3";
+var spoonKey1 = "53ed151123a740PPPf094ac3e8409f6c1f3";  //use for presentation
 var spoonKey2 = "b79ab8cbea19412a8dc76a8297bc9d42";
 var spoonKey3 = "b0c5916c7355494bba6f931d954fdad9";
 
@@ -302,9 +302,7 @@ function findMarkets() {
           return response.json();
         }) 
         .then(function (response) {
-          console.log(response);
           var link = response.marketdetails.GoogleLink;
-          //USDA link is returned as a lat/long search; need to clear that info so that the link is simply a link to the name of the market 
           link = link.replace(/[^a-z+/.:?=]/gi, "").replace([".C."], "");
           if (!link.includes("Farmers")) {
             link = link.concat("+Farmers+Market");

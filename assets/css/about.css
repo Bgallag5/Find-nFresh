@@ -56,6 +56,7 @@ body {
   .navbar {
     position: fixed;
     z-index: 9999;
+    overflow: hidden;
   }
   
   
@@ -64,6 +65,7 @@ body {
     font-size: 40px;
     padding-top: 5px;
     position: fixed;
+    margin-left: 45px;
   }
   
   .navbar-toggler {
@@ -96,6 +98,7 @@ body {
   .nav-link {
     padding-top: 10px;
     z-index: 9999;
+    
   }
   
 
