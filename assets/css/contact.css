@@ -59,6 +59,12 @@
     padding-top: 20px;
   }
 
+  .navbar {
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
   .hero {
 
     background-image: url("../images/2farm2table.jpeg");

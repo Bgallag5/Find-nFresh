@@ -35,5 +35,4 @@ Ryan Jolley: APIs, JS, Git, Style, HTML
 Gaye Proctor: Style, HTML 
 
 
-![FindFresh](https://user-images.githubusercontent.com/84213096/124351810-853a4f80-dbca-11eb-9385-64f64ab6dce6.jpg)
 
