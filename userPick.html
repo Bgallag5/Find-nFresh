@@ -25,106 +25,96 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--?-----------------------Import materialize.css----------------------------->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--?-------------------------Import Bootstrap--------------------------------->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="sylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- ?---------------------------BULMA CSS------------------------------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <!--?--------------------local CSS stylesheet---------------------------------->
-
     <link rel="stylesheet" href="./assets/css/userPick.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+
 
 </head>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
-    <img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
-    </h1>
-    <a class="navbar-brand" href="./index.html">FindFresh</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./userPick.html">Recently Viewed</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./contact.html">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
+<!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+<!-- FindFresh<img class="leaf-image" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+</h1> -->
+
+<!-- <ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="./about.html">About Us</a>
+    </li>
+    <li class="nav-item id=" recViewed">
+        <a class="nav-link" href="/userPick.html">Recently Viewed</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+    </li>
+</ul>
+</header> -->
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!--?-----font used for the FRESH FIND Header is Permanent Marker on Google Font-->
+<img class="leaf-image" class="header" src="./assets/images/leaf.png" alt="two connected leaves logo" />
+  
+<a class="navbar-brand" href="./index.html">FindFresh</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./userPick.html">Recently Viewed</a>
+  </li>    
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html">Contact Us</a>
+  </li>    
+
+</ul>
+</div>  
+</nav>   
 
     <!--?---------------HERO SECTION STARTS HERE-------------------------->
-    <section class="hero">
 
+
+
+    <section class="hero" id="heroId">
         <h2>Recently Viewed</h2>
-        <div>
-            <a href="./index.html" class="btn-back"></a>
-        </div>
-
     </section>
-    <!--?-----------END HERO SECTION--------------------------------------->
-
-    <!---------------------------------CARDS FOR PREVIOUSLY VIEWED---------------------------->
-    <!-- <div class="row mx-auto" style="width: 400px;">
-            <div class=" card" id="cardOne" style="width: 400px; height: 400px;">
-                <img class="card-img-top" id="imgOne" src="...">
-                <div class="card-body">
-                    <p class="card-text">
-
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="mx-auto" style="width: 400px;">
-            <div class="card" id="cardTwo" style="width: 400px; height: 400px;">
-                <img class="card-img-top" id="imgTwo" src="...">
-                <div class="card-body">
-                    <p class="card-text"></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mx-auto" style="width: 400px;">
-            <div class="card" id="cardThree" style="width: 400px; height: 400px;">
-                <img class="card-img-top" id="imgThree" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text"></p>
-                </div>
-            </div>
-        </div> -->
 
 
 
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <div class="card" id="cardOne">1</div>
+                <div class="card" id="card1"></div>
             </div>
             <div class="col-4">
-                <div class="card" id="cardTwo">2</div>
+                <div class="card" id="card2"></div>
             </div>
             <div class="col-4">
-                <div class="card" id="cardThree">3</div>
+                <div class="card" id="card3"></div>
             </div>
         </div>
     </div>
 
 
 
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>

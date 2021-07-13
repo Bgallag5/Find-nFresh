@@ -55,6 +55,7 @@ header img {
 .navbar {
   position: fixed;
   z-index: 9999;
+  overflow: hidden;
 }
 
 
@@ -137,6 +138,7 @@ footer {
   margin-bottom: 10px;
 }
 
+
 .search-term {
 text-align: center;
 }
@@ -157,6 +159,7 @@ text-align: center;
 .container-box {
   margin: 20px;
 }
+
 
 .recipe-img {
   padding-top: 20px;
@@ -179,15 +182,18 @@ text-align: center;
 }
 
 .map-container {
-  padding-top: 25px;
-  margin-top: 50px;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+
 }
 
 iframe {
   margin: auto;
   padding: 20px;
-  width: 700px;
-  height: 300px;
+
+  width: 500px;
+  height: 500px;
 }
 
 
@@ -200,6 +206,42 @@ iframe {
     opacity: 0;
   }
 
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+/*****On screens that are 768 or less***/
+@media screen and (max-width: 768px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+/*****On screens that are 575 or less***/
+@media screen and (max-width: 575px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
 }
 
 @media screen and (min-width: 980px) {
@@ -208,7 +250,23 @@ iframe {
     padding-top: 0px;
   }
 
+
 }
+
+
+/*?--------------------MEDIA QUERIES---------------*/
+
+/*****On screens that are 980 or less***/
+@media screen and (max-width: 980px) {
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+}
+
 
 
 

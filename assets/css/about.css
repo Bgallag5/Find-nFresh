@@ -51,12 +51,12 @@ body {
     width: 45px;
     height: 45px;
     margin-bottom: 10px;
-    /* position: fixed; */
   }
   
   .navbar {
     position: fixed;
     z-index: 9999;
+    overflow: hidden;
   }
   
   
@@ -66,7 +66,6 @@ body {
     padding-top: 5px;
     position: fixed;
     margin-left: 45px;
-  
   }
   
   .navbar-toggler {
@@ -99,6 +98,7 @@ body {
   .nav-link {
     padding-top: 10px;
     z-index: 9999;
+    
   }
   
 
@@ -194,65 +194,77 @@ footer {
     justify-content: space-between;
     align-items: left;
     padding: 20px;
-    /* position: fixed; */
     bottom: 0;
     width: 100%;
 }
 
-
-/*****On screens that are 992 or less***/
-@media screen and (max-width: 992px) {
-
-  .hero h2 {
-    font-size: 70px;
-    margin-left: 450px;
-    margin-top: 100px;
-  }
-
-}
-
-
 /*****On screens that are 980 or less***/
-@media screen and (max-width: 769px) {
-
-  .hero h2 {
-
-    font-size: 100px;
-    margin-left: 200px;
-    margin-top: 100px;
+@media screen and (max-width: 768px) {
+  .hero {
+    background-image: url("../images/AboutUs.jpeg"); 
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
   }
 
+  .hero h2 {
+    color: rgb(233, 47, 0);
+    font-family: 'Dancing Script', cursive;
+    font-size: 100px;
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+  
 
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+  }
 
 }
-
-
 
 /*****On screens that are 768 or less***/
 @media screen and (max-width: 768px) {
 
   .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
 
-    font-size: 100px;
-    margin-left: 200px;
-    margin-top: 100px;
+  iframe {
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
   }
 
 }
-
-
 
 /*****On screens that are 575 or less***/
 @media screen and (max-width: 575px) {
 
   .hero h2 {
-
-    font-size: 100px;
-    margin-left: 200px;
-    margin-top: 100px;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
   }
 
 }
+
+@media screen and (min-width: 980px) {
+
+  .navbar-brand {
+    padding-top: 0px;
+  }
+
+}
+
+
+
+
 
 
 

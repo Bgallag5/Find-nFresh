@@ -1,120 +1,269 @@
 :root {
-    --first: #414243;
-    --second: #8db030;
-    --third: #b7af9e;
-    --fourth: #664B4D;
-    --fifth: #81b622;
-    --sixth: #3d550c;
-    --seventh: rgb(233, 47, 0);
-    /* font color primary- white */
-    /* font color secondary --grey */
-  }
-  
-  * {
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-size: cover;
-    background-position: center;
-    background-color: var(--sixth);
-  }
-  
-  /*?-----------------Header and navigation----------------*/
-  
-  header {
-    background: var(--first);
-    color: white;
-    font-family: 'Permanent Marker', cursive;
-    padding: 10px 30px; 
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: left;
-    font-size: 30px;
-    width: 100%;
-    position: fixed;
-    z-index: 9999;
-  }
-  
-  header h1 {
-    padding-top: 10px;
-  }
-  
-  header img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-  }
-  
-  
-  ul li a {
-    color: white;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
-  }
-  
-  ul li a:hover {
-    color: var(--second);
-    display: flex;
-  }
-  
-  .nav-link {
-    padding-top: 20px;
-  }
-  
-
-  
-  /*?---------------------HERO SECTION -----------------------*/
-  .hero {
-    background-image: url("../images/background.jpeg");
-    background-size: cover;
-    color: white;
-    background-position: 40;
-    height: 350px ;
-    z-index:8888;
-  }
-  
-  .hero h2 {
-   padding: 150px 70px;
-   color: white;
-   font-family: 'Dancing Script', cursive;
-   font-size: 75px;
-   margin-bottom: 400px;
-  }
-
-  
-
-
-
-.mx-auto {
-    display: flex;
-    flex-wrap: wrap;
-    
+  --first: #414243;
+  --second: #8db030;
+  --third: #b7af9e;
+  --fourth: #664B4D;
+  --fifth: #81b622;
+  --sixth: #3d550c;
+  --seventh:rgb(102, 255, 255);
+  --eigth: rgb(141, 141, 141);
+  --nineth: rgb(179, 29, 79);
+  --tenth: rgb(255, 198, 75);
+  --eleventh: rgb(36, 36, 36);
+  /* font color primary- white */
+  /* font color secondary --grey */
 }
 
-.card {
-    border-color: var(--sixth);
-    color:var(--sixth);
-    text-decoration-line: none;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--eleventh);
+}
+
+/*?-----------------Header and navigation----------------*/
+
+header {
+  background:var(--first);
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  padding: 10px 30px; 
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: left;
+  font-size: 30px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+header h1 {
+  padding-top: 10px;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+
+.nav-item a{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+  z-index: 9999;
+}
+
+/* .nav-link {
+  padding-top: 20px;
+} */
+
+.nav-link:hover {
+  background-color: var(--second);
+  /* height: 60px; */
+}
+
+.nav-link {
+  padding-top: 10px;
+  z-index: 9999;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.leaf-image {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  padding: 0 0 5px 0;
+  position: fixed;
+  margin-left: 45px;
+}
+
+
+/*?---------------------FOOTER SECTION---------------------*/
+
+footer {
+  background: var(--first);
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px;
+}
+
+/*?---------------------HERO SECTION -----------------------*/
+.hero {
+  background-image: url("../images/moreSpices.jpg");
+  background-size: cover;
+  color: wheat;
+  background-position: 40;
+  height: 350px ;
+  z-index:8888;
+}
+
+.hero h2 {
+ padding: 150px 70px;
+ color: white;
+ /* font-family: 'Dancing Script', cursive; */
+ font-size: 75px;
+ /* margin-left: 900px; */
+ text-align: center;
+ margin-top: 20px;
+}
+
+/*?------------------------INGREDIENTS INPUT CONTAINER--------------------------*/
+
+
+
+/*?--------------RECIPE CARD CONTAINER--------------------*/
 
 .card a {
-    text-decoration: none;
-    text-emphasis: none;
-    color: var(--sixth)
+  color:var(--first);
+  text-decoration: none;
+  font-weight: bold;
+  
+
+}
+
+.row {
+  margin-right: 10px;
+}
+
+.container-box {
+  margin: 20px;
+}
+
+.recipe-img {
+  padding-top: 20px;
+}
+
+/*?----------------ZIP CODE CONTAINER----------------*/
+.zipcode {
+  align-items: center;
+}
+
+.container .card {
+  padding-top: 0px;
+  padding-bottom: 20px; 
+  margin-bottom: 25px;
+  align-items: center;
 }
 
 
-  /*?---------------------FOOTER SECTION---------------------*/
+
+/*?--------------------MEDIA QUERIES---------------*/
+
+/*****On screens that are 980 or less***/
+@media screen and (max-width: 980px) {
+
   
-  footer {
-    background: var(--first);
-    color: white;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
-    padding: 20px;
-    text-decoration-style: none;
+
+  .nav-item {
+     
+      color: white;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10px;
+    
+
   }
+
+
+  #recViewed {
+    margin-right: 0;
+    margin-left: 37px;
+  }
+
+  #home {
+    margin-right: 30px;
+  }
+
+  .hero img {
+    height: 200px;
+    
+  }
+
+  .hero h2 {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .container {
+    margin-right: 60px;
+  }
+
+}
+
+/* small devices - landscape phones, 576px and up */
+
+/* @media (min-width: 576px) { 
+    ul li a {
+      margin-right: 100px;
+      font-size: 20px;
+    }
+
+
+
+ } */
+
+ @media (max-width: 767px) {
+    #header {
+      height: 100px;
+    }
+  
+    #headerId h1 {
+      font-size: 15px;
+    }
+
+    .nav-link {
+      font-size: 10px;
+    }
+  
+  
+    #home {
+      margin-right: 100px;
+    }
+
+    #about {
+      margin-right: 100px;
+    }
+
+    #recViewed {
+      margin-right: 100px;
+    }
+
+    #contact {
+      margin-right: 100px;
+    }
+
+    .hero h2 {
+      font-size: 35px;
+      margin-top: 90px;
+      margin-right: 50px;
+    }
+
+    .col-4 {
+      font-size: 10px;
+    }
+
+    .card {
+      width: 50px;
+    }
+
+    
+}
