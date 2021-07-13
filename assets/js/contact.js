@@ -37,8 +37,10 @@ if (window.localStorage) {
         userEmail.value = localStorage.getItem("user-email");
 
 
+
         userEmail.addEventListener("input", function store() {
             localStorage.setItem("user-email", userEmail.value);
+
 
         }, false)
 
